@@ -4,12 +4,12 @@ ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: []
-TENSORBOARD_DIR: "tb"
+TENSORBOARD_DIR: "tb_rl"
 VIDEO_DIR: "video_dir"
 TEST_EPISODE_COUNT: -1
 EVAL_CKPT_PATH_DIR: "data/new_checkpoints"
-NUM_ENVIRONMENTS: 4
-CHECKPOINT_FOLDER: "data/new_checkpoints"
+NUM_ENVIRONMENTS: 2
+CHECKPOINT_FOLDER: "data/new_checkpoints_rl"
 TRAINER_NAME: "pirlnav-ppo"
 SENSORS: ["RGB_SENSOR"]
 NUM_UPDATES: 40000
@@ -54,7 +54,7 @@ RL:
     # The PyTorch distributed backend to use
     distrib_backend: NCCL
     # Visual encoder babone
-    pretrained_weights: data/ddppo-models/gibson-2plus-resnet50.pth
+    pretrained_weights: data/new_checkpoints/ckpt.9.pth
     # Initialize with pretrained weights
     pretrained: False
     # Initialize just the visual encoder backbone with pretrained weights
@@ -63,3 +63,4 @@ RL:
     train_encoder: True
     # Whether or not to reset the critic linear layer
     reset_critic: True
+    force_distributed: True
