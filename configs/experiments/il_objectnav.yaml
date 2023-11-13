@@ -4,15 +4,15 @@ ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb_dgx/eval"
+TENSORBOARD_DIR: "tb_debug/eval"
 VIDEO_DIR: "video_dir"
 TEST_EPISODE_COUNT: -1
 EVAL_CKPT_PATH_DIR: "data/new_checkpoints_dgx_il/ckpt.3.pth"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "data/new_checkpoints_dgx_il"
+CHECKPOINT_FOLDER: "data/new_checkpoints_debug"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
-NUM_UPDATES: 40000
+NUM_UPDATES: 100000
 LOG_INTERVAL: 10
 NUM_CHECKPOINTS: 10
 # Force PyTorch to be single threaded as
