@@ -3,13 +3,13 @@ CMD_TRAILING_OPTS: ["TASK_CONFIG.ENVIRONMENT.ITERATOR_OPTIONS.MAX_SCENE_REPEAT_S
 ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
-VIDEO_OPTION: [disk, tb]
-TENSORBOARD_DIR: "tb/eval"
+VIDEO_OPTION: [disk]
+TENSORBOARD_DIR: "tb_dgx/eval"
 VIDEO_DIR: "video_dir"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/new_checkpoints/ckpt.9.pth"
+EVAL_CKPT_PATH_DIR: "data/new_checkpoints_dgx_il/ckpt.3.pth"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "data/new_checkpoints"
+CHECKPOINT_FOLDER: "data/new_checkpoints_dgx_il"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
 NUM_UPDATES: 40000
@@ -21,6 +21,7 @@ FORCE_TORCH_SINGLE_THREADED: True
 
 EVAL:
   SPLIT: "val"
+  USE_CKPT_CONFIG: False
 
 IL:
   POLICY:

@@ -70,4 +70,4 @@ ENV MAGNUM_LOG="quiet"
 ENV HABITAT_SIM_LOG=quiet
 
 COPY entrypoint.sh /home/rafa
-ENTRYPOINT [ "/home/carlos/entrypoint.sh" ]
+ENTRYPOINT [ "/home/rafa/entrypoint.sh" ]

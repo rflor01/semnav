@@ -95,10 +95,12 @@ class ILEnvDDPTrainer(PPOTrainer):
         )
 
     def _init_train(self):
+        #If there is some checkpoint we will want to take this checkpoint in order to start working again
         resume_state = load_resume_state(self.config)
+        #Unless is there is no checkpoint, in that case we will have nothing to unfreeze
         if resume_state is not None:
             self.config: Config = resume_state["config"]
-
+        #Distributed is in order to parallel the work, it seems to be necessary
         if self.config.RL.DDPPO.force_distributed:
             self._is_distributed = True
 
@@ -107,15 +109,21 @@ class ILEnvDDPTrainer(PPOTrainer):
 
         # Add replay sensors
         self.config.defrost()
+
+        #This are the sensors that will be repeated in behavior cloning
         self.config.TASK_CONFIG.TASK.SENSORS.extend(
             ["DEMONSTRATION_SENSOR", "INFLECTION_WEIGHT_SENSOR"]
         )
+
         self.config.freeze()
 
         if self._is_distributed:
+            #All of this seems to be configurations in order to parallel the work
             local_rank, tcp_store = init_distrib_slurm(
                 self.config.RL.DDPPO.distrib_backend
             )
+
+
             if rank0_only():
                 logger.info(
                     "Initialized DD-PPO with {} workers".format(
@@ -124,9 +132,11 @@ class ILEnvDDPTrainer(PPOTrainer):
                 )
 
             self.config.defrost()
+            #Save the gpus to be used in the task
             self.config.TORCH_GPU_ID = local_rank
             self.config.SIMULATOR_GPU_ID = local_rank
             # Multiply by the number of simulators to make sure they also get unique seeds
+            #Generate seeds for every GPU and for every environment
             self.config.TASK_CONFIG.SEED += (
                 torch.distributed.get_rank() * self.config.NUM_ENVIRONMENTS
             )
@@ -135,6 +145,8 @@ class ILEnvDDPTrainer(PPOTrainer):
             random.seed(self.config.TASK_CONFIG.SEED)
             np.random.seed(self.config.TASK_CONFIG.SEED)
             torch.manual_seed(self.config.TASK_CONFIG.SEED)
+
+            #A rollout will be a sequence of steps without interruption
             self.num_rollouts_done_store = torch.distributed.PrefixStore(
                 "rollout_tracker", tcp_store
             )
@@ -148,11 +160,14 @@ class ILEnvDDPTrainer(PPOTrainer):
             num_steps_to_capture=self.config.PROFILING.NUM_STEPS_TO_CAPTURE,
         )
 
+        #Environments are initialized
         self._init_envs()
 
+        #What actions are going to be used 4 or 6
         action_space = self.envs.action_spaces[0]
         self.policy_action_space = action_space
 
+        #We check if we are taking discrete point nav or continuous pointnav
         if is_continuous_action_space(action_space):
             # Assume ALL actions are NOT discrete
             action_shape = (get_num_actions(action_space),)
@@ -161,9 +176,14 @@ class ILEnvDDPTrainer(PPOTrainer):
             # For discrete pointnav
             action_shape = None
             discrete_actions = True
-
+        #Save IL configurations
         il_cfg = self.config.IL.BehaviorCloning
+        #Save Policy configurations
         policy_cfg = self.config.POLICY
+        #POLICY INCLUDES: RGB ENCODER: hidden_size  512 image size 256
+        # State encoder: hidden size 2048 recurrent layers 2 (GRU)
+        # use previous action: True
+        #critic: in il no_critic True
         if torch.cuda.is_available():
             self.device = torch.device("cuda", self.config.TORCH_GPU_ID)
             torch.cuda.set_device(self.device)
@@ -172,8 +192,10 @@ class ILEnvDDPTrainer(PPOTrainer):
 
         if rank0_only() and not os.path.isdir(self.config.CHECKPOINT_FOLDER):
             os.makedirs(self.config.CHECKPOINT_FOLDER)
-
+        #Set the critic
         self._setup_actor_critic_agent(il_cfg)
+        #Distributed training start, find_unused_params is a way to construct the training and communicate different
+        #proccesses in a distributed training
         if self._is_distributed:
             self.agent.init_distributed(find_unused_params=True)  # type: ignore
 
@@ -182,7 +204,7 @@ class ILEnvDDPTrainer(PPOTrainer):
                 sum(param.numel() for param in self.agent.parameters())
             )
         )
-
+        #starts getting the space information
         obs_space = self.obs_space
         if self._static_encoder:
             self._encoder = self.actor_critic.net.visual_encoder
@@ -199,7 +221,7 @@ class ILEnvDDPTrainer(PPOTrainer):
             )
 
         self._nbuffers = 2 if il_cfg.use_double_buffered_sampler else 1
-
+        #sets rollouts initialization
         self.rollouts = RolloutStorage(
             il_cfg.num_steps,
             self.envs.num_envs,
