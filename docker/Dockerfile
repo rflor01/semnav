@@ -70,4 +70,6 @@ ENV MAGNUM_LOG="quiet"
 ENV HABITAT_SIM_LOG=quiet
 
 COPY entrypoint.sh /home/rafa
+RUN ls
+RUN  cat configs/experiments/il_objectnav.yaml
 ENTRYPOINT [ "/home/rafa/entrypoint.sh" ]

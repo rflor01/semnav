@@ -12,15 +12,16 @@ NUM_ENVIRONMENTS: 2
 CHECKPOINT_FOLDER: "data/new_checkpoints_rl"
 TRAINER_NAME: "pirlnav-ppo"
 SENSORS: ["RGB_SENSOR"]
-NUM_UPDATES: 40000
+NUM_UPDATES: 100000
 LOG_INTERVAL: 10
-NUM_CHECKPOINTS: 10
+NUM_CHECKPOINTS: 100
 # Force PyTorch to be single threaded as
 # this improves performance considerably
 FORCE_TORCH_SINGLE_THREADED: True
 
 EVAL:
   SPLIT: "val"
+  USE_CKPT_CONFIG: False
 
 RL:
   SUCCESS_REWARD: 2.5
