@@ -21,6 +21,6 @@ python -u -m torch.distributed.launch \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
     NUM_UPDATES 100000 \
     NUM_ENVIRONMENTS 30 \
-    EVAL USE_CKPT_CONFIG False\
+    EVAL.USE_CKPT_CONFIG False\
     RL.DDPPO.force_distributed True \
     TASK_CONFIG.DATASET.DATA_PATH "$DATA_PATH/{split}/{split}.json.gz" \
