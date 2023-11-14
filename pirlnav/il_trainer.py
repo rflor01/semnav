@@ -99,7 +99,8 @@ class ILEnvDDPTrainer(PPOTrainer):
         resume_state = load_resume_state(self.config)
         #Unless is there is no checkpoint, in that case we will have nothing to unfreeze
         if resume_state is not None:
-            self.config: Config = resume_state["config"]
+            None
+            #self.config: Config = resume_state["config"]
         #Distributed is in order to parallel the work, it seems to be necessary
         if self.config.RL.DDPPO.force_distributed:
             self._is_distributed = True
