@@ -98,9 +98,12 @@ class ILEnvDDPTrainer(PPOTrainer):
         #If there is some checkpoint we will want to take this checkpoint in order to start working again
         resume_state = load_resume_state(self.config)
         #Unless is there is no checkpoint, in that case we will have nothing to unfreeze
+        #This line changes the configuration to the one the ckpt was done, not interesting for us in this moment
         if resume_state is not None:
             None
-            #self.config: Config = resume_state["config"]
+            resume_state["config"]["NUM_UPDATES"] = 100000
+            resume_state["config"]["NUM_CHECKPOINTS"] = 100
+            self.config: Config = resume_state["config"]
         #Distributed is in order to parallel the work, it seems to be necessary
         if self.config.RL.DDPPO.force_distributed:
             self._is_distributed = True

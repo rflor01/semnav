@@ -4,18 +4,18 @@ ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb_debug/eval"
+TENSORBOARD_DIR: "tb/behavior"
 VIDEO_DIR: "video_dir"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/new_checkpoints_dgx_il/ckpt.3.pth"
-NUM_ENVIRONMENTS: 30
-CHECKPOINT_FOLDER: "data/il_ckpts"
+EVAL_CKPT_PATH_DIR: "data/il_ckpts"
+NUM_ENVIRONMENTS: 2
+CHECKPOINT_FOLDER: "data/old_il_ckpts"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
 NUM_UPDATES: 100000
 LOG_INTERVAL: 10
 NUM_CHECKPOINTS: 100
-USE_CKPT_CONFIG: False
+
 # Force PyTorch to be single threaded as
 # this improves performance considerably
 FORCE_TORCH_SINGLE_THREADED: True
@@ -27,7 +27,7 @@ EVAL:
 IL:
   POLICY:
     name: "ObjectNavILMAEPolicy"
-  USE_CKPT_CONFIG: False
+
 
 RL:
   SUCCESS_REWARD: 2.5
@@ -38,4 +38,3 @@ RL:
 POLICY:
   CRITIC:
     no_critic: True
-  USE_CKPT_CONFIG: False
