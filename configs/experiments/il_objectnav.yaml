@@ -9,12 +9,13 @@ VIDEO_DIR: "video_dir"
 TEST_EPISODE_COUNT: -1
 EVAL_CKPT_PATH_DIR: "data/new_checkpoints_dgx_il/ckpt.3.pth"
 NUM_ENVIRONMENTS: 30
-CHECKPOINT_FOLDER: "data/new_checkpoints_debug"
+CHECKPOINT_FOLDER: "data/il_ckpts"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
 NUM_UPDATES: 100000
 LOG_INTERVAL: 10
 NUM_CHECKPOINTS: 100
+USE_CKPT_CONFIG: False
 # Force PyTorch to be single threaded as
 # this improves performance considerably
 FORCE_TORCH_SINGLE_THREADED: True
