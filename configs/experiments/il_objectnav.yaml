@@ -37,3 +37,4 @@ RL:
 POLICY:
   CRITIC:
     no_critic: True
+  USE_CKPT_CONFIG: False
