@@ -17,7 +17,5 @@ python -u -m torch.distributed.launch \
     run.py \
     --exp-config $config \
     --run-type train \
-    TENSORBOARD_DIR $TENSORBOARD_DIR \
-    CHECKPOINT_FOLDER $CHECKPOINT_DIR \
     RL.DDPPO.force_distributed True \
     TASK_CONFIG.DATASET.DATA_PATH "$DATA_PATH/{split}/{split}.json.gz" \
