@@ -26,6 +26,7 @@ EVAL:
 IL:
   POLICY:
     name: "ObjectNavILMAEPolicy"
+  USE_CKPT_CONFIG: False
 
 RL:
   SUCCESS_REWARD: 2.5
