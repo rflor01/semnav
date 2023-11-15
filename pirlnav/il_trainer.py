@@ -100,11 +100,11 @@ class ILEnvDDPTrainer(PPOTrainer):
         #Unless is there is no checkpoint, in that case we will have nothing to unfreeze
         #This line changes the configuration to the one the ckpt was done, not interesting for us in this moment
         if resume_state is not None:
-            None
-            resume_state["config"]["NUM_UPDATES"] = 100000
-            resume_state["config"]["NUM_CHECKPOINTS"] = 100
+            #None
+            resume_state["config"]["NUM_UPDATES"] = 200000
+            resume_state["config"]["NUM_CHECKPOINTS"] = 200
             resume_state["config"]["CHECKPOINT_FOLDER"] = 'data/old_il_ckpts'
-            resume_state["config"]['CMD_TRAILING_OPTS'] = ['TASK_CONFIG.ENVIRONMENT.ITERATOR_OPTIONS.MAX_SCENE_REPEAT_STEPS','50000', 'TENSORBOARD_DIR','tb/behavior/','CHECKPOINT_FOLDER','data/old_il_ckpts','NUM_UPDATES','100000','NUM_ENVIRONMENTS','30','RL.DDPPO.force_distributed','True', 'TASK_CONFIG.DATASET.DATA_PATH','data/datasets/objectnav/objectnav_hm3d_hd/train/train.json.gz']
+            resume_state["config"]['CMD_TRAILING_OPTS'] = ['TASK_CONFIG.ENVIRONMENT.ITERATOR_OPTIONS.MAX_SCENE_REPEAT_STEPS','50000', 'TENSORBOARD_DIR','tb/behavior/','CHECKPOINT_FOLDER','data/old_il_ckpts','NUM_UPDATES','200000','NUM_ENVIRONMENTS','30','RL.DDPPO.force_distributed','True', 'TASK_CONFIG.DATASET.DATA_PATH','data/datasets/objectnav/objectnav_hm3d_hd/train/train.json.gz']
             self.config: Config = resume_state["config"]
         #Distributed is in order to parallel the work, it seems to be necessary
         if self.config.RL.DDPPO.force_distributed:
