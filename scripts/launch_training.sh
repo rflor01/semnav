@@ -7,7 +7,7 @@ export HABITAT_SIM_LOG=quiet
 config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
 TENSORBOARD_DIR="tb/behavior/"
-CHECKPOINT_DIR="data/il_ckpts"
+CHECKPOINT_DIR="data/old_il_ckpts"
 
 
 echo "In ObjectNav IL DDP"
