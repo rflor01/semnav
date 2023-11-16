@@ -354,10 +354,10 @@ class ILEnvDDPTrainer(PPOTrainer):
             optimizer=self.agent.optimizer,
             lr_lambda=lambda x: 1 - self.percent_done(),
         )
-        resume_state = torch.load('data/il_ckpts/ckpt.9.pth', map_location="cpu")
-        if rank0_only():
-            logger.info(f"Loading resume state: {'data/il_ckpts/ckpt.9.pth'}")
-        #resume_state = load_resume_state(self.config)
+        # resume_state = torch.load('data/il_ckpts/ckpt.9.pth', map_location="cpu")
+        # if rank0_only():
+        #     logger.info(f"Loading resume state: {'data/il_ckpts/ckpt.9.pth'}")
+        resume_state = load_resume_state(self.config)
         if resume_state is not None:
             self.agent.load_state_dict(resume_state["state_dict"])
             self.agent.optimizer.load_state_dict(resume_state["optim_state"])
