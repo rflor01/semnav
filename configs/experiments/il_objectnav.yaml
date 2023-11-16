@@ -7,15 +7,15 @@ VIDEO_OPTION: [disk]
 TENSORBOARD_DIR: "tb/behavior"
 VIDEO_DIR: "video_dir"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/old_il_ckpts"
+EVAL_CKPT_PATH_DIR: "data/il_ckpts"
 NUM_ENVIRONMENTS: 30
-CHECKPOINT_FOLDER: "data/old_il_ckpts"
+CHECKPOINT_FOLDER: "data/il_ckpts"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
 NUM_UPDATES: 200000
 LOG_INTERVAL: 10
 NUM_CHECKPOINTS: 200
-RESUME_STATE_BASE_NAME: 'ckpt.9'
+
 
 # Force PyTorch to be single threaded as
 # this improves performance considerably
