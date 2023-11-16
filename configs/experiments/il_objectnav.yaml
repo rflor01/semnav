@@ -15,6 +15,7 @@ SENSORS: ["RGB_SENSOR"]
 NUM_UPDATES: 200000
 LOG_INTERVAL: 10
 NUM_CHECKPOINTS: 200
+RESUME_STATE_BASE_NAME: 'ckpt.9'
 
 # Force PyTorch to be single threaded as
 # this improves performance considerably
