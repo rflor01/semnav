@@ -353,6 +353,7 @@ class ILEnvDDPTrainer(PPOTrainer):
             lr_lambda=lambda x: 1 - self.percent_done(),
         )
         resume_state = load_resume_state('data/il_ckpts/ckpt.9.pth')
+        logger.info(f'Keys {resume_state.keys()}')
         if resume_state is not None:
             self.agent.load_state_dict(resume_state["state_dict"])
             self.agent.optimizer.load_state_dict(resume_state["optim_state"])
