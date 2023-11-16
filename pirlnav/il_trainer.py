@@ -96,10 +96,8 @@ class ILEnvDDPTrainer(PPOTrainer):
 
     def _init_train(self):
         #If there is some checkpoint we will want to take this checkpoint in order to start working again
-        resume_state = torch.load('data/il_ckpts/ckpt.9.pth', map_location="cpu")
-        if rank0_only():
-            logger.info(f"Loading resume state: {'data/il_ckpts/ckpt.9.pth'}")
-        #resume_state = load_resume_state(self.config)
+
+        resume_state = load_resume_state('data/il_ckpts/ckpt.9.pth')
         #Unless is there is no checkpoint, in that case we will have nothing to unfreeze
         #This line changes the configuration to the one the ckpt was done, not interesting for us in this moment
         if resume_state is not None:
@@ -354,10 +352,7 @@ class ILEnvDDPTrainer(PPOTrainer):
             optimizer=self.agent.optimizer,
             lr_lambda=lambda x: 1 - self.percent_done(),
         )
-        resume_state = torch.load('data/il_ckpts/ckpt.9.pth', map_location="cpu")
-        if rank0_only():
-            logger.info(f"Loading resume state: {'data/il_ckpts/ckpt.9.pth'}")
-        #resume_state = load_resume_state(self.config)
+        resume_state = load_resume_state('data/il_ckpts/ckpt.9.pth')
         if resume_state is not None:
             self.agent.load_state_dict(resume_state["state_dict"])
             self.agent.optimizer.load_state_dict(resume_state["optim_state"])
