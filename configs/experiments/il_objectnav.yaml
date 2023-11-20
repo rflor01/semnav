@@ -4,12 +4,12 @@ ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/behavior300k"
-VIDEO_DIR: "video_dir"
+TENSORBOARD_DIR: "tb/300k_inflection"
+VIDEO_DIR: "video_dir_inflection"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/il_ckpts_300k"
-NUM_ENVIRONMENTS: 30
-CHECKPOINT_FOLDER: "data/il_ckpts_300k"
+EVAL_CKPT_PATH_DIR: "data/il_ckpts_300k_inflection"
+NUM_ENVIRONMENTS: 2
+CHECKPOINT_FOLDER: "data/il_ckpts_300k_inflection"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
 NUM_UPDATES: 300000
@@ -23,7 +23,6 @@ FORCE_TORCH_SINGLE_THREADED: True
 
 EVAL:
   SPLIT: "val"
-  USE_CKPT_CONFIG: False
 
 IL:
   POLICY:

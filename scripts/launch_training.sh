@@ -8,7 +8,7 @@ config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
 TENSORBOARD_DIR="tb/behavior300k"
 CHECKPOINT_DIR="data/il_ckpts_300k"
-
+INFLECTION_COEF=3.234951275740812
 
 echo "In ObjectNav IL DDP"
 python -u -m torch.distributed.launch \
@@ -24,3 +24,4 @@ python -u -m torch.distributed.launch \
     EVAL.USE_CKPT_CONFIG False\
     RL.DDPPO.force_distributed True \
     TASK_CONFIG.DATASET.DATA_PATH "$DATA_PATH/{split}/{split}.json.gz" \
+    TASK_CONFIG.TASK.INFLECTION_WEIGHT_SENSOR.INFLECTION_COEF $INFLECTION_COEF \
