@@ -5,9 +5,9 @@ export MAGNUM_LOG=quiet
 export HABITAT_SIM_LOG=quiet
 
 config="configs/experiments/il_objectnav.yaml"
-DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
-TENSORBOARD_DIR="tb/behavior300k"
-CHECKPOINT_DIR="data/il_ckpts_300k"
+DATA_PATH="data/datasets/objectnav/objectnav_hm3d_v1"
+TENSORBOARD_DIR="tb/300k_inflection"
+CHECKPOINT_DIR="data/il_ckpts_300k_inflection"
 INFLECTION_COEF=3.234951275740812
 
 echo "In ObjectNav IL DDP"
