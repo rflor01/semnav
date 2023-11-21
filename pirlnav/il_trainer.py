@@ -102,10 +102,6 @@ class ILEnvDDPTrainer(PPOTrainer):
         #This line changes the configuration to the one the ckpt was done, not interesting for us in this moment
         if resume_state is not None:
             #None
-            resume_state["config"]["NUM_UPDATES"] = 200000
-            resume_state["config"]["NUM_CHECKPOINTS"] = 200
-            resume_state["config"]["CHECKPOINT_FOLDER"] = 'data/il_ckpts'
-            resume_state["config"]['CMD_TRAILING_OPTS'] = ['TASK_CONFIG.ENVIRONMENT.ITERATOR_OPTIONS.MAX_SCENE_REPEAT_STEPS','50000', 'TENSORBOARD_DIR','tb/behavior/','CHECKPOINT_FOLDER','data/il_ckpts','NUM_UPDATES','200000','NUM_ENVIRONMENTS','30','RL.DDPPO.force_distributed','True', 'TASK_CONFIG.DATASET.DATA_PATH','data/datasets/objectnav/objectnav_hm3d_hd/train/train.json.gz']
             self.config: Config = resume_state["config"]
         #Distributed is in order to parallel the work, it seems to be necessary
         if self.config.RL.DDPPO.force_distributed:
@@ -375,10 +371,12 @@ class ILEnvDDPTrainer(PPOTrainer):
                 requeue_stats["window_episode_stats"]
             )
 
+        #PPO config and il_config are saved
         ppo_cfg = self.config.RL.PPO
         il_cfg = self.config.IL.BehaviorCloning
 
         with (
+            #Tensorboard
             get_writer(self.config, flush_secs=self.flush_secs)
             if rank0_only()
             else contextlib.suppress()
@@ -393,6 +391,7 @@ class ILEnvDDPTrainer(PPOTrainer):
                     )
 
                 if rank0_only() and self._should_save_resume_state():
+                    #Resume state is saved
                     requeue_stats = dict(
                         env_time=self.env_time,
                         pth_time=self.pth_time,
