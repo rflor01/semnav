@@ -4,12 +4,12 @@ ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb_inflection_2"
+TENSORBOARD_DIR: "tb_inflection_3"
 VIDEO_DIR: "video_dir_inflection"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "tb_inflection_2"
+EVAL_CKPT_PATH_DIR: "tb_inflection_3"
 NUM_ENVIRONMENTS: 30
-CHECKPOINT_FOLDER: "tb_inflection_2"
+CHECKPOINT_FOLDER: "tb_inflection_3"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
 NUM_UPDATES: 300000
