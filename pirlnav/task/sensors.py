@@ -90,7 +90,6 @@ class InflectionWeightSensor(Sensor):
             != episode.reference_replay[self.timestep].action
         ):
             inflection_weight = self._config.INFLECTION_COEF
-            print(inflection_weight)
         self.timestep += 1
         return inflection_weight
 
