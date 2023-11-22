@@ -28,7 +28,7 @@ IL:
   POLICY:
     name: "ObjectNavILMAEPolicy"
   BehaviorCloning:
-    num_steps: 328
+    num_steps: 410
 
 
 RL:
