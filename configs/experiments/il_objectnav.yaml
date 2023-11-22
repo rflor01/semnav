@@ -4,15 +4,15 @@ ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb_inflection_3"
-VIDEO_DIR: "video_dir_inflection"
+TENSORBOARD_DIR: "tb_num_steps"
+VIDEO_DIR: "tb_num_steps"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "tb_inflection_3"
+EVAL_CKPT_PATH_DIR: "data/num_steps"
 NUM_ENVIRONMENTS: 30
-CHECKPOINT_FOLDER: "tb_inflection_3"
+CHECKPOINT_FOLDER: "data/num_steps"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
-NUM_UPDATES: 300000
+NUM_UPDATES: 40000
 LOG_INTERVAL: 10
 NUM_CHECKPOINTS: 10
 
@@ -27,13 +27,14 @@ EVAL:
 IL:
   POLICY:
     name: "ObjectNavILMAEPolicy"
+  BehaviorCloning:
+    num_steps: 273
 
 
 RL:
   SUCCESS_REWARD: 2.5
   SLACK_REWARD: -1e-3
-  DDPPO:
-    force_distributed: True
+
 
 POLICY:
   CRITIC:
