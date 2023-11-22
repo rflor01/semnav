@@ -8,7 +8,7 @@ TENSORBOARD_DIR: "tb_num_steps"
 VIDEO_DIR: "tb_num_steps"
 TEST_EPISODE_COUNT: -1
 EVAL_CKPT_PATH_DIR: "data/num_steps"
-NUM_ENVIRONMENTS: 30
+NUM_ENVIRONMENTS: 25
 CHECKPOINT_FOLDER: "data/num_steps"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
@@ -28,7 +28,7 @@ IL:
   POLICY:
     name: "ObjectNavILMAEPolicy"
   BehaviorCloning:
-    num_steps: 273
+    num_steps: 328
 
 
 RL:
