@@ -5,14 +5,14 @@ SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
 TENSORBOARD_DIR: "tb/num_env8num_updates320000"
-VIDEO_DIR: "num_env24num_updates40000"
+VIDEO_DIR: "num_env8num_updates40000"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/num_env24num_updates40000"
-NUM_ENVIRONMENTS: 24
-CHECKPOINT_FOLDER: "data/num_env24num_updates40000"
+EVAL_CKPT_PATH_DIR: "data/num_env8num_updates320000lr0001"
+NUM_ENVIRONMENTS: 8
+CHECKPOINT_FOLDER: "data/num_env8num_updates320000lr0001"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
-NUM_UPDATES: 40000
+NUM_UPDATES: 320000
 LOG_INTERVAL: 10
 NUM_CHECKPOINTS: 80
 
@@ -29,9 +29,10 @@ IL:
     name: "ObjectNavILMAEPolicy"
   BehaviorCloning:
     num_steps: 64
+    lr: 0.0001
 
 
-  num_mini_batch: 8
+  num_mini_batch: 2
 
 RL:
   SUCCESS_REWARD: 2.5

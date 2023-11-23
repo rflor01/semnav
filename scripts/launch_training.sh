@@ -6,8 +6,8 @@ export HABITAT_SIM_LOG=quiet
 
 config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
-TENSORBOARD_DIR="tb/num_env24num_updates40000"
-CHECKPOINT_DIR="data/num_env24num_updates40000"
+TENSORBOARD_DIR="tb/num_env8num_updates320000lr0001"
+CHECKPOINT_DIR="data/num_env8num_updates320000lr0001"
 INFLECTION_COEF=3.234951275740812
 
 echo "In ObjectNav IL DDP"
@@ -19,8 +19,8 @@ python -u -m torch.distributed.launch \
     --run-type train \
     TENSORBOARD_DIR $TENSORBOARD_DIR \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
-    NUM_UPDATES 40000 \
-    NUM_ENVIRONMENTS 24 \
+    NUM_UPDATES 320000 \
+    NUM_ENVIRONMENTS 8 \
     EVAL.USE_CKPT_CONFIG True\
     RL.DDPPO.force_distributed True \
     TASK_CONFIG.DATASET.DATA_PATH "$DATA_PATH/{split}/{split}.json.gz" \
