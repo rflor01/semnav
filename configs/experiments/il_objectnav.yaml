@@ -31,7 +31,7 @@ IL:
     num_steps: 64
 
 
-  num_mini_batch: 4
+  num_mini_batch: 8
 
 RL:
   SUCCESS_REWARD: 2.5
