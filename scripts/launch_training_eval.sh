@@ -11,9 +11,9 @@ CHECKPOINT_DIR="data/data/final_8env_mini2"
 
 
 echo "In ObjectNav IL DDP"
-python -u -m run torch.distributed.launch\
+python -u -m run \
     --exp-config $config \
-    --run-type eval \
+    --run-type val \
     TENSORBOARD_DIR $TENSORBOARD_DIR \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
     EVAL.USE_CKPT_CONFIG False\
