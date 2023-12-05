@@ -4,10 +4,10 @@ export GLOG_minloglevel=2
 export MAGNUM_LOG=quiet
 export HABITAT_SIM_LOG=quiet
 
-config="configs/experiments/off_objectnav.yaml"
-DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd_minimal"
-TENSORBOARD_DIR="tb/eval_minimal/"
-CHECKPOINT_DIR="data/new_checkpoints"
+config="configs/experiments/il_objectnav.yaml"
+DATA_PATH="data/datasets/objectnav/objectnav_hm3d_v1"
+TENSORBOARD_DIR="tb/final_8env_mini2/"
+CHECKPOINT_DIR="data/data/final_8env_mini2"
 
 
 echo "In ObjectNav IL DDP"
@@ -16,6 +16,7 @@ python -u -m run \
     --run-type eval \
     TENSORBOARD_DIR $TENSORBOARD_DIR \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
+    EVAL.USE_CKPT_CONFIG False\
     NUM_UPDATES 50000 \
     NUM_ENVIRONMENTS 16 \
     RL.DDPPO.force_distributed True \
