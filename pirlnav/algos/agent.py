@@ -12,7 +12,7 @@ from habitat.utils import profiling_wrapper
 from torch import Tensor
 from torch import nn as nn
 from torch import optim as optim
-
+import cv2
 
 class ILAgent(nn.Module):
     def __init__(
@@ -88,7 +88,9 @@ class ILAgent(nn.Module):
         hidden_states = []
 
         for batch in data_generator:
-
+            for image in batch["observations"]["rgb"]:
+                cv2.imshow('Logo OpenCV',image.detach().cpu().numpy())
+                cv2.waitKey(500)
             # Reshape to do in a single forward pass for all steps
             (logits, rnn_hidden_states, dist_entropy) = self.actor_critic(
                 batch["observations"],

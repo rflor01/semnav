@@ -51,7 +51,7 @@ from torch.optim.lr_scheduler import LambdaLR
 
 from pirlnav.algos.agent import DDPILAgent
 from pirlnav.common.rollout_storage import RolloutStorage
-
+import cv2
 
 @baseline_registry.register_trainer(name="pirlnav-il")
 class ILEnvDDPTrainer(PPOTrainer):
@@ -239,6 +239,65 @@ class ILEnvDDPTrainer(PPOTrainer):
         self.rollouts.to(self.device)
 
         observations = self.envs.reset()
+        ##########
+        current_episode = self.envs.current_episodes() #Esto no actualiza posiciones de ningún tipo, es idempotente
+        scene_id = [None] * self.envs.num_envs
+        semantic_txt_path = [None] * self.envs.num_envs
+        new_semantic = np.zeros((480,640,1),int)
+        matriz_categorias = np.zeros((480,640,1),str)
+        matriz_roja = np.zeros((480,640,1),int)
+        matriz_verde = np.zeros((480, 640, 1), int)
+        matriz_azul = np.zeros((480, 640, 1), int)
+        matriz_color = np.zeros((480,640,3),int)
+        for i in range(self.envs.num_envs):
+            scene_id[i] = current_episode[i].scene_id
+            semantic_txt_path[i] = scene_id[i].replace(".basis.glb", ".semantic.txt")
+            new_semantic = observations[i]['semantic']
+            with open(semantic_txt_path[i], 'r') as file:
+                lines = file.readlines()[1:]
+            id_to_category = {}
+            id_to_r = {}
+            id_to_g = {}
+            id_to_b = {}
+            for line in lines:
+                parts = line.split(',')
+                obj_id = int(parts[0])
+                category = parts[2].strip('"')
+                RGB_color = parts[1].strip('"')
+                R_color = int(RGB_color[:2],16)
+                G_color = int(RGB_color[2:4],16)
+                B_color = int(RGB_color [4:6],16)
+                id_to_category[obj_id] = category
+                id_to_r[obj_id] = R_color
+                id_to_b[obj_id] = B_color
+                id_to_g[obj_id] = G_color
+
+            matriz_categorias = [
+                [id_to_category.get(obj_id[0], '') for obj_id in row]
+                for row in new_semantic
+            ]
+            matriz_roja = [
+                [id_to_r.get(obj_id[0], '') for obj_id in row]
+                for row in new_semantic
+            ]
+            matriz_verde = [
+                [id_to_g.get(obj_id[0], '') for obj_id in row]
+                for row in new_semantic
+            ]
+            matriz_azul = [
+                [id_to_b.get(obj_id[0], '') for obj_id in row]
+                for row in new_semantic
+            ]
+
+            matriz_color = np.stack([matriz_roja,matriz_azul,matriz_verde], axis=-1)
+            # for i in range(new_semantic.shape[0]):
+            #     for j in range(new_semantic.shape[1]):
+            #         matriz_categorias[i][j] = id_to_category.get(new_semantic[i][j][0])
+            print(matriz_categorias)
+            print(matriz_color)
+
+        ############
+
         batch = batch_obs(
             observations, device=self.device, cache=self._obs_batching_cache
         )
@@ -424,7 +483,7 @@ class ILEnvDDPTrainer(PPOTrainer):
 
                     return
 
-                self.agent.eval()
+                self.agent.eval() #When is training, not done
                 count_steps_delta = 0
                 profiling_wrapper.range_push("rollouts loop")
 
@@ -495,6 +554,7 @@ class ILEnvDDPTrainer(PPOTrainer):
                 profiling_wrapper.range_pop()  # train update
 
             self.envs.close()
+            cv2.destroyAllWindows()
 
     @rank0_only
     def _training_log(
