@@ -11,7 +11,7 @@ CHECKPOINT_DIR="data/data/final_8env_mini2"
 
 
 echo "In ObjectNav IL DDP"
-python -u -m run \
+python -u -m run torhc.distributed.launch\
     --exp-config $config \
     --run-type eval \
     TENSORBOARD_DIR $TENSORBOARD_DIR \
