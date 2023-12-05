@@ -4,17 +4,17 @@ ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/num_env8num_updates320000lr0001lrencoder0001mini4"
-VIDEO_DIR: "num_env8num_updates40000"
+TENSORBOARD_DIR: "tb/num_env30num_updates320000lr0001lrencoder0001mini2"
+VIDEO_DIR: "num_env30num_updates320000"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/num_env8num_updates320000lr0001lrencoder0001mini4"
-NUM_ENVIRONMENTS: 8
-CHECKPOINT_FOLDER: "data/num_env8num_updates320000lr0001lrencoder0001mini4"
+EVAL_CKPT_PATH_DIR: "data/num_env30num_updates320000lr0001lrencoder0001mini2"
+NUM_ENVIRONMENTS: 30
+CHECKPOINT_FOLDER: "data/num_env30num_updates320000lr0001lrencoder0001mini2"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
 NUM_UPDATES: 320000
 LOG_INTERVAL: 10
-NUM_CHECKPOINTS: 80
+NUM_CHECKPOINTS: 160
 
 
 # Force PyTorch to be single threaded as
@@ -33,7 +33,7 @@ IL:
     encoder_lr: 0.0001
 
 
-  num_mini_batch: 4
+  num_mini_batch: 2
 
 RL:
   SUCCESS_REWARD: 2.5
