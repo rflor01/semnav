@@ -240,6 +240,8 @@ class ILEnvDDPTrainer(PPOTrainer):
 
         observations = self.envs.reset()
         ##########
+
+        global_semantic_path = "/home/rafa/repositorios/semnav/scripts/global_semantic.semantic.txt"
         current_episode = self.envs.current_episodes() #Esto no actualiza posiciones de ningún tipo, es idempotente
         scene_id = [None] * self.envs.num_envs
         semantic_txt_path = [None] * self.envs.num_envs
@@ -295,6 +297,23 @@ class ILEnvDDPTrainer(PPOTrainer):
             #         matriz_categorias[i][j] = id_to_category.get(new_semantic[i][j][0])
             print(matriz_categorias)
             print(matriz_color)
+
+            with open(global_semantic_path, "r") as archivo:
+                lineas = archivo.readlines()[1:]  # Ignorar la primera línea de encabezado
+
+            # Crear un diccionario que asocie categorías con IDs
+            diccionario_categorias = {}
+            for linea in lineas:
+                partes = linea.strip().split(",")
+                id_categoria = int(partes[0])
+                categoria = partes[2].strip('"')
+                diccionario_categorias[categoria] = id_categoria
+
+            # Convertir la matriz de categorías a la matriz de IDs
+            matriz_ids = [[diccionario_categorias[categoria] for categoria in fila] for fila in matriz_categorias]
+
+            # Imprimir el resultado
+            print(matriz_ids)
 
         ############
 
