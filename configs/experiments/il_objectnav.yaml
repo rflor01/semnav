@@ -4,15 +4,15 @@ ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/num_env26num_updates320000lr0001lrencoder0001wvisualencoder"
-VIDEO_DIR: "num_env26num_updates320000lr0001lrencoder0001wvisualencoder"
+TENSORBOARD_DIR: "tb/num_env26num_updates500000lr0001lrencoder0001wvisualencoder"
+VIDEO_DIR: "num_env26num_updates500000lr0001lrencoder0001wvisualencoder"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/num_env26num_updates320000lr0001lrencoder0001wvisualencoder"
+EVAL_CKPT_PATH_DIR: "data/num_env26num_updates500000lr0001lrencoder0001wvisualencoder"
 NUM_ENVIRONMENTS: 26
-CHECKPOINT_FOLDER: "data/num_env26num_updates320000lr0001lrencoder0001wvisualencoder"
+CHECKPOINT_FOLDER: "data/num_env26num_updates500000lr0001lrencoder0001wvisualencoder"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
-NUM_UPDATES: 320000
+NUM_UPDATES: 500000
 LOG_INTERVAL: 10
 NUM_CHECKPOINTS: 160
 

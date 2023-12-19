@@ -19,7 +19,7 @@ python -u -m torch.distributed.launch \
     --run-type train \
     TENSORBOARD_DIR $TENSORBOARD_DIR \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
-    NUM_UPDATES 320000 \
+    NUM_UPDATES 500000 \
     NUM_ENVIRONMENTS 26 \
     EVAL.USE_CKPT_CONFIG True\
     RL.DDPPO.force_distributed True \
