@@ -6,8 +6,8 @@ export HABITAT_SIM_LOG=quiet
 
 config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
-TENSORBOARD_DIR="tb/num_env26num_updates320000lr0001lrencoder0001wvisualencoder"
-CHECKPOINT_DIR="data/num_env26num_updates320000lr0001lrencoder0001wvisualencoder"
+TENSORBOARD_DIR="tb/num_env26num_updates500000lr0001lrencoder0001wprDINO"
+CHECKPOINT_DIR="data/num_env26num_updates500000lr0001lrencoder0001wprDINO"
 INFLECTION_COEF=3.234951275740812
 
 echo "In ObjectNav IL DDP"

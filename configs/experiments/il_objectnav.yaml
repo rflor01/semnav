@@ -4,12 +4,12 @@ ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/num_env26num_updates500000lr0001lrencoder0001wvisualencoder"
-VIDEO_DIR: "num_env26num_updates500000lr0001lrencoder0001wvisualencoder"
+TENSORBOARD_DIR: "tb/num_env26num_updates500000lr0001lrencoder0001wprDINO"
+VIDEO_DIR: "num_env26num_updates500000lr0001lrencoder0001wprDINO"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/num_env26num_updates500000lr0001lrencoder0001wvisualencoder"
-NUM_ENVIRONMENTS: 26
-CHECKPOINT_FOLDER: "data/num_env26num_updates500000lr0001lrencoder0001wvisualencoder"
+EVAL_CKPT_PATH_DIR: "data/num_env26num_updates500000lr0001lrencoder0001wprDINO"
+NUM_ENVIRONMENTS: 2
+CHECKPOINT_FOLDER: "data/num_env26num_updates500000lr0001lrencoder0001wprDINO"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
 NUM_UPDATES: 500000
@@ -23,6 +23,8 @@ FORCE_TORCH_SINGLE_THREADED: True
 
 EVAL:
   SPLIT: "val"
+
+
 
 IL:
   POLICY:
@@ -38,8 +40,11 @@ IL:
 RL:
   SUCCESS_REWARD: 2.5
   SLACK_REWARD: -1e-3
-
+  DDPPO:
+    force_distributed: True
 
 POLICY:
   CRITIC:
     no_critic: True
+  RGB_ENCODER:
+    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
