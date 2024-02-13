@@ -4,12 +4,12 @@ ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/78ckpt_8env_mini2"
-VIDEO_DIR: "78ckpt_8env_mini2"
+TENSORBOARD_DIR: "tb/debug"
+VIDEO_DIR: "debug"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/data/78ckpt_8env_mini2"
-NUM_ENVIRONMENTS: 30
-CHECKPOINT_FOLDER: "data/data/78ckpt_8env_mini2"
+EVAL_CKPT_PATH_DIR: "debug"
+NUM_ENVIRONMENTS: 2
+CHECKPOINT_FOLDER: "debug"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 NUM_UPDATES: 320000
@@ -43,3 +43,7 @@ RL:
 POLICY:
   CRITIC:
     no_critic: True
+  RGB_ENCODER:
+    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
+  SEMANTIC_RGB_ENCODER:
+    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"

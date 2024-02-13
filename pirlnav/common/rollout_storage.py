@@ -41,6 +41,17 @@ class RolloutStorage:
                     dtype=observation_space.spaces[sensor].dtype,
                 )
             )
+            self.buffers["observations"]["semantic_rgb"] = torch.from_numpy(
+                np.zeros(
+                    (
+                        numsteps + 1,
+                        num_envs,
+                        *observation_space.spaces["rgb"].shape,
+                    ),
+                    dtype=observation_space.spaces["rgb"].dtype,
+                )
+            )
+
 
         self.recurrent_hidden_states = torch.zeros(
             1,

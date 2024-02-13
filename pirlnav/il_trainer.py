@@ -53,10 +53,29 @@ from pirlnav.algos.agent import DDPILAgent
 from pirlnav.common.rollout_storage import RolloutStorage
 import cv2
 
+class GlobalSemantic():
+    def __init__(self):
+        self._global_semantic_path = "/home/rafa/repositorios/semnav/scripts/global_semantic.semantic.txt"
+        with open(self._global_semantic_path, "r") as archivo:
+            self._globalrow = archivo.readlines()[1:]  # Ignorar la primera línea de encabezado
+        self.r_global_dict = {}
+        self.g_global_dict = {}
+        self.b_global_dict = {}
+        self.object_class_index_global_dict = {}
+        for row in self._globalrow:
+            info = row.strip().split(",")
+            id_class = int(info[0])
+            object_class = info[2].strip('"')
+            self.r_global_dict[object_class] = int(info[1][:2], 16)
+            self.g_global_dict[object_class] = int(info[1][2:4], 16)
+            self.b_global_dict[object_class] = int(info[1][4:6], 16)
+            self.object_class_index_global_dict[object_class] = id_class
+
 @baseline_registry.register_trainer(name="pirlnav-il")
 class ILEnvDDPTrainer(PPOTrainer):
     def __init__(self, config=None):
         super().__init__(config)
+        self.gss = GlobalSemantic()
 
     def _setup_actor_critic_agent(self, il_cfg: Config) -> None:
         r"""Sets up actor critic and agent for IL.
@@ -241,16 +260,10 @@ class ILEnvDDPTrainer(PPOTrainer):
         observations = self.envs.reset()
         ##########
 
-        global_semantic_path = "/home/rafa/repositorios/semnav/scripts/global_semantic.semantic.txt"
+
         current_episode = self.envs.current_episodes() #Esto no actualiza posiciones de ningún tipo, es idempotente
         scene_id = [None] * self.envs.num_envs
         semantic_txt_path = [None] * self.envs.num_envs
-        new_semantic = np.zeros((480,640,1),int)
-        matriz_categorias = np.zeros((480,640,1),str)
-        matriz_roja = np.zeros((480,640,1),int)
-        matriz_verde = np.zeros((480, 640, 1), int)
-        matriz_azul = np.zeros((480, 640, 1), int)
-        matriz_color = np.zeros((480,640,3),int)
         for i in range(self.envs.num_envs):
             scene_id[i] = current_episode[i].scene_id
             semantic_txt_path[i] = scene_id[i].replace(".basis.glb", ".semantic.txt")
@@ -258,62 +271,23 @@ class ILEnvDDPTrainer(PPOTrainer):
             with open(semantic_txt_path[i], 'r') as file:
                 lines = file.readlines()[1:]
             id_to_category = {}
-            id_to_r = {}
-            id_to_g = {}
-            id_to_b = {}
+
             for line in lines:
                 parts = line.split(',')
                 obj_id = int(parts[0])
                 category = parts[2].strip('"')
-                RGB_color = parts[1].strip('"')
-                R_color = int(RGB_color[:2],16)
-                G_color = int(RGB_color[2:4],16)
-                B_color = int(RGB_color [4:6],16)
                 id_to_category[obj_id] = category
-                id_to_r[obj_id] = R_color
-                id_to_b[obj_id] = B_color
-                id_to_g[obj_id] = G_color
 
             matriz_categorias = [
                 [id_to_category.get(obj_id[0], '') for obj_id in row]
                 for row in new_semantic
             ]
-            matriz_roja = [
-                [id_to_r.get(obj_id[0], '') for obj_id in row]
-                for row in new_semantic
-            ]
-            matriz_verde = [
-                [id_to_g.get(obj_id[0], '') for obj_id in row]
-                for row in new_semantic
-            ]
-            matriz_azul = [
-                [id_to_b.get(obj_id[0], '') for obj_id in row]
-                for row in new_semantic
-            ]
-
-            matriz_color = np.stack([matriz_roja,matriz_azul,matriz_verde], axis=-1)
-            # for i in range(new_semantic.shape[0]):
-            #     for j in range(new_semantic.shape[1]):
-            #         matriz_categorias[i][j] = id_to_category.get(new_semantic[i][j][0])
-            print(matriz_categorias)
-            print(matriz_color)
-
-            with open(global_semantic_path, "r") as archivo:
-                lineas = archivo.readlines()[1:]  # Ignorar la primera línea de encabezado
-
-            # Crear un diccionario que asocie categorías con IDs
-            diccionario_categorias = {}
-            for linea in lineas:
-                partes = linea.strip().split(",")
-                id_categoria = int(partes[0])
-                categoria = partes[2].strip('"')
-                diccionario_categorias[categoria] = id_categoria
-
             # Convertir la matriz de categorías a la matriz de IDs
-            matriz_ids = [[diccionario_categorias[categoria] for categoria in fila] for fila in matriz_categorias]
+            matriz_color = np.stack([[np.array([self.gss.r_global_dict.get(c) for c in fila]) for fila in matriz_categorias],
+                                    [np.array([self.gss.g_global_dict.get(c) for c in fila]) for fila in matriz_categorias],
+                                    [np.array([self.gss.b_global_dict.get(c) for c in fila]) for fila in matriz_categorias]], axis = -1)
+            observations[i]["semantic_rgb"]=matriz_color
 
-            # Imprimir el resultado
-            print(matriz_ids)
 
         ############
 
@@ -347,14 +321,47 @@ class ILEnvDDPTrainer(PPOTrainer):
             int(buffer_index * num_envs / self._nbuffers),
             int((buffer_index + 1) * num_envs / self._nbuffers),
         )
-
         t_sample_action = time.time()
-
         # fetch actions from replay buffer
         step_batch = self.rollouts.buffers[
             self.rollouts.current_rollout_step_idxs[buffer_index],
             env_slice,
         ]
+
+
+        current_episode = self.envs.current_episodes() #Esto no actualiza posiciones de ningún tipo, es idempotente
+        scene_id = [None] * self.envs.num_envs
+        semantic_txt_path = [None] * self.envs.num_envs
+
+        for i in range(self.envs.num_envs):
+            scene_id[i] = current_episode[i].scene_id
+            semantic_txt_path[i] = scene_id[i].replace(".basis.glb", ".semantic.txt")
+            new_semantic = np.array(step_batch['observations']['semantic'][i].cpu())
+            with open(semantic_txt_path[i], 'r') as file:
+                lines = file.readlines()[1:]
+            id_to_category = {}
+
+            for line in lines:
+                parts = line.split(',')
+                obj_id = int(parts[0])
+                category = parts[2].strip('"')
+                id_to_category[obj_id] = category
+
+            matriz_categorias = [
+                [id_to_category.get(obj_id[0], '') for obj_id in row]
+                for row in new_semantic
+            ]
+
+            # Convertir la matriz de categorías a la matriz de IDs
+            matriz_color =torch.from_numpy(np.stack([[np.array([self.gss.r_global_dict.get(c) for c in fila]) for fila in matriz_categorias],
+                                    [np.array([self.gss.g_global_dict.get(c) for c in fila]) for fila in matriz_categorias],
+                                    [np.array([self.gss.b_global_dict.get(c) for c in fila]) for fila in matriz_categorias]], axis = -1))
+            step_batch['observations']['semantic_rgb'][i]=matriz_color
+
+
+
+
+
         next_actions = step_batch["observations"]["next_actions"]
         actions = next_actions.long().unsqueeze(-1)
 
