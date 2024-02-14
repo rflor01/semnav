@@ -22,6 +22,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     unzip &&\
     rm -rf /var/lib/apt/lists/*
 
+RUN pip install wandb
+
 # Install conda
 RUN curl -L -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh  &&\
     chmod +x ~/miniconda.sh &&\
