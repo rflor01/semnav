@@ -9,7 +9,7 @@ import numba
 import quaternion
 import torch
 import habitat
-
+import wandb
 from habitat import logger
 from habitat.config import Config
 from habitat_baselines.common.baseline_registry import baseline_registry
@@ -87,6 +87,9 @@ def run_exp(exp_config: str, run_type: str, opts=None) -> None:
         None.
     """
     config = get_config(exp_config, opts)
+    if config.WANDB_ENABLED and os.getenv('LOCAL_RANK') == '0':
+        wandb.init(project="semnav", name=f'{run_type}-{config.TENSORBOARD_DIR.split("/")[-1]}', sync_tensorboard=True,
+                   config=config, tags=[f'{run_type}'])
     execute_exp(config, run_type)
 
 
