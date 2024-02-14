@@ -55,7 +55,7 @@ import cv2
 
 class GlobalSemantic():
     def __init__(self):
-        self._global_semantic_path = "/home/rafa/repositorios/semnav/scripts/global_semantic.semantic.txt"
+        self._global_semantic_path = "/home/rafa/code/scripts/global_semantic.semantic.txt"
         with open(self._global_semantic_path, "r") as archivo:
             self._globalrow = archivo.readlines()[1:]  # Ignorar la primera línea de encabezado
         self.r_global_dict = {}
