@@ -34,7 +34,7 @@ IL:
     encoder_lr: 0.0001
 
 
-  num_mini_batch: 2
+  num_mini_batch: 1
 
 RL:
   SUCCESS_REWARD: 2.5
