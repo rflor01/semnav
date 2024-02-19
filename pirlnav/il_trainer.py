@@ -337,7 +337,7 @@ class ILEnvDDPTrainer(PPOTrainer):
         for i in range(self.envs.num_envs):
             scene_id[i] = current_episode[i].scene_id
             semantic_txt_path[i] = scene_id[i].replace(".basis.glb", ".semantic.txt")
-            new_semantic = np.array(step_batch['observations']['semantic'][i].cpu())
+            new_semantic = step_batch['observations']['semantic'][i].cpu().numpy
             with open(semantic_txt_path[i], 'r') as file:
                 lines = file.readlines()[1:]
             id_to_category = {}
