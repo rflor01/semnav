@@ -21,7 +21,7 @@ python -u -m torch.distributed.launch \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
     NUM_UPDATES 320000 \
     NUM_ENVIRONMENTS 1 \
-    IL.num_mini_batch 1\
+    IL.BehaviorCloning.num_mini_batch 1\
     EVAL.USE_CKPT_CONFIG True\
     RL.DDPPO.force_distributed True \
     TASK_CONFIG.DATASET.DATA_PATH "$DATA_PATH/{split}/{split}.json.gz" \
