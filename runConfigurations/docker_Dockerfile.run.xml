@@ -3,12 +3,16 @@
     <deployment type="dockerfile">
       <settings>
         <option name="imageTag" value="semnav" />
-        <option name="containerName" value="semnav" />
+        <option name="containerName" value="semnav_rgb_dgx" />
         <option name="envVars">
           <list>
             <DockerEnvVarImpl>
               <option name="name" value="CUDA_VISIBLE_DEVICES" />
               <option name="value" value="2,3" />
+            </DockerEnvVarImpl>
+            <DockerEnvVarImpl>
+              <option name="name" value="WANDB_API_KEY" />
+              <option name="value" value="eb30afb2459abcd99cbb3a7bbf9efe61635b934f" />
             </DockerEnvVarImpl>
           </list>
         </option>
