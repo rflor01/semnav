@@ -14,6 +14,7 @@ import wandb
 import numpy as np
 import torch
 import tqdm
+import re
 from gym import spaces
 from habitat import Config, logger
 from habitat.utils import profiling_wrapper
@@ -53,15 +54,18 @@ from pirlnav.algos.agent import DDPILAgent
 from pirlnav.common.rollout_storage import RolloutStorage
 import cv2
 
+
+
 class GlobalSemantic():
     def __init__(self):
-        self._global_semantic_path = "/home/rafa/code/scripts/global_semantic.semantic.txt"
-        #self._global_semantic_path = "/home/rafa/repositorios/semnav/scripts/global_semantic.semantic.txt"
-        with open(self._global_semantic_path, "r") as archivo:
-            self._globalrow = archivo.readlines()[1:]  # Ignore first semantic line
+        #self._global_semantic_path = "/home/rafa/code/scripts/global_semantic.semantic.txt"
+        self._global_semantic_path = "/home/rafa/repositorios/semnav/scripts/global_semantic.semantic.txt"
+        with open(self._global_semantic_path, "r") as archive:
+            self._globalrow = archive.readlines()[1:]  # Ignore first semantic line
         self.r_global_dict = {}
         self.g_global_dict = {}
         self.b_global_dict = {}
+        self.patron = r'\/([^\/]+)\.basis\.glb'
         self.object_class_index_global_dict = {}
         for row in self._globalrow:
             info = row.strip().split(",")
@@ -71,6 +75,75 @@ class GlobalSemantic():
             self.g_global_dict[object_class] = int(info[1][2:4], 16)
             self.b_global_dict[object_class] = int(info[1][4:6], 16)
             self.object_class_index_global_dict[object_class] = id_class
+
+        self._scenes_datasets_path_train = "/home/rafa/repositorios/semnav/data/scene_datasets/hm3d/train"
+        self._scenes_datasets_path_val = "/home/rafa/repositorios/semnav/data/scene_datasets/hm3d/val"
+        self._search_semantic_txt()
+        self._initialize_allscenes_rgb_dictionary()
+        self._fill_allscenes_rgb_dictionary()
+        print(self.allscenes_rgb_dictionary)
+
+        #We have generated a full dictionary, if you ingress the scene id name and a scene id you obtain a rgb color
+        #This color is an universal color that will be useful to train with semantic rgb
+
+
+    def _search_semantic_txt(self):
+        self._semantic_txt = []
+        # Recorre todos los directorios y subdirectorios
+        for current_directory, _, archives in os.walk(self._scenes_datasets_path_train):
+            # Busca archivos que coincidan con el patrón "*.semantic.txt"
+            for archive in archives:
+                if archive.endswith(".semantic.txt"):
+                    # Imprime la ruta completa del archivo encontrado
+                    path = os.path.join(current_directory, archive)
+                    self._semantic_txt.append(path)
+        for current_directory, _, archives in os.walk(self._scenes_datasets_path_val):
+            # Busca archivos que coincidan con el patrón "*.semantic.txt"
+            for archive in archives:
+                if archive.endswith(".semantic.txt"):
+                    # Imprime la ruta completa del archivo encontrado
+                    path = os.path.join(current_directory, archive)
+                    self._semantic_txt.append(path)
+
+    def _initialize_allscenes_rgb_dictionary(self):
+        self.allscenes_rgb_dictionary = {}
+        self._scenes_names = []
+        self._scenes_names = [ruta.split('/')[-2] for ruta in self._semantic_txt]
+        self._scenes_names = [parte.split('-')[-1] for parte in self._scenes_names]
+        for name in self._scenes_names:
+            self.allscenes_rgb_dictionary[name] = {}  # Inicializar el diccionario interno vacío
+
+    def _fill_allscenes_rgb_dictionary(self):
+        counter = 0
+        for path in self._semantic_txt:
+            id_to_category  = {}
+
+            # Leer el contenido del archivo
+            with open(path, 'r') as archive:
+                # Saltar la primera línea (encabezado)
+                next(archive)
+
+                # Iterar sobre las líneas restantes
+                for line in archive:
+                    # Dividir la línea en campos usando coma como separador
+                    field = line.strip().split(',')
+
+                    # Obtener el ID de escena y la categoría de objeto
+                    scene_id = int(field[0])
+                    category = field[2].strip('"')
+
+                    # Agregar al diccionario
+                    id_to_category[scene_id] = category
+            for id, category in id_to_category.items():
+                self.allscenes_rgb_dictionary[self._scenes_names[counter]][id] = (self.r_global_dict[category],self.g_global_dict[category],self.b_global_dict[category])
+            counter += 1
+
+
+
+
+
+
+
 
 @baseline_registry.register_trainer(name="pirlnav-il")
 class ILEnvDDPTrainer(PPOTrainer):
@@ -267,27 +340,8 @@ class ILEnvDDPTrainer(PPOTrainer):
         semantic_txt_path = [None] * self.envs.num_envs
         for i in range(self.envs.num_envs):
             scene_id[i] = current_episode[i].scene_id
-            semantic_txt_path[i] = scene_id[i].replace(".basis.glb", ".semantic.txt")
-            new_semantic = observations[i]['semantic']
-            with open(semantic_txt_path[i], 'r') as file:
-                lines = file.readlines()[1:]
-            id_to_category = {}
-
-            for line in lines:
-                parts = line.split(',')
-                obj_id = int(parts[0])
-                category = parts[2].strip('"')
-                id_to_category[obj_id] = category
-
-            matriz_categorias = [
-                [id_to_category.get(obj_id[0], '') for obj_id in row]
-                for row in new_semantic
-            ]
-            # Convertir la matriz de categorías a la matriz de IDs
-            matriz_color = np.stack([[np.array([self.gss.r_global_dict.get(c) for c in fila]) for fila in matriz_categorias],
-                                    [np.array([self.gss.g_global_dict.get(c) for c in fila]) for fila in matriz_categorias],
-                                    [np.array([self.gss.b_global_dict.get(c) for c in fila]) for fila in matriz_categorias]], axis = -1)
-            observations[i]["semantic_rgb"]=matriz_color
+            scene_cut_id = re.findall(self.gss.patron, scene_id[i])
+            observations[i]["semantic_rgb"] = np.take(np.array(list(self.gss.allscenes_rgb_dictionary[scene_cut_id[0]].values())), np.squeeze(observations[i]['semantic'], axis=2), axis=0)
 
 
         ############
@@ -333,34 +387,12 @@ class ILEnvDDPTrainer(PPOTrainer):
         current_episode = self.envs.current_episodes() #Esto no actualiza posiciones de ningún tipo, es idempotente
         scene_id = [None] * self.envs.num_envs
         semantic_txt_path = [None] * self.envs.num_envs
-
         for i in range(self.envs.num_envs):
             scene_id[i] = current_episode[i].scene_id
-            semantic_txt_path[i] = scene_id[i].replace(".basis.glb", ".semantic.txt")
-            new_semantic = step_batch['observations']['semantic'][i].cpu().numpy()
-            with open(semantic_txt_path[i], 'r') as file:
-                lines = file.readlines()[1:]
-            id_to_category = {}
+            scene_cut_id = re.findall(self.gss.patron, scene_id[i])
+            semantic_tensor = torch.tensor(list(self.gss.allscenes_rgb_dictionary[scene_cut_id[0]].values()))
 
-            for line in lines:
-                parts = line.split(',')
-                obj_id = int(parts[0])
-                category = parts[2].strip('"')
-                id_to_category[obj_id] = category
-
-            matriz_categorias = [
-                [id_to_category.get(obj_id[0], '') for obj_id in row]
-                for row in new_semantic
-            ]
-
-            # Convertir la matriz de categorías a la matriz de IDs
-            matriz_color =torch.from_numpy(np.stack([[np.array([self.gss.r_global_dict.get(c) for c in fila]) for fila in matriz_categorias],
-                                    [np.array([self.gss.g_global_dict.get(c) for c in fila]) for fila in matriz_categorias],
-                                    [np.array([self.gss.b_global_dict.get(c) for c in fila]) for fila in matriz_categorias]], axis = -1))
-            step_batch['observations']['semantic_rgb'][i]=matriz_color
-
-
-
+            step_batch["observations"]["semantic_rgb"][i] = torch.take(torch.tensor(list(self.gss.allscenes_rgb_dictionary[scene_cut_id[0]].values())).cuda(), torch.squeeze(step_batch["observations"]["semantic"][i], dim=2).cuda().long())
 
 
         next_actions = step_batch["observations"]["next_actions"]

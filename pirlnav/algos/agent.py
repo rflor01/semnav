@@ -88,7 +88,7 @@ class ILAgent(nn.Module):
         hidden_states = []
 
         for batch in data_generator:
-            # for image in batch["observations"]["rgb"]:
+            # for image in batch["observations"]["semantic_rgb"]:
             #     cv2.imshow('Logo OpenCV',image.detach().cpu().numpy())
             #     cv2.waitKey(500)
             # Reshape to do in a single forward pass for all steps
