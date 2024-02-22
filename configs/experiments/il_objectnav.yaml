@@ -5,7 +5,7 @@ WANDB_ENABLED: True
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/data/debug"
+TENSORBOARD_DIR: "tb/third_rgb_semantic"
 VIDEO_DIR: "debug"
 TEST_EPISODE_COUNT: -1
 EVAL_CKPT_PATH_DIR: "debug"

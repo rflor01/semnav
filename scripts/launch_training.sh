@@ -6,8 +6,8 @@ export HABITAT_SIM_LOG=quiet
 
 config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
-TENSORBOARD_DIR="tb/data/second_rgb_semantic"
-CHECKPOINT_DIR="data/second_rgb_semantic_ckpt"
+TENSORBOARD_DIR="tb/data/third_rgb_semantic"
+CHECKPOINT_DIR="data/third_rgb_semantic_ckpt"
 INFLECTION_COEF=3.234951275740812
 
 echo "In ObjectNav IL DDP"
@@ -20,7 +20,7 @@ python -u -m torch.distributed.launch \
     TENSORBOARD_DIR $TENSORBOARD_DIR \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
     NUM_UPDATES 320000 \
-    NUM_ENVIRONMENTS 1 \
+    NUM_ENVIRONMENTS 12 \
     IL.BehaviorCloning.num_mini_batch 2\
     EVAL.USE_CKPT_CONFIG True\
     RL.DDPPO.force_distributed True \
