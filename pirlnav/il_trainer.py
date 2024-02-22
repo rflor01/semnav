@@ -58,8 +58,8 @@ import cv2
 
 class GlobalSemantic():
     def __init__(self):
-        #self._global_semantic_path = "/home/rafa/code/scripts/global_semantic.semantic.txt"
-        self._global_semantic_path = "/home/rafa/repositorios/semnav/scripts/global_semantic.semantic.txt"
+        self._global_semantic_path = "/home/rafa/code/scripts/global_semantic.semantic.txt"
+        #self._global_semantic_path = "/home/rafa/repositorios/semnav/scripts/global_semantic.semantic.txt"
         with open(self._global_semantic_path, "r") as archive:
             self._globalrow = archive.readlines()[1:]  # Ignore first semantic line
         self.r_global_dict = {}
@@ -341,8 +341,8 @@ class ILEnvDDPTrainer(PPOTrainer):
         for i in range(self.envs.num_envs):
             scene_id[i] = current_episode[i].scene_id
             scene_cut_id = re.findall(self.gss.patron, scene_id[i])
-            observations[i]["semantic_rgb"] = np.take(np.array(list(self.gss.allscenes_rgb_dictionary[scene_cut_id[0]].values())), np.squeeze(observations[i]['semantic'], axis=2), axis=0)
-
+            semantic_rgb_values = np.array(list(self.gss.allscenes_rgb_dictionary[scene_cut_id[0]].values()))
+            observations[i]["semantic_rgb"] = np.squeeze(semantic_rgb_values[observations[i]['semantic']])
 
         ############
 
@@ -390,11 +390,8 @@ class ILEnvDDPTrainer(PPOTrainer):
         for i in range(self.envs.num_envs):
             scene_id[i] = current_episode[i].scene_id
             scene_cut_id = re.findall(self.gss.patron, scene_id[i])
-            semantic_tensor = torch.tensor(list(self.gss.allscenes_rgb_dictionary[scene_cut_id[0]].values()))
-
-            step_batch["observations"]["semantic_rgb"][i] = torch.take(torch.tensor(list(self.gss.allscenes_rgb_dictionary[scene_cut_id[0]].values())).cuda(), torch.squeeze(step_batch["observations"]["semantic"][i], dim=2).cuda().long())
-
-
+            semantic_rgb_values = torch.tensor(list(self.gss.allscenes_rgb_dictionary[scene_cut_id[0]].values()))
+            step_batch["observations"]["semantic_rgb"][i] = semantic_rgb_values[step_batch["observations"]['semantic'][i].long()].squeeze(2)
         next_actions = step_batch["observations"]["next_actions"]
         actions = next_actions.long().unsqueeze(-1)
 
