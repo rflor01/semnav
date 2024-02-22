@@ -8,7 +8,7 @@
           <list>
             <DockerEnvVarImpl>
               <option name="name" value="CUDA_VISIBLE_DEVICES" />
-              <option name="value" value="2,3" />
+              <option name="value" value="3" />
             </DockerEnvVarImpl>
             <DockerEnvVarImpl>
               <option name="name" value="WANDB_API_KEY" />
