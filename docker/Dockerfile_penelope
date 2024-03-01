@@ -39,7 +39,7 @@ RUN ln -s /opt/cmake/bin/cmake /usr/local/bin/cmake
 RUN cmake --version
 
 # Add user
-RUN useradd -u 1002 --create-home rafa # 1002 for penelope and 1004 for DGX
+RUN useradd -u 1004 --create-home rafa # 1001 for penelope and 1004 for DGX
 WORKDIR /home/rafa
 RUN mkdir code/
 
