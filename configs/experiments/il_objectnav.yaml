@@ -5,12 +5,12 @@ WANDB_ENABLED: True
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/rgb_semantic_penelope1"
+TENSORBOARD_DIR: "tb/first_rgb_semantic_wlessio"
 VIDEO_DIR: "rgb_sem"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "rgb_sem_penelope"
+EVAL_CKPT_PATH_DIR: "first_rgb_semantic_wlessio"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "rgb_sem_penelope"
+CHECKPOINT_FOLDER: "first_rgb_semantic_wlessio"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 NUM_UPDATES: 320000

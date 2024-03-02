@@ -1,13 +1,13 @@
 #!/bin/bash
-export NUM_GPUS=1
+export NUM_GPUS=4
 export GLOG_minloglevel=2
 export MAGNUM_LOG=quiet
 export HABITAT_SIM_LOG=quiet
 
 config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
-TENSORBOARD_DIR="tb/data/third_rgb_semantic"
-CHECKPOINT_DIR="data/third_rgb_semantic_ckpt"
+TENSORBOARD_DIR="tb/data/first_rgb_semantic_wlessio"
+CHECKPOINT_DIR="data/first_rgb_semantic_wlessio"
 INFLECTION_COEF=3.234951275740812
 
 echo "In ObjectNav IL DDP"
@@ -20,7 +20,7 @@ python -u -m torch.distributed.launch \
     TENSORBOARD_DIR $TENSORBOARD_DIR \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
     NUM_UPDATES 320000 \
-    NUM_ENVIRONMENTS 13 \
+    NUM_ENVIRONMENTS 2 \
     IL.BehaviorCloning.num_mini_batch 2\
     EVAL.USE_CKPT_CONFIG True\
     RL.DDPPO.force_distributed True \
