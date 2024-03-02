@@ -76,8 +76,8 @@ class GlobalSemantic():
             self.b_global_dict[object_class] = int(info[1][4:6], 16)
             self.object_class_index_global_dict[object_class] = id_class
 
-        self._scenes_datasets_path_train = "/home/rafa/repositorios/semnav/data/scene_datasets/hm3d/train"
-        self._scenes_datasets_path_val = "/home/rafa/repositorios/semnav/data/scene_datasets/hm3d/val"
+        self._scenes_datasets_path_train = "/home/rafa/code/data/scene_datasets/hm3d/train"
+        self._scenes_datasets_path_val = "/home/rafa/code/data/scene_datasets/hm3d/val"
         self._search_semantic_txt()
         self._initialize_allscenes_rgb_dictionary()
         self._fill_allscenes_rgb_dictionary()
@@ -336,7 +336,6 @@ class ILEnvDDPTrainer(PPOTrainer):
 
         current_episode = self.envs.current_episodes() #Esto no actualiza posiciones de ningún tipo, es idempotente
         scene_id = [None] * self.envs.num_envs
-        semantic_txt_path = [None] * self.envs.num_envs
         for i in range(self.envs.num_envs):
             scene_id[i] = current_episode[i].scene_id
             scene_cut_id = re.findall(self.gss.patron, scene_id[i])
