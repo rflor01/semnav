@@ -33,7 +33,7 @@ def generate_unique_colors_hex(num_colors):
 
 def construir_global_semantic(archivos_semanticos):
     global_semantic = {}
-    id_categoria = 1
+    id_categoria = 0
 
     for linea in archivos_semanticos:
         partes = linea.strip().split(',')
