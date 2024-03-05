@@ -76,8 +76,8 @@ class GlobalSemantic():
             self.b_global_dict[object_class] = int(info[1][4:6], 16)
             self.object_class_index_global_dict[object_class] = id_class
 
-        self._scenes_datasets_path_train = "/home/rafa/code/data/scene_datasets/hm3d/train"
-        self._scenes_datasets_path_val = "/home/rafa/code/data/scene_datasets/hm3d/val"
+        self._scenes_datasets_path_train = "/home/rafa/code/data/scene_datasets/semantics/hm3d/train"
+        self._scenes_datasets_path_val = "/home/rafa/code/data/scene_datasets/semantics/hm3d/val"
         self._search_semantic_txt()
         self._initialize_allscenes_rgb_dictionary()
         self._fill_allscenes_rgb_dictionary()
