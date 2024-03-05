@@ -1,5 +1,5 @@
 #!/bin/bash
-export NUM_GPUS=4
+export NUM_GPUS=2
 export GLOG_minloglevel=2
 export MAGNUM_LOG=quiet
 export HABITAT_SIM_LOG=quiet
@@ -20,8 +20,8 @@ python -u -m torch.distributed.launch \
     TENSORBOARD_DIR $TENSORBOARD_DIR \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
     NUM_UPDATES 320000 \
-    NUM_ENVIRONMENTS 1 \
-    IL.BehaviorCloning.num_mini_batch 1\
+    NUM_ENVIRONMENTS 14 \
+    IL.BehaviorCloning.num_mini_batch 2\
     EVAL.USE_CKPT_CONFIG True\
     RL.DDPPO.force_distributed True \
     TASK_CONFIG.DATASET.DATA_PATH "$DATA_PATH/{split}/{split}.json.gz" \

@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="docker/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker DGX">
+  <configuration default="false" name="docker/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
         <option name="imageTag" value="semnav" />
@@ -8,7 +8,7 @@
           <list>
             <DockerEnvVarImpl>
               <option name="name" value="CUDA_VISIBLE_DEVICES" />
-              <option name="value" value="3" />
+              <option name="value" value="0,1" />
             </DockerEnvVarImpl>
             <DockerEnvVarImpl>
               <option name="name" value="WANDB_API_KEY" />
