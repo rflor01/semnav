@@ -25,7 +25,7 @@
               <option name="hostPath" value="$PROJECT_DIR$/../../../carlosgutierrez/repositorios/semnav" />
             </DockerVolumeBindingImpl>
             <DockerVolumeBindingImpl>
-              <option name="containerPath" value="$USER_HOME$/data" />
+              <option name="containerPath" value="$USER_HOME$/code/data" />
               <option name="hostPath" value="$PROJECT_DIR$/../../../carlosgutierrez/data" />
             </DockerVolumeBindingImpl>
           </list>
