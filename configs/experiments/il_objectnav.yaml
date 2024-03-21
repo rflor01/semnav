@@ -5,12 +5,12 @@ WANDB_ENABLED: True
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/first_rgb_semantic_wlessio"
+TENSORBOARD_DIR: "tb/debug"
 VIDEO_DIR: "rgb_sem"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "first_rgb_semantic_wlessio"
+EVAL_CKPT_PATH_DIR: "debug"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "first_rgb_semantic_wlessio"
+CHECKPOINT_FOLDER: "debug"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 NUM_UPDATES: 320000
@@ -37,6 +37,9 @@ IL:
 RL:
   SUCCESS_REWARD: 2.5
   SLACK_REWARD: -1e-3
+  DDPPO:
+    force_distributed: True
+
 
 
 POLICY:

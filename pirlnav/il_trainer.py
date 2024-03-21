@@ -59,7 +59,7 @@ import cv2
 class GlobalSemantic():
     def __init__(self):
         self._global_semantic_path = "/home/rafa/code/scripts/global_semantic.semantic.txt"
-        #self._global_semantic_path = "/home/rafa/repositorios/semnav/scripts/global_semantic.semantic.txt"
+        #self._global_semantic_path = "/home/rafa/rafarepos/semnav/scripts/global_semantic.semantic.txt"
         with open(self._global_semantic_path, "r") as archive:
             self._globalrow = archive.readlines()[1:]  # Ignore first semantic line
         self.r_global_dict = {}
@@ -78,6 +78,8 @@ class GlobalSemantic():
 
         self._scenes_datasets_path_train = "/home/rafa/code/data/scene_datasets/semantics/hm3d/train"
         self._scenes_datasets_path_val = "/home/rafa/code/data/scene_datasets/semantics/hm3d/val"
+        #self._scenes_datasets_path_train = "/home/rafa/rafarepos/semnav/data/scene_datasets/hm3d/train"
+        #self._scenes_datasets_path_val = "/home/rafa/rafarepos/semnav/data/scene_datasets/hm3d/val"
         self._search_semantic_txt()
         self._initialize_allscenes_rgb_dictionary()
         self._fill_allscenes_rgb_dictionary()
@@ -137,7 +139,6 @@ class GlobalSemantic():
             for id, category in id_to_category.items():
                 self.allscenes_rgb_dictionary[self._scenes_names[counter]][id] = (self.r_global_dict[category],self.g_global_dict[category],self.b_global_dict[category])
             counter += 1
-
 
 
 
@@ -332,18 +333,30 @@ class ILEnvDDPTrainer(PPOTrainer):
         self.rollouts.to(self.device)
 
         observations = self.envs.reset()
-        ##########
 
-        current_episode = self.envs.current_episodes() #Esto no actualiza posiciones de ningún tipo, es idempotente
-        scene_id = [None] * self.envs.num_envs
+        ###########
         for i in range(self.envs.num_envs):
-            scene_id[i] = current_episode[i].scene_id
-            scene_cut_id = re.findall(self.gss.patron, scene_id[i])
-            semantic_rgb_values = np.array(list(self.gss.allscenes_rgb_dictionary[scene_cut_id[0]].values()))
-            observations[i]["semantic_rgb"] = np.squeeze(semantic_rgb_values[observations[i]['semantic']])
+            observations[i]["semantic_rgb"] = np.zeros([480,640,3])
+        # observations_mult = np.array([diccionario['semantic'] for diccionario in observations])
+        # observations_mult *= 17
+        # matriz_rgb = np.zeros((2, 480, 640, 3), dtype=np.uint8)
+        # matriz_rgb[:, :, :, 0] = (observations_mult[:, :, :, 0] >> 16) & 0xFF  # R
+        # matriz_rgb[:, :, :, 1] = (observations_mult[:, :, :, 0] >> 8) & 0xFF  # G
+        # matriz_rgb[:, :, :, 2] = observations_mult[:, :, :, 0] & 0xFF  # B
+        # for i in range(self.envs.num_envs):
+        #     observations[i]["semantic_rgb"] = matriz_rgb[i,:,:,:]
+        ###########
+        #########
+
+        # current_episode = self.envs.current_episodes() #Esto no actualiza posiciones de ningún tipo, es idempotente
+        # scene_id = [None] * self.envs.num_envs
+        # for i in range(self.envs.num_envs):
+        #     scene_id[i] = current_episode[i].scene_id
+        #     scene_cut_id = re.findall(self.gss.patron, scene_id[i])
+        #     semantic_rgb_values = np.array(list(self.gss.allscenes_rgb_dictionary[scene_cut_id[0]].values()))
+        #     observations[i]["semantic_rgb"] = np.squeeze(semantic_rgb_values[observations[i]['semantic']])
 
         ############
-
         batch = batch_obs(
             observations, device=self.device, cache=self._obs_batching_cache
         )
@@ -382,14 +395,18 @@ class ILEnvDDPTrainer(PPOTrainer):
         ]
 
 
-        current_episode = self.envs.current_episodes() #Esto no actualiza posiciones de ningún tipo, es idempotente
-        scene_id = [None] * self.envs.num_envs
-        semantic_txt_path = [None] * self.envs.num_envs
-        for i in range(self.envs.num_envs):
-            scene_id[i] = current_episode[i].scene_id
-            scene_cut_id = re.findall(self.gss.patron, scene_id[i])
-            semantic_rgb_values = torch.tensor(list(self.gss.allscenes_rgb_dictionary[scene_cut_id[0]].values()))
-            step_batch["observations"]["semantic_rgb"][i] = semantic_rgb_values[step_batch["observations"]['semantic'][i].long()].squeeze(2)
+        # current_episode = self.envs.current_episodes() #Esto no actualiza posiciones de ningún tipo, es idempotente
+        # scene_id = [None] * self.envs.num_envs
+        # step_batch["observations"]['semantic'].putpalette(d3_40_colors_rgb.flatten())
+        # step_batch["observations"]['semantic'].putdata((step_batch["observations"]['semantic'].flatten() % 40).astype(np.uint8))
+        # step_batch["observations"]['semantic'] = step_batch["observations"]['semantic'].convert("RGBA")
+
+        # semantic_txt_path = [None] * self.envs.num_envs
+        # for i in range(self.envs.num_envs):
+        #     scene_id[i] = current_episode[i].scene_id
+        #     scene_cut_id = re.findall(self.gss.patron, scene_id[i])
+        #     semantic_rgb_values = torch.tensor(list(self.gss.allscenes_rgb_dictionary[scene_cut_id[0]].values()))
+        #     step_batch["observations"]["semantic_rgb"][i] = semantic_rgb_values[step_batch["observations"]['semantic'][i].long()].squeeze(2)
         next_actions = step_batch["observations"]["next_actions"]
         actions = next_actions.long().unsqueeze(-1)
 

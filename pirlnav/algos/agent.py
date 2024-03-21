@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import time
 # Copyright (c) Facebook, Inc. and its affiliates.
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
@@ -87,11 +87,28 @@ class ILAgent(nn.Module):
         cross_entropy_loss = torch.nn.CrossEntropyLoss(reduction="none")
         hidden_states = []
 
+
         for batch in data_generator:
            # for image in batch["observations"]["semantic_rgb"]:
            #     cv2.imshow('Logo OpenCV',image.detach().cpu().numpy())
            #     cv2.waitKey(500)
             # Reshape to do in a single forward pass for all steps
+            inicio = time.time()
+            constant = 10255
+
+            observations_mult = batch["observations"]["semantic"]*constant
+
+
+            rgb_matrix = torch.zeros((64, 480, 640, 3), dtype=torch.uint8, device=observations_mult.device)
+            rgb_matrix[:, :, :, 0] = (observations_mult[:, :, :, 0] >> 16) & 0xFF  # R
+            rgb_matrix[:, :, :, 1] = (observations_mult[:, :, :, 0] >> 8) & 0xFF  # G
+            rgb_matrix[:, :, :, 2] = observations_mult[:, :, :, 0] & 0xFF  # B
+
+
+            batch["observations"]["semantic_rgb"] = rgb_matrix
+
+            fin = time.time()
+            print("Tiempo total de las 64 observaciones:", fin - inicio)
             (logits, rnn_hidden_states, dist_entropy) = self.actor_critic(
                 batch["observations"],
                 batch["recurrent_hidden_states"],
