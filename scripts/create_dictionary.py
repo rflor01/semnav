@@ -114,9 +114,9 @@ def actualizar_archivos(folder_path,global_semantic):
                         file.write(','.join(parts) + '\n')
 
 # Reemplaza 'directorio_a_buscar' con la ruta del directorio que deseas explorar
-train_search_directory = "/home/carlosgutierrez/repositorios/semnav/data/scene_datasets/hm3d/train"
+train_search_directory = "/home/carlosgutierrez/data/scene_datasets/semantics/hm3d/train"
 archivos_semantics_train = buscar_archivos_semanticos(train_search_directory)
-val_search_directory = "/home/carlosgutierrez/repositorios/semnav/data/scene_datasets/hm3d/val"
+val_search_directory = "/home/carlosgutierrez/data/scene_datasets/semantics/hm3d/val"
 archivos_semantics_val = buscar_archivos_semanticos(val_search_directory)
 archivos_semantics_train.extend(archivos_semantics_val)
 global_semantic = construir_global_semantic(archivos_semantics_train)
