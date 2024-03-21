@@ -93,7 +93,6 @@ class ILAgent(nn.Module):
            #     cv2.imshow('Logo OpenCV',image.detach().cpu().numpy())
            #     cv2.waitKey(500)
             # Reshape to do in a single forward pass for all steps
-            inicio = time.time()
             constant = 10255
 
             observations_mult = batch["observations"]["semantic"]*constant
@@ -107,8 +106,6 @@ class ILAgent(nn.Module):
 
             batch["observations"]["semantic_rgb"] = rgb_matrix
 
-            fin = time.time()
-            print("Tiempo total de las 64 observaciones:", fin - inicio)
             (logits, rnn_hidden_states, dist_entropy) = self.actor_critic(
                 batch["observations"],
                 batch["recurrent_hidden_states"],
