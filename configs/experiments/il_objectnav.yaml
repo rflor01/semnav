@@ -37,8 +37,7 @@ IL:
 RL:
   SUCCESS_REWARD: 2.5
   SLACK_REWARD: -1e-3
-  DDPPO:
-    force_distributed: True
+
 
 
 
