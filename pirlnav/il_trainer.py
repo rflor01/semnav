@@ -150,7 +150,7 @@ class GlobalSemantic():
 class ILEnvDDPTrainer(PPOTrainer):
     def __init__(self, config=None):
         super().__init__(config)
-        self.gss = GlobalSemantic()
+        #self.gss = GlobalSemantic()
 
     def _setup_actor_critic_agent(self, il_cfg: Config) -> None:
         r"""Sets up actor critic and agent for IL.
