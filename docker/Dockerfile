@@ -71,6 +71,8 @@ ENV GLOG_minloglevel=2
 ENV MAGNUM_LOG="quiet"
 ENV HABITAT_SIM_LOG=quiet
 
+RUN ls -l
+
 # Verificar si entrypoint.sh existe antes de copiarlo
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN test -e entrypoint.sh || { echo "ERROR: entrypoint.sh no encontrado"; exit 1; }
