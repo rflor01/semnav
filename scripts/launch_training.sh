@@ -21,6 +21,7 @@ python -u -m torch.distributed.launch \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
     NUM_UPDATES 320000 \
     NUM_ENVIRONMENTS 18 \
+    TRAIN.USE_CKPT_CONFIG False\
     IL.BehaviorCloning.num_mini_batch 2\
     EVAL.USE_CKPT_CONFIG True\
     RL.DDPPO.force_distributed True \

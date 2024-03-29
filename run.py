@@ -50,9 +50,9 @@ def execute_exp(config: Config, run_type: str) -> None:
     """
     # set a random seed (from detectron2)
     seed = (
-        os.getpid()
-        + int(datetime.now().strftime("%S%f"))
-        + int.from_bytes(os.urandom(2), "big")
+            os.getpid()
+            + int(datetime.now().strftime("%S%f"))
+            + int.from_bytes(os.urandom(2), "big")
     )
     logger.info("Using a generated random seed {}".format(seed))
     config.defrost()
