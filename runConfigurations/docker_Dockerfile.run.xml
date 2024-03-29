@@ -21,12 +21,12 @@
         <option name="volumeBindings">
           <list>
             <DockerVolumeBindingImpl>
-              <option name="containerPath" value="$USER_HOME$/code" />
-              <option name="hostPath" value="$PROJECT_DIR$/../../../carlosgutierrez/repositorios/semnav" />
+              <option name="containerPath" value="/home/rafa/code" />
+              <option name="hostPath" value="/home/carlosgutierrez/repositorios/semnav" />
             </DockerVolumeBindingImpl>
             <DockerVolumeBindingImpl>
-              <option name="containerPath" value="$USER_HOME$/code/data" />
-              <option name="hostPath" value="$PROJECT_DIR$/../../../carlosgutierrez/data" />
+              <option name="containerPath" value="/home/rafa/code/data" />
+              <option name="hostPath" value="/home/carlosgutierrez/data" />
             </DockerVolumeBindingImpl>
           </list>
         </option>
