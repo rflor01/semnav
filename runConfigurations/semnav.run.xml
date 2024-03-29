@@ -1,0 +1,37 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="semnav" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+    <deployment type="dockerfile">
+      <settings>
+        <option name="imageTag" value="semnav" />
+        <option name="containerName" value="semnav_rgb_dgx" />
+        <option name="envVars">
+          <list>
+            <DockerEnvVarImpl>
+              <option name="name" value="CUDA_VISIBLE_DEVICES" />
+              <option name="value" value="0,1" />
+            </DockerEnvVarImpl>
+            <DockerEnvVarImpl>
+              <option name="name" value="WANDB_API_KEY" />
+              <option name="value" value="eb30afb2459abcd99cbb3a7bbf9efe61635b934f" />
+            </DockerEnvVarImpl>
+          </list>
+        </option>
+        <option name="commandLineOptions" value="--runtime=nvidia" />
+        <option name="sourceFilePath" value="docker/Dockerfile" />
+        <option name="volumeBindings">
+          <list>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/home/rafa/code" />
+              <option name="hostPath" value="/home/carlosgutierrez/repositorios/semnav" />
+            </DockerVolumeBindingImpl>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/home/rafa/code/data" />
+              <option name="hostPath" value="/home/carlosgutierrez/data" />
+            </DockerVolumeBindingImpl>
+          </list>
+        </option>
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>
