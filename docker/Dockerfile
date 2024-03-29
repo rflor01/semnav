@@ -71,8 +71,6 @@ ENV GLOG_minloglevel=2
 ENV MAGNUM_LOG="quiet"
 ENV HABITAT_SIM_LOG=quiet
 
-COPY . /home/rafa
-RUN chmod 777 /home/rafa/entrypoint.sh
-RUN ls -l /home/rafa
+COPY entrypoint.sh /home/rafa
 
 ENTRYPOINT [ "/home/rafa/entrypoint.sh" ]
