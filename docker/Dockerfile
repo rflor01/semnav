@@ -73,5 +73,6 @@ ENV HABITAT_SIM_LOG=quiet
 
 COPY . /home/rafa
 
+RUN ls -l /home/rafa
 
 ENTRYPOINT [ "/home/rafa/entrypoint.sh" ]
