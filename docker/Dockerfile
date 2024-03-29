@@ -71,7 +71,10 @@ ENV GLOG_minloglevel=2
 ENV MAGNUM_LOG="quiet"
 ENV HABITAT_SIM_LOG=quiet
 
-RUN ls -l
+COPY . /tmp/build-context
+
+# Listar los archivos en el contexto de construcción de Docker (fuera del contenedor)
+RUN ls -l /tmp/build-context
 
 # Verificar si entrypoint.sh existe antes de copiarlo
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
