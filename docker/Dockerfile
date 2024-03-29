@@ -71,6 +71,11 @@ ENV GLOG_minloglevel=2
 ENV MAGNUM_LOG="quiet"
 ENV HABITAT_SIM_LOG=quiet
 
+# Verificar si entrypoint.sh existe antes de copiarlo
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+RUN test -e entrypoint.sh || { echo "ERROR: entrypoint.sh no encontrado"; exit 1; }
+
+# Copiar entrypoint.sh si existe
 COPY entrypoint.sh /home/rafa
 
 ENTRYPOINT [ "/home/rafa/entrypoint.sh" ]
