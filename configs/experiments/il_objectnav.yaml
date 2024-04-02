@@ -8,9 +8,9 @@ VIDEO_OPTION: [disk]
 TENSORBOARD_DIR: "tb/first_rgb_semantic_gpu"
 VIDEO_DIR: "rgb_sem"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/checkpoints/first_rgb_semantic_gpu"
+EVAL_CKPT_PATH_DIR: "data/checkpoints/semnav/first_rgb_semantic_gpu"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "data/checkpoints/first_rgb_semantic_gpu"
+CHECKPOINT_FOLDER: "data/checkpoints/semnav/first_rgb_semantic_gpu"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 NUM_UPDATES: 320000
