@@ -7,7 +7,7 @@ export HABITAT_SIM_LOG=quiet
 config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
 TENSORBOARD_DIR="tb/first_rgb_semantic_gpu"
-CHECKPOINT_DIR="data/checkpoints/semnav/first_rgb_semantic_gpu/util"
+CHECKPOINT_DIR="data/checkpoints/semnav/first_rgb_semantic_gpu"
 INFLECTION_COEF=3.234951275740812
 
 echo "In ObjectNav IL DDP"
