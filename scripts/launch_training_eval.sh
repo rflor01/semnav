@@ -4,10 +4,10 @@ export GLOG_minloglevel=2
 export MAGNUM_LOG=quiet
 export HABITAT_SIM_LOG=quiet
 
-config="configs/experiments/off_objectnav.yaml"
-DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd_minimal"
-TENSORBOARD_DIR="tb/eval_minimal/"
-CHECKPOINT_DIR="data/new_checkpoints"
+config="configs/experiments/il_objectnav.yaml"
+DATA_PATH="data/datasets/objectnav/objectnav_hm3d/objectnav_hm3d_v1"
+TENSORBOARD_DIR="tb/first_rgb_semantic_gpu/"
+CHECKPOINT_DIR="checkpoints/first_rgb_semantic_gpu"
 
 
 echo "In ObjectNav IL DDP"
