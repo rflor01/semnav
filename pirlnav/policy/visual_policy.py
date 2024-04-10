@@ -73,7 +73,7 @@ class ObjectNavILMAENet(Net):
             "RGB encoder is {}".format(policy_config.RGB_ENCODER.backbone)
         )
 
-        ##### RGB_SEMANTIC_ENCODER ####
+        # ##### RGB_SEMANTIC_ENCODER ####
         semantic_rgb_config = policy_config.SEMANTIC_RGB_ENCODER
         semantic_name = "resize"
         if semantic_rgb_config.use_augmentations and run_type == "train":
@@ -299,9 +299,9 @@ class ObjectNavILMAENet(Net):
             x.append(prev_actions_embedding)
 
         x = torch.cat(x, dim=1)
-
+        contiguo = rnn_hidden_states.contiguous()
         x, rnn_hidden_states = self.state_encoder(
-            x, rnn_hidden_states.contiguous(), masks
+            x, contiguo , masks
         )
 
         return x, rnn_hidden_states

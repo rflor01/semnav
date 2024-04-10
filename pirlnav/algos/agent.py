@@ -98,7 +98,7 @@ class ILAgent(nn.Module):
             observations_mult = batch["observations"]["semantic"]*constant
 
 
-            rgb_matrix = torch.zeros((576, 480, 640, 3), dtype=torch.uint8, device=observations_mult.device)
+            rgb_matrix = torch.zeros((observations_mult.size(0), 480, 640, 3), dtype=torch.uint8, device=observations_mult.device)
             rgb_matrix[:, :, :, 0] = (observations_mult[:, :, :, 0] >> 16) & 0xFF  # R
             rgb_matrix[:, :, :, 1] = (observations_mult[:, :, :, 0] >> 8) & 0xFF  # G
             rgb_matrix[:, :, :, 2] = observations_mult[:, :, :, 0] & 0xFF  # B

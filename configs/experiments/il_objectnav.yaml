@@ -5,13 +5,14 @@ WANDB_ENABLED: True
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/first_rgb_semantic_gpu"
-VIDEO_DIR: "rgb_sem"
+TENSORBOARD_DIR: "tb/rgb_sem_wcorrecteval"
+VIDEO_DIR: "rgb_sem_wcorrecteval"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/checkpoints/semnav/first_rgb_semantic_gpu"
-NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "data/checkpoints/semnav/first_rgb_semantic_gpu"
+EVAL_CKPT_PATH_DIR: "checkpoints/first_rgb_semantic_gpu"
+NUM_ENVIRONMENTS: 20
+CHECKPOINT_FOLDER: "checkpoints/first_rgb_semantic_gpu"
 TRAINER_NAME: "pirlnav-il"
+#SENSORS: ["RGB_SENSOR"]
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 NUM_UPDATES: 320000
 LOG_INTERVAL: 10
@@ -24,6 +25,7 @@ FORCE_TORCH_SINGLE_THREADED: True
 
 EVAL:
   SPLIT: "val"
+  USE_CKPT_CONFIG: False
 
 IL:
   POLICY:

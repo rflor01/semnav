@@ -781,6 +781,14 @@ class ILEnvDDPTrainer(PPOTrainer):
         batch = batch_obs(
             observations, device=self.device, cache=self._obs_batching_cache
         )
+        observations_mult = batch["semantic"] * 10255
+
+        rgb_matrix = torch.zeros((observations_mult.size(0), 480, 640, 3), dtype=torch.uint8, device=observations_mult.device)
+        rgb_matrix[:, :, :, 0] = (observations_mult[:, :, :, 0] >> 16) & 0xFF  # R
+        rgb_matrix[:, :, :, 1] = (observations_mult[:, :, :, 0] >> 8) & 0xFF  # G
+        rgb_matrix[:, :, :, 2] = observations_mult[:, :, :, 0] & 0xFF  # B
+
+        batch["semantic_rgb"] = rgb_matrix
         batch = apply_obs_transforms_batch(batch, self.obs_transforms)  # type: ignore
 
         current_episode_reward = torch.zeros(
@@ -873,6 +881,15 @@ class ILEnvDDPTrainer(PPOTrainer):
                 device=self.device,
                 cache=self._obs_batching_cache,
             )
+            observations_mult = batch["semantic"] * 10255
+
+            rgb_matrix = torch.zeros((observations_mult.size(0), 480, 640, 3), dtype=torch.uint8, device=observations_mult.device)
+            rgb_matrix[:, :, :, 0] = (observations_mult[:, :, :, 0] >> 16) & 0xFF  # R
+            rgb_matrix[:, :, :, 1] = (observations_mult[:, :, :, 0] >> 8) & 0xFF  # G
+            rgb_matrix[:, :, :, 2] = observations_mult[:, :, :, 0] & 0xFF  # B
+
+            batch["semantic_rgb"] = rgb_matrix
+
             batch = apply_obs_transforms_batch(batch, self.obs_transforms)  # type: ignore
 
             not_done_masks = torch.tensor(
