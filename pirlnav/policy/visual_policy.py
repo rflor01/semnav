@@ -74,40 +74,40 @@ class ObjectNavILMAENet(Net):
         )
 
         ##### RGB_SEMANTIC_ENCODER ####
-        semantic_rgb_config = policy_config.SEMANTIC_RGB_ENCODER
-        semantic_name = "resize"
-        if semantic_rgb_config.use_augmentations and run_type == "train":
-            semantic_name = semantic_rgb_config.augmentations_name
-        if semantic_rgb_config.use_augmentations_test_time and run_type == "eval":
-            semantic_name = semantic_rgb_config.augmentations_name
-        self.semantic_visual_transform = get_transform(semantic_name, size=semantic_rgb_config.image_size)
-        self.semantic_visual_transform.randomize_environments = (
-            semantic_rgb_config.randomize_augmentations_over_envs
-        )
-
-        self.semantic_visual_encoder = VisualEncoder(
-            image_size=semantic_rgb_config.image_size,
-            backbone=semantic_rgb_config.backbone,
-            input_channels=3,
-            resnet_baseplanes=semantic_rgb_config.resnet_baseplanes,
-            resnet_ngroups=semantic_rgb_config.resnet_baseplanes // 2,
-            avgpooled_image=semantic_rgb_config.avgpooled_image,
-            drop_path_rate=semantic_rgb_config.drop_path_rate,
-        )
-
-        self.semantic_visual_fc = nn.Sequential(
-            nn.Flatten(),
-            nn.Linear(
-                self.semantic_visual_encoder.output_size,
-                policy_config.SEMANTIC_RGB_ENCODER.hidden_size,
-            ),
-            nn.ReLU(True),
-        )
-
-        rnn_input_size += policy_config.SEMANTIC_RGB_ENCODER.hidden_size
-        logger.info(
-            "SEMANTIC RGB encoder is {}".format(policy_config.SEMANTIC_RGB_ENCODER.backbone)
-        )
+        # semantic_rgb_config = policy_config.SEMANTIC_RGB_ENCODER
+        # semantic_name = "resize"
+        # if semantic_rgb_config.use_augmentations and run_type == "train":
+        #     semantic_name = semantic_rgb_config.augmentations_name
+        # if semantic_rgb_config.use_augmentations_test_time and run_type == "eval":
+        #     semantic_name = semantic_rgb_config.augmentations_name
+        # self.semantic_visual_transform = get_transform(semantic_name, size=semantic_rgb_config.image_size)
+        # self.semantic_visual_transform.randomize_environments = (
+        #     semantic_rgb_config.randomize_augmentations_over_envs
+        # )
+        #
+        # self.semantic_visual_encoder = VisualEncoder(
+        #     image_size=semantic_rgb_config.image_size,
+        #     backbone=semantic_rgb_config.backbone,
+        #     input_channels=3,
+        #     resnet_baseplanes=semantic_rgb_config.resnet_baseplanes,
+        #     resnet_ngroups=semantic_rgb_config.resnet_baseplanes // 2,
+        #     avgpooled_image=semantic_rgb_config.avgpooled_image,
+        #     drop_path_rate=semantic_rgb_config.drop_path_rate,
+        # )
+        #
+        # self.semantic_visual_fc = nn.Sequential(
+        #     nn.Flatten(),
+        #     nn.Linear(
+        #         self.semantic_visual_encoder.output_size,
+        #         policy_config.SEMANTIC_RGB_ENCODER.hidden_size,
+        #     ),
+        #     nn.ReLU(True),
+        # )
+        #
+        # rnn_input_size += policy_config.SEMANTIC_RGB_ENCODER.hidden_size
+        # logger.info(
+        #     "SEMANTIC RGB encoder is {}".format(policy_config.SEMANTIC_RGB_ENCODER.backbone)
+        # )
         ###############################
 
 
@@ -179,26 +179,26 @@ class ObjectNavILMAENet(Net):
         )
 
         ##### SEMANTIC_RGB
-        if semantic_rgb_config.pretrained_encoder is not None:
-            msg = load_encoder(
-                self.semantic_visual_encoder, semantic_rgb_config.pretrained_encoder
-            )
-            logger.info(
-                "Using weights from {}: {}".format(
-                    semantic_rgb_config.pretrained_encoder, msg
-                )
-            )
-
-        # freeze backbone
-        if semantic_rgb_config.freeze_backbone:
-            for p in self.semantic_visual_encoder.backbone.parameters():
-                p.requires_grad = False
-
-        logger.info(
-            "State enc: {} - {} - {} - {}".format(
-                rnn_input_size, hidden_size, rnn_type, num_recurrent_layers
-            )
-        )
+        # if semantic_rgb_config.pretrained_encoder is not None:
+        #     msg = load_encoder(
+        #         self.semantic_visual_encoder, semantic_rgb_config.pretrained_encoder
+        #     )
+        #     logger.info(
+        #         "Using weights from {}: {}".format(
+        #             semantic_rgb_config.pretrained_encoder, msg
+        #         )
+        #     )
+        #
+        # # freeze backbone
+        # if semantic_rgb_config.freeze_backbone:
+        #     for p in self.semantic_visual_encoder.backbone.parameters():
+        #         p.requires_grad = False
+        #
+        # logger.info(
+        #     "State enc: {} - {} - {} - {}".format(
+        #         rnn_input_size, hidden_size, rnn_type, num_recurrent_layers
+        #     )
+        # )
         #####
 
         self.state_encoder = build_rnn_state_encoder(
@@ -229,7 +229,7 @@ class ObjectNavILMAENet(Net):
         rgb_embedding: [batch_size x RGB_ENCODER.output_size]
         """
         rgb_obs = observations["rgb"]
-        semantic_rgb_obs = observations["semantic_rgb"]
+        # semantic_rgb_obs = observations["semantic_rgb"]
 
         N = rnn_hidden_states.size(1)
 
@@ -248,17 +248,17 @@ class ObjectNavILMAENet(Net):
             rgb = self.visual_fc(rgb)
             x.append(rgb)
 
-            if len(semantic_rgb_obs.size()) == 5:
-                observations["semantic_rgb"] = semantic_rgb_obs.contiguous().view(
-                    -1, semantic_rgb_obs.size(2), semantic_rgb_obs.size(3), semantic_rgb_obs.size(4)
-                )
-            # visual encoder
-            semantic_rgb = observations["semantic_rgb"]
-
-            semantic_rgb = self.semantic_visual_transform(semantic_rgb, N)
-            semantic_rgb = self.semantic_visual_encoder(semantic_rgb)
-            semantic_rgb = self.semantic_visual_fc(semantic_rgb)
-            x.append(semantic_rgb)
+            # if len(semantic_rgb_obs.size()) == 5:
+            #     observations["semantic_rgb"] = semantic_rgb_obs.contiguous().view(
+            #         -1, semantic_rgb_obs.size(2), semantic_rgb_obs.size(3), semantic_rgb_obs.size(4)
+            #     )
+            # # visual encoder
+            # semantic_rgb = observations["semantic_rgb"]
+            #
+            # semantic_rgb = self.semantic_visual_transform(semantic_rgb, N)
+            # semantic_rgb = self.semantic_visual_encoder(semantic_rgb)
+            # semantic_rgb = self.semantic_visual_fc(semantic_rgb)
+            # x.append(semantic_rgb)
 
         if EpisodicGPSSensor.cls_uuid in observations:
             obs_gps = observations[EpisodicGPSSensor.cls_uuid]
