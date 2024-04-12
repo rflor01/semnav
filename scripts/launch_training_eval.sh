@@ -8,7 +8,7 @@ config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d/objectnav_hm3d_v1"
 TENSORBOARD_DIR="tb/pirlnavwDINO31"
 CHECKPOINT_DIR="data/checkpoints/pirlnavwDINO31"
-
+EVAL_CKPT_PATH_DIR = "data/checkpoints/pirlnavwDINO31"
 
 echo "In ObjectNav IL DDP"
 python -u -m run \
@@ -16,6 +16,7 @@ python -u -m run \
     --run-type eval \
     TENSORBOARD_DIR $TENSORBOARD_DIR \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
+    EVAL_CKPT_PATH_DIR $EVAL_CKPT_PATH_DIR\
     NUM_UPDATES 50000 \
     NUM_ENVIRONMENTS 20 \
     RL.DDPPO.force_distributed True \
