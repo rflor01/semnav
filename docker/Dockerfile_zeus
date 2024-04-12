@@ -64,6 +64,9 @@ RUN /bin/bash -c ". activate habitat; pip install gym==0.22.0 urllib3==1.25.11"
 RUN git clone --depth 1 --branch v0.2.2 https://github.com/facebookresearch/habitat-lab.git
 RUN /bin/bash -c ". activate habitat; cd habitat-lab; python setup.py develop --all"
 
+RUN sed -i 's/self.single_forward(x, hidden_states, masks)/x, hidden_states = self.single_forward(x, hidden_states.contiguous(), masks)/g' /home/rafa/habitat-lab/habitat_baselines/rl/models/rnn_state_encoder.py
+
+
 RUN /bin/bash -c ". activate habitat; pip install wandb"
 
 # Silence habitat-sim logs
