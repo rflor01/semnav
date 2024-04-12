@@ -16,7 +16,6 @@ python -u -m run \
     --run-type eval \
     TENSORBOARD_DIR $TENSORBOARD_DIR \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
-    EVAL_CKPT_PATH_DIR $EVAL_CKPT_PATH_DIR \
     NUM_UPDATES 50000 \
     NUM_ENVIRONMENTS 20 \
     RL.DDPPO.force_distributed True \
