@@ -1,8 +1,20 @@
 #!/bin/bash
-export NUM_GPUS=2
+# Get number of GPUs
+if [ -z "$CUDA_VISIBLE_DEVICES" ]
+then
+    echo "CUDA_VISIBLE_DEVICES is not set"
+else
+    IFS=',' read -ra ADDR <<< "$CUDA_VISIBLE_DEVICES"
+    num_gpus=${#ADDR[@]}
+    echo "Number of GPUs: $num_gpus"
+fi
+# Get number of CPUs
+num_cpus=$(nproc)
+
 export GLOG_minloglevel=2
 export MAGNUM_LOG=quiet
 export HABITAT_SIM_LOG=quiet
+export OMP_NUM_THREADS=$((num_cpus/num_gpus))
 
 config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
@@ -11,10 +23,7 @@ CHECKPOINT_DIR="data/checkpoints/semnav/first_rgb_semantic_gpu"
 INFLECTION_COEF=3.234951275740812
 
 echo "In ObjectNav IL DDP"
-python -u -m torch.distributed.launch \
-    --use_env \
-    --nproc_per_node $NUM_GPUS \
-    run.py \
+torchrun --nproc_per_node $num_gpus run.py \
     --exp-config $config \
     --run-type train \
     TENSORBOARD_DIR $TENSORBOARD_DIR \
