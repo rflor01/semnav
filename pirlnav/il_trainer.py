@@ -884,8 +884,8 @@ class ILEnvDDPTrainer(PPOTrainer):
                 device=self.device,
                 cache=self._obs_batching_cache,
             )
-            constant = 10255
-
+            # constant = 10255
+            #
             # observations_mult = batch["semantic"] * constant
             #
             # rgb_matrix = torch.zeros((observations_mult.size(0), 480, 640, 3), dtype=torch.uint8, device=observations_mult.device)

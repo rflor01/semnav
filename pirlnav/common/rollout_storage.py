@@ -46,9 +46,9 @@ class RolloutStorage:
                     (
                         numsteps + 1,
                         num_envs,
-                        *observation_space.spaces["rgb"].shape,
+                        480,640,3
                     ),
-                    dtype=observation_space.spaces["rgb"].dtype,
+                    dtype=np.uint8,
                 )
             )
 

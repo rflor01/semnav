@@ -5,15 +5,16 @@ WANDB_ENABLED: True
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/first_rgb_semantic_gpu/ckpt52"
-VIDEO_DIR: "rgb_sem_ckpt52"
+TENSORBOARD_DIR: "tb/pirlnav/debug2"
+VIDEO_DIR: "pretrained_ckpt"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/checkpoints/pirlnavwDINO31"
-NUM_ENVIRONMENTS: 20
-CHECKPOINT_FOLDER: "checkpoints/first_rgb_semantic_gpu/ckpt52"
+EVAL_CKPT_PATH_DIR: "debug2"
+NUM_ENVIRONMENTS: 2
+CHECKPOINT_FOLDER: "debug2"
 TRAINER_NAME: "pirlnav-il"
-SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
+#SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 #SENSORS: ["RGB_SENSOR",]
+SENSORS: ["SEMANTIC_SENSOR"]
 NUM_UPDATES: 320000
 LOG_INTERVAL: 10
 NUM_CHECKPOINTS: 160
@@ -36,10 +37,12 @@ IL:
     encoder_lr: 0.0001
     num_mini_batch: 2
 
+
 RL:
   SUCCESS_REWARD: 2.5
   SLACK_REWARD: -1e-3
-
+  DDPPO:
+    force_distributed: True
 
 
 
