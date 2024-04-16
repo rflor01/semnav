@@ -18,8 +18,8 @@ export OMP_NUM_THREADS=$((num_cpus/num_gpus))
 
 config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
-TENSORBOARD_DIR="tb/first_rgb_semantic_gpu"
-CHECKPOINT_DIR="data/checkpoints/semnav/first_rgb_semantic_gpu"
+TENSORBOARD_DIR="tb/first_only_semantic"
+CHECKPOINT_DIR="data/checkpoints/semnav/first_only_semantic"
 INFLECTION_COEF=3.234951275740812
 
 echo "In ObjectNav IL DDP"
