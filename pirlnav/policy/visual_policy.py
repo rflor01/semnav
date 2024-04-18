@@ -184,7 +184,7 @@ class Semantic_ObjectNavILMAENet(Net):
             semantic_rgb = observations["semantic_rgb"]
 
             semantic_rgb = self.semantic_visual_transform(semantic_rgb, N)
-            semantic_rgb = self.semantic_visual_encoder(semantic_rgb)
+            semantic_rgb = self.visual_encoder(semantic_rgb)
             semantic_rgb = self.semantic_visual_fc(semantic_rgb)
             x.append(semantic_rgb)
 
