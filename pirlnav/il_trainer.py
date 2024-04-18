@@ -260,7 +260,7 @@ class ILEnvDDPTrainer(PPOTrainer):
         observations = self.envs.reset()
 
         ###########
-        if 'semantic' in observation_space.spaces:
+        if 'semantic' in obs_space.spaces:
             for i in range(self.envs.num_envs):
                 observations[i]["semantic_rgb"] = np.zeros([480,640,3])
         # observations_mult = np.array([diccionario['semantic'] for diccionario in observations])

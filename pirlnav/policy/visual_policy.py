@@ -822,7 +822,7 @@ class RGB_ObjectNavILMAEPolicy(ILPolicy):
         num_recurrent_layers: int,
     ):
         super().__init__(
-            RGB_ObjectNavILMAENet(
+            Semantic_ObjectNavILMAENet(
                 observation_space=observation_space,
                 policy_config=policy_config,
                 num_actions=action_space.n,
