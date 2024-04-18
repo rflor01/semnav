@@ -18,8 +18,8 @@ export OMP_NUM_THREADS=$((num_cpus/num_gpus))
 
 config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
-TENSORBOARD_DIR="tb/first_only_semantic"
-CHECKPOINT_DIR="data/checkpoints/semnav/first_only_semantic"
+TENSORBOARD_DIR="tb/32_envs_only_semantic"
+CHECKPOINT_DIR="checkpoints/32_envs_only_semantic"
 INFLECTION_COEF=3.234951275740812
 
 echo "In ObjectNav IL DDP"
@@ -29,7 +29,7 @@ torchrun --nproc_per_node $num_gpus run.py \
     TENSORBOARD_DIR $TENSORBOARD_DIR \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
     NUM_UPDATES 320000 \
-    NUM_ENVIRONMENTS 18 \
+    NUM_ENVIRONMENTS 32 \
     IL.BehaviorCloning.num_mini_batch 2\
     EVAL.USE_CKPT_CONFIG True\
     RL.DDPPO.force_distributed True \
