@@ -30,7 +30,7 @@ EVAL:
 
 IL:
   POLICY:
-    name: "RGB_ObjectNavILMAEPolicy"
+    name: "SEMANTIC_ObjectNavILMAEPolicy"
   BehaviorCloning:
     num_steps: 64
     lr: 0.0001

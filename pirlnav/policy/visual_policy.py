@@ -822,7 +822,7 @@ class RGB_ObjectNavILMAEPolicy(ILPolicy):
         num_recurrent_layers: int,
     ):
         super().__init__(
-            Semantic_ObjectNavILMAENet(
+            RGB_ObjectNavILMAENet(
                 observation_space=observation_space,
                 policy_config=policy_config,
                 num_actions=action_space.n,
@@ -878,6 +878,7 @@ class RGB_ObjectNavILMAEPolicy(ILPolicy):
             param.requires_grad_(True)
 
 
+@baseline_registry.register_policy
 class SEMANTIC_RGB_ObjectNavILMAEPolicy(ILPolicy):
     def __init__(
         self,
@@ -946,6 +947,8 @@ class SEMANTIC_RGB_ObjectNavILMAEPolicy(ILPolicy):
             param.requires_grad_(True)
 
 
+
+@baseline_registry.register_policy
 class SEMANTIC_ObjectNavILMAEPolicy(ILPolicy):
     def __init__(
         self,
