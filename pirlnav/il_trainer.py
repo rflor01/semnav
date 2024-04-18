@@ -51,97 +51,9 @@ from torch import nn as nn
 from torch.optim.lr_scheduler import LambdaLR
 
 from pirlnav.algos.agent import DDPILAgent
+from pirlnav.algos.agent import Semantic_DDPILAgent
 from pirlnav.common.rollout_storage import RolloutStorage
 import cv2
-
-
-
-class GlobalSemantic():
-    def __init__(self):
-        self._global_semantic_path = "/home/rafa/code/scripts/global_semantic.semantic.txt"
-        #self._global_semantic_path = "/home/rafa/rafarepos/semnav/scripts/global_semantic.semantic.txt"
-        with open(self._global_semantic_path, "r") as archive:
-            self._globalrow = archive.readlines()[1:]  # Ignore first semantic line
-        self.r_global_dict = {}
-        self.g_global_dict = {}
-        self.b_global_dict = {}
-        self.patron = r'\/([^\/]+)\.basis\.glb'
-        self.object_class_index_global_dict = {}
-        for row in self._globalrow:
-            info = row.strip().split(",")
-            id_class = int(info[0])
-            object_class = info[2].strip('"')
-            self.r_global_dict[object_class] = int(info[1][:2], 16)
-            self.g_global_dict[object_class] = int(info[1][2:4], 16)
-            self.b_global_dict[object_class] = int(info[1][4:6], 16)
-            self.object_class_index_global_dict[object_class] = id_class
-
-        self._scenes_datasets_path_train = "/home/rafa/code/data/scene_datasets/semantics/hm3d/train"
-        self._scenes_datasets_path_val = "/home/rafa/code/data/scene_datasets/semantics/hm3d/val"
-        #self._scenes_datasets_path_train = "/home/rafa/rafarepos/semnav/data/scene_datasets/hm3d/train"
-        #self._scenes_datasets_path_val = "/home/rafa/rafarepos/semnav/data/scene_datasets/hm3d/val"
-        self._search_semantic_txt()
-        self._initialize_allscenes_rgb_dictionary()
-        self._fill_allscenes_rgb_dictionary()
-        print(self.allscenes_rgb_dictionary)
-
-        #We have generated a full dictionary, if you ingress the scene id name and a scene id you obtain a rgb color
-        #This color is an universal color that will be useful to train with semantic rgb
-
-
-    def _search_semantic_txt(self):
-        self._semantic_txt = []
-        # Recorre todos los directorios y subdirectorios
-        for current_directory, _, archives in os.walk(self._scenes_datasets_path_train):
-            # Busca archivos que coincidan con el patrón "*.semantic.txt"
-            for archive in archives:
-                if archive.endswith(".semantic.txt"):
-                    # Imprime la ruta completa del archivo encontrado
-                    path = os.path.join(current_directory, archive)
-                    self._semantic_txt.append(path)
-        for current_directory, _, archives in os.walk(self._scenes_datasets_path_val):
-            # Busca archivos que coincidan con el patrón "*.semantic.txt"
-            for archive in archives:
-                if archive.endswith(".semantic.txt"):
-                    # Imprime la ruta completa del archivo encontrado
-                    path = os.path.join(current_directory, archive)
-                    self._semantic_txt.append(path)
-
-    def _initialize_allscenes_rgb_dictionary(self):
-        self.allscenes_rgb_dictionary = {}
-        self._scenes_names = []
-        self._scenes_names = [ruta.split('/')[-2] for ruta in self._semantic_txt]
-        self._scenes_names = [parte.split('-')[-1] for parte in self._scenes_names]
-        for name in self._scenes_names:
-            self.allscenes_rgb_dictionary[name] = {}  # Inicializar el diccionario interno vacío
-
-    def _fill_allscenes_rgb_dictionary(self):
-        counter = 0
-        for path in self._semantic_txt:
-            id_to_category  = {}
-
-            # Leer el contenido del archivo
-            with open(path, 'r') as archive:
-                # Saltar la primera línea (encabezado)
-                next(archive)
-
-                # Iterar sobre las líneas restantes
-                for line in archive:
-                    # Dividir la línea en campos usando coma como separador
-                    field = line.strip().split(',')
-
-                    # Obtener el ID de escena y la categoría de objeto
-                    scene_id = int(field[0])
-                    category = field[2].strip('"')
-
-                    # Agregar al diccionario
-                    id_to_category[scene_id] = category
-            for id, category in id_to_category.items():
-                self.allscenes_rgb_dictionary[self._scenes_names[counter]][id] = (self.r_global_dict[category],self.g_global_dict[category],self.b_global_dict[category])
-            counter += 1
-
-
-
 
 
 
@@ -175,18 +87,30 @@ class ILEnvDDPTrainer(PPOTrainer):
             self.config, observation_space, self.envs.action_spaces[0]
         )
         self.actor_critic.to(self.device)
-
-        self.agent = DDPILAgent(
-            actor_critic=self.actor_critic,
-            num_envs=self.envs.num_envs,
-            num_mini_batch=il_cfg.num_mini_batch,
-            lr=il_cfg.lr,
-            encoder_lr=il_cfg.encoder_lr,
-            eps=il_cfg.eps,
-            max_grad_norm=il_cfg.max_grad_norm,
-            wd=il_cfg.wd,
-            entropy_coef=il_cfg.entropy_coef,
-        )
+        if 'semantic' in observation_space.spaces:
+            self.agent = Semantic_DDPILAgent(
+                actor_critic=self.actor_critic,
+                num_envs=self.envs.num_envs,
+                num_mini_batch=il_cfg.num_mini_batch,
+                lr=il_cfg.lr,
+                encoder_lr=il_cfg.encoder_lr,
+                eps=il_cfg.eps,
+                max_grad_norm=il_cfg.max_grad_norm,
+                wd=il_cfg.wd,
+                entropy_coef=il_cfg.entropy_coef,
+            )
+        else:
+            self.agent = DDPILAgent(
+                actor_critic=self.actor_critic,
+                num_envs=self.envs.num_envs,
+                num_mini_batch=il_cfg.num_mini_batch,
+                lr=il_cfg.lr,
+                encoder_lr=il_cfg.encoder_lr,
+                eps=il_cfg.eps,
+                max_grad_norm=il_cfg.max_grad_norm,
+                wd=il_cfg.wd,
+                entropy_coef=il_cfg.entropy_coef,
+            )
 
     def _init_train(self):
         #If there is some checkpoint we will want to take this checkpoint in order to start working again
@@ -336,8 +260,9 @@ class ILEnvDDPTrainer(PPOTrainer):
         observations = self.envs.reset()
 
         ###########
-        for i in range(self.envs.num_envs):
-            observations[i]["semantic_rgb"] = np.zeros([480,640,3])
+        if 'semantic' in observation_space.spaces:
+            for i in range(self.envs.num_envs):
+                observations[i]["semantic_rgb"] = np.zeros([480,640,3])
         # observations_mult = np.array([diccionario['semantic'] for diccionario in observations])
         # observations_mult *= 17
         # matriz_rgb = np.zeros((2, 480, 640, 3), dtype=np.uint8)
@@ -781,17 +706,17 @@ class ILEnvDDPTrainer(PPOTrainer):
         batch = batch_obs(
             observations, device=self.device, cache=self._obs_batching_cache
         )
-        # constant = 10255
-        #
-        # observations_mult = batch["semantic"] * constant
-        #
-        # rgb_matrix = torch.zeros((observations_mult.size(0), 480, 640, 3), dtype=torch.uint8,
-        #                          device=observations_mult.device)
-        # rgb_matrix[:, :, :, 0] = (observations_mult[:, :, :, 0] >> 16) & 0xFF  # R
-        # rgb_matrix[:, :, :, 1] = (observations_mult[:, :, :, 0] >> 8) & 0xFF  # G
-        # rgb_matrix[:, :, :, 2] = observations_mult[:, :, :, 0] & 0xFF  # B
-        #
-        # batch["semantic_rgb"] = rgb_matrix
+        constant = 10255
+
+        observations_mult = batch["semantic"] * constant
+
+        rgb_matrix = torch.zeros((observations_mult.size(0), 480, 640, 3), dtype=torch.uint8,
+                                 device=observations_mult.device)
+        rgb_matrix[:, :, :, 0] = (observations_mult[:, :, :, 0] >> 16) & 0xFF  # R
+        rgb_matrix[:, :, :, 1] = (observations_mult[:, :, :, 0] >> 8) & 0xFF  # G
+        rgb_matrix[:, :, :, 2] = observations_mult[:, :, :, 0] & 0xFF  # B
+
+        batch["semantic_rgb"] = rgb_matrix
         batch = apply_obs_transforms_batch(batch, self.obs_transforms)  # type: ignore
 
         current_episode_reward = torch.zeros(
@@ -884,16 +809,16 @@ class ILEnvDDPTrainer(PPOTrainer):
                 device=self.device,
                 cache=self._obs_batching_cache,
             )
-            # constant = 10255
-            #
-            # observations_mult = batch["semantic"] * constant
-            #
-            # rgb_matrix = torch.zeros((observations_mult.size(0), 480, 640, 3), dtype=torch.uint8, device=observations_mult.device)
-            # rgb_matrix[:, :, :, 0] = (observations_mult[:, :, :, 0] >> 16) & 0xFF  # R
-            # rgb_matrix[:, :, :, 1] = (observations_mult[:, :, :, 0] >> 8) & 0xFF  # G
-            # rgb_matrix[:, :, :, 2] = observations_mult[:, :, :, 0] & 0xFF  # B
-            #
-            # batch["semantic_rgb"] = rgb_matrix
+            constant = 10255
+
+            observations_mult = batch["semantic"] * constant
+
+            rgb_matrix = torch.zeros((observations_mult.size(0), 480, 640, 3), dtype=torch.uint8, device=observations_mult.device)
+            rgb_matrix[:, :, :, 0] = (observations_mult[:, :, :, 0] >> 16) & 0xFF  # R
+            rgb_matrix[:, :, :, 1] = (observations_mult[:, :, :, 0] >> 8) & 0xFF  # G
+            rgb_matrix[:, :, :, 2] = observations_mult[:, :, :, 0] & 0xFF  # B
+
+            batch["semantic_rgb"] = rgb_matrix
             batch = apply_obs_transforms_batch(batch, self.obs_transforms)  # type: ignore
 
             not_done_masks = torch.tensor(
