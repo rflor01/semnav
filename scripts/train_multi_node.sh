@@ -1,0 +1,50 @@
+#!/bin/bash
+#!/bin/bash
+# Get number of GPUs
+if [ -z "$CUDA_VISIBLE_DEVICES" ]
+then
+    echo "CUDA_VISIBLE_DEVICES is not set"
+else
+    IFS=',' read -ra ADDR <<< "$CUDA_VISIBLE_DEVICES"
+    num_gpus=${#ADDR[@]}
+    echo "Number of GPUs: $num_gpus"
+fi
+# Get number of CPUs
+num_cpus=$(nproc)
+
+export GLOG_minloglevel=2
+export MAGNUM_LOG=quiet
+export HABITAT_SIM_LOG=quiet
+export OMP_NUM_THREADS=$((num_cpus/num_gpus))
+
+
+config="configs/experiments/il_objectnav.yaml"
+DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
+TENSORBOARD_DIR="tb/rgb_sem_no_encoder"
+CHECKPOINT_DIR="checkpoints/rgb_sem_no_encoder"
+INFLECTION_COEF=3.234951275740812
+SCENE_DATASET = "data/scene_datasets/hm3d/semantics/hm3d_annotated_basis.scene_dataset_config.json"
+# shellcheck disable=SC1090
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate habitat
+
+
+torchrun \
+  --nnodes $NNODES \
+  --nproc_per_node $NPERNODE \
+  --rdzv-id=$JOB_ID \
+  --rdzv-backend=c10d \
+  --rdzv-endpoint=$MASTER_ADDR:$MASTER_PORT \
+  run.py \
+    --exp-config $config \
+    --run-type train \
+    TENSORBOARD_DIR $TENSORBOARD_DIR \
+    CHECKPOINT_FOLDER $CHECKPOINT_DIR \
+    NUM_UPDATES 320000 \
+    WANDB_ENABLED True \
+    NUM_ENVIRONMENTS 32 \
+    IL.BehaviorCloning.num_mini_batch 2\
+    RL.DDPPO.force_distributed True \
+    TASK_CONFIG.SCENE_DATASET $SCENE_DATASET \
+    TASK_CONFIG.TASK.INFLECTION_WEIGHT_SENSOR.INFLECTION_COEF $INFLECTION_COEF \
+    TASK_CONFIG.DATASET.DATA_PATH "$DATA_PATH/{split}/{split}.json.gz"
