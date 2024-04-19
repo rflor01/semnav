@@ -5,12 +5,12 @@ WANDB_ENABLED: True
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/rgb_sem_no_encoder"
-VIDEO_DIR: "rgb_sem_no_encoder"
+TENSORBOARD_DIR: "tb/onlysem_32_envs_no_encoder"
+VIDEO_DIR: "onlysem_32_envs_no_encoder"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "checkpoints/rgb_sem_no_encoder"
+EVAL_CKPT_PATH_DIR: "checkpoints/onlysem_32_envs_no_encoder"
 NUM_ENVIRONMENTS: 32
-CHECKPOINT_FOLDER: "checkpoints/rgb_sem_no_encoder"
+CHECKPOINT_FOLDER: "checkpoints/onlysem_32_envs_no_encoder"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 #SENSORS: ["RGB_SENSOR",]
@@ -30,7 +30,7 @@ EVAL:
 
 IL:
   POLICY:
-    name: "SEMANTIC_RGB_ObjectNavILMAEPolicy"
+    name: "SEMANTIC_ObjectNavILMAEPolicy"
   BehaviorCloning:
     num_steps: 64
     lr: 0.0001

@@ -18,8 +18,8 @@ export OMP_NUM_THREADS=$((num_cpus/num_gpus))
 
 config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
-TENSORBOARD_DIR="tb/rgb_sem_no_encoder"
-CHECKPOINT_DIR="checkpoints/rgb_sem_no_encoder"
+TENSORBOARD_DIR="tb/onlysem_32_envs_no_encoder"
+CHECKPOINT_DIR="checkpoints/onlysem_32_envs_no_encoder"
 INFLECTION_COEF=3.234951275740812
 
 echo "In ObjectNav IL DDP"

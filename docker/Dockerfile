@@ -71,6 +71,12 @@ ENV GLOG_minloglevel=2
 ENV MAGNUM_LOG="quiet"
 ENV HABITAT_SIM_LOG=quiet
 
+
 COPY entrypoint.sh /home/rafa
+
+
+# Listar el contenido del directorio /home/rafa/ dentro del contenedor
+RUN ls -l /home/rafa
+
 
 ENTRYPOINT [ "/home/rafa/entrypoint.sh" ]
