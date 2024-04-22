@@ -51,5 +51,5 @@ POLICY:
     no_critic: True
   RGB_ENCODER:
     pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
-#  SEMANTIC_RGB_ENCODER:
-#    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
+  SEMANTIC_RGB_ENCODER:
+    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
