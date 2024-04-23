@@ -5,16 +5,17 @@ WANDB_ENABLED: True
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/debug2"
-VIDEO_DIR: "debug2"
+TENSORBOARD_DIR: "tb/coloresporfi"
+VIDEO_DIR: "coloresporfi"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "checkpoints/32_envs_only_semantic"
+EVAL_CKPT_PATH_DIR: "data/checkpoints/32_envs_only_semantic_functional"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "checkpoints/32_envs_only_semantic"
+CHECKPOINT_FOLDER: "data/checkpoints/32_envs_only_semantic_functional"
 TRAINER_NAME: "pirlnav-il"
-#SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
+
+SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 #SENSORS: ["RGB_SENSOR",]
-SENSORS: ["SEMANTIC_SENSOR"]
+#SENSORS: ["SEMANTIC_SENSOR"]
 NUM_UPDATES: 320000
 LOG_INTERVAL: 10
 NUM_CHECKPOINTS: 160

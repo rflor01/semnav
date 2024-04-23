@@ -14,7 +14,7 @@ from torch import nn as nn
 from torch import optim as optim
 import cv2
 
-class SemanticILAgent(nn.Module):
+class ILAgent(nn.Module):
     def __init__(
         self,
         actor_critic: nn.Module,
@@ -164,7 +164,7 @@ class SemanticILAgent(nn.Module):
     def after_step(self) -> None:
         pass
 
-class ILAgent(nn.Module):
+class SemanticILAgent(nn.Module):
     def __init__(
         self,
         actor_critic: nn.Module,

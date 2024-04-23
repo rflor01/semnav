@@ -58,7 +58,7 @@ class Semantic_ObjectNavILMAENet(Net):
             drop_path_rate=semantic_rgb_config.drop_path_rate,
         )
 
-        self.visual_fc = nn.Sequential(
+        self.semantic_visual_fc = nn.Sequential(
             nn.Flatten(),
             nn.Linear(
                 self.visual_encoder.output_size,
@@ -185,7 +185,7 @@ class Semantic_ObjectNavILMAENet(Net):
 
             semantic_rgb = self.semantic_visual_transform(semantic_rgb, N)
             semantic_rgb = self.visual_encoder(semantic_rgb)
-            semantic_rgb = self.visual_fc(semantic_rgb)
+            semantic_rgb = self.semantic_visual_fc(semantic_rgb)
             x.append(semantic_rgb)
 
 
