@@ -8,9 +8,9 @@ VIDEO_OPTION: [disk]
 TENSORBOARD_DIR: "tb/debug2"
 VIDEO_DIR: "debug2"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "prueba_ponerencoder/32_envs_only_semantic"
+EVAL_CKPT_PATH_DIR: "checkpoints/32_envs_only_semantic"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "prueba_ponerencoder/32_envs_only_semantic"
+CHECKPOINT_FOLDER: "checkpoints/32_envs_only_semantic"
 TRAINER_NAME: "pirlnav-il"
 #SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 #SENSORS: ["RGB_SENSOR",]
