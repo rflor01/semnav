@@ -5,12 +5,12 @@ WANDB_ENABLED: True
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/coloresporfi"
-VIDEO_DIR: "coloresporfi"
+TENSORBOARD_DIR: "tb/32_envs_only_semantic_functional_woutDINO"
+VIDEO_DIR: "32_envs_only_semantic_functional_woutDINO"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/checkpoints/32_envs_only_semantic_functional"
+EVAL_CKPT_PATH_DIR: "data/checkpoints/32_envs_only_semantic_functional_woutDINO"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "data/checkpoints/32_envs_only_semantic_functional"
+CHECKPOINT_FOLDER: "data/checkpoints/32_envs_only_semantic_functional_woutDINO"
 TRAINER_NAME: "pirlnav-il"
 
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
@@ -50,7 +50,7 @@ RL:
 POLICY:
   CRITIC:
     no_critic: True
-  RGB_ENCODER:
-    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
-  SEMANTIC_RGB_ENCODER:
-    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
+#  RGB_ENCODER:
+#    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
+#  SEMANTIC_RGB_ENCODER:
+#    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
