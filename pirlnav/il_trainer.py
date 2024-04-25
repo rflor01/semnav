@@ -774,6 +774,7 @@ class ILEnvDDPTrainer(PPOTrainer):
             current_episodes = self.envs.current_episodes()
 
             with torch.no_grad():
+                prueba_test_recurrent_hidden_states = test_recurrent_hidden_states
                 (
                     actions,
                     test_recurrent_hidden_states,
@@ -784,7 +785,17 @@ class ILEnvDDPTrainer(PPOTrainer):
                     not_done_masks,
                     deterministic=True,
                 )
-
+                # batch["rgb"] = torch.zeros(2,480,640,3).to("cuda:0")
+                # (
+                #     actions,
+                #     test_recurrent_hidden_states,
+                # ) = self.actor_critic.act(
+                #     batch,
+                #     prueba_test_recurrent_hidden_states,
+                #     prev_actions,
+                #     not_done_masks,
+                #     deterministic=True,
+                # )
                 prev_actions.copy_(actions)  # type: ignore
             # NB: Move actions to CPU.  If CUDA tensors are
             # sent in to env.step(), that will create CUDA contexts
