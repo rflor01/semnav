@@ -8,7 +8,7 @@ VIDEO_OPTION: [disk]
 TENSORBOARD_DIR: "tb/lowering_encoder_onlysemantic"
 VIDEO_DIR: "lowering_encoder_onlysemantic"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "/data/checkpoints/lowering_encoder_onlysemantic"
+EVAL_CKPT_PATH_DIR: "data/checkpoints/lowering_encoder_onlysemantic"
 NUM_ENVIRONMENTS: 2
 CHECKPOINT_FOLDER: "data/checkpoints/lowering_encoder_onlysemantic"
 TRAINER_NAME: "pirlnav-il"
