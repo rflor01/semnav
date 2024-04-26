@@ -177,7 +177,7 @@ _CONFIG.POLICY.SEMANTIC_RGB_ENCODER.randomize_augmentations_over_envs = False
 _CONFIG.POLICY.SEMANTIC_RGB_ENCODER.pretrained_encoder = None
 _CONFIG.POLICY.SEMANTIC_RGB_ENCODER.freeze_backbone = False
 _CONFIG.POLICY.SEMANTIC_RGB_ENCODER.avgpooled_image = False
-_CONFIG.POLICY.SEMANTIC_RGB_ENCODER.augmentations_name = "shift"
+_CONFIG.POLICY.SEMANTIC_RGB_ENCODER.augmentations_name = "jitter+shift"
 _CONFIG.POLICY.SEMANTIC_RGB_ENCODER.drop_path_rate = 0.0
 _CONFIG.POLICY.SEMANTIC_RGB_ENCODER.normalize_visual_inputs = False
 
