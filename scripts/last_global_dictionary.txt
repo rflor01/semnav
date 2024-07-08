@@ -1,0 +1,1659 @@
+514,wall,4E6214
+153,door,1754FA
+1387,ceiling,D3832E
+9,floor,015F5A
+1262,picture,C0734C
+671,window,665336
+786,chair,77DCB4
+1276,doorframe,C295D8
+1170,remove,B26BB4
+909,pillow,8A9E82
+1157,object,B07032
+386,light,3ADD14
+976,cabinet,94D620
+1580,curtain,F0F1B8
+726,table,6EB65C
+216,plant,20F070
+1294,decoration,C5548C
+1437,window frame,DB2322
+849,lamp,81782A
+723,mirror,6E413E
+1129,towel,AC2B1A
+576,sink,57D680
+15,shelf,024996
+1524,couch,E86788
+1442,dining chair,DBE654
+1495,bed,E3FB66
+1426,nightstand,D975B4
+1536,toilet,EA3C00
+927,sofa chair,8D5D36
+1289,column,C4915A
+63,handrail,099B76
+395,stair,3C3C6E
+1022,stool,9BD9EC
+210,armchair,200634
+469,kitchen cabinet,478552
+744,vase,717510
+243,cushion,250E7E
+476,tv,489698
+1084,door frame,A54E58
+383,unknown,3A67F6
+1169,pot,B244AA
+1637,desk,F9A2F2
+762,painting,7433C4
+828,roof,7E4458
+1149,box,AF37E2
+1469,shower wall,E00462
+692,coffee table,698708
+1006,countertop,99694C
+636,bench,60FCD8
+842,wall frame,8066E4
+1372,trash can,D13998
+816,fireplace,7C6FE0
+1366,clothes,D04F5C
+177,pillar,1AFDEA
+160,bathtub,186640
+798,ceiling duct,79B12C
+138,bath cabinet,150B64
+1478,book,E163BC
+405,beam,3DC2D2
+1610,vent,F584E4
+1028,shower floor,9CC428
+1333,faucet,CB4712
+1657,photo,FCAFBA
+1491,delete,E35F3E
+490,toilet paper,4AB924
+1509,counter,E61DF2
+648,fan,62D150
+1173,step,B2E0D2
+318,table lamp,307E6C
+224,wall / other room,2228C0
+461,washbasin,464D02
+867,rail,8436DE
+157,side table,17F122
+859,decor,82FE8E
+501,shelves,4C6692
+116,statue,11B088
+1114,dresser,A9E184
+638,stairs,614AEC
+1648,rug,FB5060
+113,ottoman,113B6A
+1206,round table,B7E91C
+344,bottle,347570
+1505,kitchen counter,E581CA
+725,windowframe,6E8F52
+1261,office chair,C04C42
+1145,frame,AE9BBA
+1219,refrigerator,B9E49E
+1094,bookshelf,A6D4BC
+1205,end table,B7C212
+801,wardrobe,7A264A
+392,toiletry,3BC750
+381,windowsill,3A19E2
+112,pipe,111460
+691,monitor,695FFE
+1398,stand,D5309C
+65,drawers,09E98A
+845,dining table,80DC02
+108,container,107838
+699,light switch,6A984E
+1533,skylight,E9C6E2
+115,purse,11897E
+1186,wall /otherroom,B4DC54
+48,sofa,0751E0
+1228,books,BB43F8
+1420,doorway,D88B78
+1086,railing,A59C6C
+1595,wainscotting,F33B4E
+907,basket,8A506E
+938,closet,8F0AA4
+1364,arch,D00148
+1281,chandelier,C3590A
+934,oven,8E6E7C
+1562,clock,EE3304
+1046,footstool,9F82DC
+98,stove,0EF1D4
+199,trashcan,1E58C6
+409,drawer,3E5EFA
+478,bathroom countertop object,48E4AC
+681,washing machine,67D99A
+1464,shower curtain,DF4130
+1307,rack,C7500E
+955,art,91A24E
+379,firealarm,39CBCE
+876,bin,859638
+970,chest,93EBE4
+375,microwave,392FA6
+682,blinds,6800A4
+171,bowl,1A13AE
+1180,ceiling pipe,B3F218
+195,tree,1DBC9E
+574,vanity,57886C
+819,ceiling fan,7CE4FE
+1212,tissue box,B8D358
+1438,desk chair,DB4A2C
+850,plate,819F34
+380,tv stand,39F2D8
+562,shoes,55B3F4
+203,heater,1EF4EE
+73,bedframe,0B21DA
+1068,headboard,A2DDB8
+431,post,41B9D6
+1531,swivel chair,E978CE
+1195,pedestal,B63BAE
+1433,fence,DA86FA
+2,ceiling pipes,004E14
+491,pew,4AE02E
+1071,decorative object,A352D6
+854,bucket,823B5C
+1153,mask,AFD40A
+945,candle,901BEA
+414,flowerpot,3F222C
+698,speaker,6A7144
+977,seat,94FD2A
+526,sign,50368C
+1552,air conditioner,ECACA0
+1367,shower curtain rod,D07666
+437,unknown / other room,42A412
+1176,flowers,B355F0
+128,clutter,138500
+321,pillows,30F38A
+1465,plants,DF683A
+1080,wall \other room,A4B230
+1202,fire extinguisher,B74CF4
+1422,towels,D8D98C
+110,curtains,10C64C
+251,curtain rod,2646CE
+1362,kitchen countertop object,CFB334
+87,mat,0D4466
+1336,flower,CBBC30
+1265,sculpture,C0E86A
+1450,shelving,DD1EA4
+989,wall/other room,96D1A2
+585,knickknack,5935DA
+246,printer,25839C
+1615,wall behind,F64816
+438,telephone,42CB1C
+428,bedside table,4144B8
+230,moulding,2312FC
+59,handbag,08FF4E
+486,wall /other room,4A1CFC
+412,blanket,3ED418
+735,shower,7015B6
+147,steps,166ABE
+697,switch,6A4A3A
+568,toilet paper dispenser,569E30
+920,objects,8C4BF0
+1259,handle,BFFE2E
+1361,frame /outside,CF8C2A
+1159,screen,B0BE46
+385,shower head,3AB60A
+355,baracade,3622DE
+434,picture frame,422EF4
+47,soap,072AD6
+665,staircase railing,6568FA
+1288,keyboard,C46A50
+1002,thermostat,98CD24
+1421,radiator,D8B282
+31,kitchen island,04BA36
+740,paper towel,70D8E8
+1554,wall decoration,ECFAB4
+481,phone,4959CA
+886,mirror frame,871C9C
+751,clothes dryer,728656
+661,panel,64CCD2
+767,glass,74F6F6
+156,soap dispenser,17CA18
+969,dishwasher,93C4DA
+1143,cup,AE4DA6
+166,bathroom cabinet,19507C
+896,ladder,88A300
+1323,garage door,C9C0AE
+1179,hat,B3CB0E
+928,chest of drawers,8D8440
+1060,exit sign,A1A568
+1383,sidetable,D2E706
+222,office table,21DAAC
+739,piano,70B1DE
+151,painter,1706E6
+430,board,4192CC
+70,windows,0AACBC
+141,archway,158082
+1058,rope,A15754
+1566,ball,EECF2C
+397,gym equipment,3C8A82
+1009,clothes hangers,99DE6A
+903,bathroom object,89B446
+1000,easy chair,987F10
+161,lounge chair,188D4A
+1434,furniture,DAAE04
+1277,cabinets,C2BCE2
+897,carpet,88CA0A
+1239,food,BCF166
+1075,plant pot,A3EEFE
+1308,duct,C77718
+1027,ridge,9C9D1E
+1271,candlestick,C1D2A6
+1384,computer desk,D30E10
+1267,shower door,C1367E
+806,trash,7AE97C
+965,crown molding,9328B2
+377,wall sconce,397DBA
+679,door handle,678B86
+722,scale,6E1A34
+815,trash bin,7C48D6
+1280,baseboard,C33200
+1237,window /otherroom,BCA352
+145,bag,161CAA
+680,laptop,67B290
+1494,treadmill,E3D45C
+92,staircase,0E0798
+470,guitar,47AC5C
+208,light fixture,1FB820
+484,pipes,49CEE8
+1235,display case,BC553E
+30,weight machine,04932C
+983,toilet paper holder,95E766
+464,basin,46C220
+1559,towel bar,EDBDE6
+1457,floor behind,DE2FEA
+1011,wooden chair,9A2C7E
+260,potted plant,27A628
+255,ceiling / other room,26E2F6
+231,window sill,233A06
+1162,floor / other room,B13364
+1405,cupboard,D641E2
+863,tray,839AB6
+1238,urn,BCCA5C
+999,church seating,985806
+1258,decorative plate,BFD724
+19,doors,02E5BE
+1380,bar,D271E8
+1107,stair rail,A8D03E
+107,window shade,10512E
+663,grass,651AE6
+1004,pool table,991B38
+534,coat,516EDC
+1454,trees,DDBACC
+1138,cloth,AD8A74
+621,bottle of soap,5EB342
+452,floor lamp,44EDA8
+765,water cooler,74A8E2
+930,pews,8DD254
+757,ledge,737092
+1369,kitchen shelf,D0C47A
+1209,bathroom utencils,B85E3A
+963,hanger,92DA9E
+1343,shrubbery,CCCD76
+853,teapot,821452
+422,bottles,405A7C
+1245,exercise equipment,BDDBA2
+1313,boxes,C83A4A
+1110,locker,A9455C
+676,wall cabinet,671668
+808,wainscotting \other room,7B3790
+1072,ceiling light,A379E0
+1218,ornament,B9BD94
+772,bidet,75BA28
+345,shower soap shelf,349C7A
+492,window / door,4B0738
+68,stuffed animal,0A5EA8
+1377,paper towel dispenser,D1FCCA
+547,chair bottom,536A5E
+1213,fencing,B8FA62
+1279,lampshade,C30AF6
+1352,door side,CE2CD0
+659,bust,647EBE
+780,car,76F278
+274,figure,29C8B4
+1203,sofa set,B773FE
+1456,commode,DE08E0
+667,toilet brush,65B70E
+1497,doll,E4497A
+60,drums,092658
+131,bathroom counter,13FA1E
+252,dress,266DD8
+316,shower handle,303058
+908,closet door,8A7778
+803,whiteboard,7A745E
+932,garage door opener,8E2068
+57,range hood,08B13A
+1193,window curtain,B5ED9A
+1091,easel,A65F9E
+483,bowl of fruit,49A7DE
+361,molding,370D1A
+1643,pool,FA8D2E
+306,kitchen appliance,2EA9F4
+553,candelabra,54549A
+39,ceiling lamp,05F286
+239,toy,247256
+523,top,4FC16E
+1151,wall art,AF85F6
+727,highchair,6EDD66
+466,footrest,471034
+624,bathroom sink,5F2860
+1117,soap dish,AA56A2
+331,miscellaneous object,3279EE
+566,trim,56501C
+620,tabletop object,5E8C38
+1324,clothes hanger rod,C9E7B8
+759,altar,73BEA6
+1348,candles,CD90A8
+1031,placemat,9D3946
+1397,kitchen center island,D50992
+315,plate of food,30094E
+1338,sheet,CC0A44
+1474,wood,E0C794
+980,robe,957248
+432,bathroom stall,41E0E0
+67,tabletop decoration,0A379E
+1135,plush toy,AD1556
+370,wash basin,386C74
+1631,celing,F8B8B6
+1642,hangers,FA6624
+674,bushes,66C854
+1260,floor/other room,C02538
+530,dinner placesetting,50D2B4
+586,curtain valence,595CE4
+1471,control,E05276
+634,tap,60AEC4
+76,shampoo,0B96F8
+139,computer,15326E
+441,massage bed,43403A
+1032,knob,9D6050
+518,door stopper,4EFE3C
+28,bulletin board,044518
+688,brick archway,68EAE0
+1001,fruit bowl,98A61A
+64,electric wire casing,09C280
+1217,bookcase,B9968A
+689,other room,6911EA
+80,exercise machine,0C3320
+1647,storage shelving,FB2956
+509,coffee maker,4D9EE2
+34,shower ceiling,052F54
+1189,fire alarm,B55172
+189,tissue paper,1CD262
+880,projector,863260
+1185,coat hanger,B4B54A
+1047,wall cubby,9FA9E6
+1048,balcony railing,9FD0F0
+1083,shelf /w clutter,A5274E
+227,case,229DDE
+1395,coat rack,D4BB7E
+719,pan,6DA516
+276,fridge,2A16C8
+783,suitcase,776796
+1373,wardrobe rod,D160A2
+1310,hamper,C7C52C
+226,trinket,2276D4
+1563,c;lothes hangers,EE5A0E
+1081,paper,A4D93A
+1232,back splash,BBE020
+873,chimney,85211A
+261,arc,27CD32
+971,shower bench,9412EE
+168,person,199E90
+781,tablet,771982
+812,exercise mat,7BD3B8
+822,smoke alarm,7D5A1C
+1577,kitchen utensils,F07C9A
+1539,weights,EAB11E
+914,display cabinet,8B61B4
+299,showcase,2D98AE
+519,bedpost,4F2546
+664,file cabinet,6541F0
+1283,umbrella,C3A71E
+351,massage table,3586B6
+531,laundry basket,50F9BE
+893,jar,882DE2
+72,exercise bike,0AFAD0
+302,hose,2E0DCC
+515,window dormer,4E891E
+1544,closet shelf,EB7450
+598,power breaker box,5B315C
+1527,smoke detector,E8DCA6
+1654,door knob,FC3A9C
+1063,shelf side,A21A86
+1136,jacuzzi,AD3C60
+510,backpack,4DC5EC
+1160,wooden desk,B0E550
+565,bath mat,562912
+297,unknown clutter,2D4A9A
+1029,hook,9CEB32
+1020,sauna wall,9B8BD8
+332,elevator,32A0F8
+311,tool,2F6D26
+463,recliner,469B16
+1122,recessed wall,AB19D4
+809,closet bar,7B5E9A
+1166,tank,B1CF8C
+472,toaster,47FA70
+646,toilet brush holder,62833C
+599,handrail /otherroom,5B5866
+594,landing,5A9534
+439,book rack,42F226
+194,wall mirror,1D9594
+1092,hunting trophy,A686A8
+604,rod,5C1B98
+310,floor mat,2F461C
+916,motion detector,8BAFC8
+790,clothing,7878DC
+1216,can of paint,B96F80
+1492,medicine cabinet,E38648
+1003,sensor,98F42E
+608,cart,5CB7C0
+159,slab,183F36
+527,bean bag chair,505D96
+1472,window valence,E07980
+856,window /outside,828970
+685,pole,6875C2
+660,picture / other room,64A5C8
+508,canister,4D77D8
+1428,washbasin counter,D9C3C8
+653,kitchen top,639482
+1414,unknown object,D7A13C
+1601,pitcher,F4258A
+1594,showerhead,F31444
+1069,podium,A304C2
+1502,ceiling vent,E50CAC
+731,throw pillow,6F798E
+7,grill,011146
+406,sink cabinet,3DE9DC
+1555,tapestry,ED21BE
+1390,bed sheet,D3F84C
+1599,shade,F3D776
+209,doorknob,1FDF2A
+1609,stair railing,F55DDA
+860,vacuum cleaner,832598
+1124,bed comforter,AB67E8
+539,door / other room,52320E
+1605,pictures,F4C1B2
+583,bed table,58E7C6
+1477,shirt,E13CB2
+1546,dressing table,EBC264
+1078,shower wall cubby,A4641C
+1416,side wall,D7EF50
+827,beside table,7E1D4E
+1073,curb,A3A0EA
+471,arches,47D366
+875,storage bin,856F2E
+687,support beam,68C3D6
+776,globe,765650
+837,pantry,7FA3B2
+1370,skateboard,D0EB84
+1278,stove hood,C2E3EC
+1476,cabin,E115A8
+1575,shower bar,F02E86
+821,chaise,7D3312
+644,flower wash,623528
+730,desk and chairs,6F5284
+717,plant vase,6D5702
+925,towel rack,8D0F22
+1639,cross,F9F106
+1572,sliding door,EFB968
+1111,cosmetics,A96C66
+287,wall other room,2BC436
+824,kettle,7DA830
+1393,junk,D46D6A
+378,stationery,39A4C4
+1339,lights,CC314E
+234,window / other room,23AF24
+1526,dish cabinet,E8B59C
+1504,wall panel,E55AC0
+764,gate,7481D8
+1269,safe,C18492
+606,ventilation,5C69AC
+44,logs,06B5B8
+148,sliding doors,1691C8
+749,shower rod,723842
+211,towel shelf,202D3E
+796,row of theater chairs,796318
+580,closet wall,5872A8
+150,bath utencils,16DFDC
+994,sconce,9794D4
+953,garage light,91543A
+1317,ceiling beam,C8D672
+652,toolbox,636D78
+1644,sponge stool,FAB438
+322,security camera,311A94
+677,gym machine,673D72
+742,wall /outside,7126FC
+959,mantle,923E76
+1282,floor 2,C38014
+546,skirting,534354
+170,banister,19ECA4
+1518,lockers,E77D4C
+213,trophy,207B52
+1337,tile,CBE33A
+123,unknown / room below,12C1CE
+1039,picture car,9E7196
+356,outlet,3649E8
+1301,plant ridge,C665D2
+105,backsplash,10031A
+494,computer monitor,4B554C
+258,doorframe / other room,275814
+1435,shower wall /otherroom,DAD50E
+455,shelves with wine,4562C6
+733,shoe,6FC7A2
+1521,hedge,E7F26A
+748,glass window,721138
+129,sofachair,13AC0A
+1190,hand soap,B5787C
+1470,window blinds,E02B6C
+575,flower vase,57AF76
+592,appliance,5A4720
+174,christmas tree,1A88CC
+1089,support column,A6118A
+1242,dish,BD6684
+1131,closet floor,AC792E
+522,celling,4F9A64
+132,stuffed animals,142128
+390,casket,3B793C
+27,rowing machine,041E0E
+1553,dining table centerpiece,ECD3AA
+1628,bedside lamp,F84398
+1064,kitchen countertop item,A24190
+1621,fountain,F73252
+975,window glass,94AF16
+1152,wall soffet,AFAD00
+656,urinal,6409A0
+1381,kitchen hood,D298F2
+236,showpiece,23FD38
+997,wall trim,9809F2
+1304,barrel,C6DAF0
+881,firewood,86596A
+295,columns,2CFC86
+948,beams,909108
+245,carpet roll,255C92
+643,portrait,620E1E
+1606,table light,F4E8BC
+1144,water heater,AE74B0
+468,stairs 2,475E48
+1297,pouffe,C5C9AA
+1409,ceiling behind,D6DE0A
+1557,pillars,ED6FD2
+972,concrete block,9439F8
+887,range,8743A6
+645,shelf with objects,625C32
+303,toilet seat liner dispenser,2E34D6
+1059,patio chair,A17E5E
+1165,folding chair,B1A882
+862,island,8373AC
+479,toaster oven,490BB6
+272,overlook railing,297AA0
+176,bathroom mirror,1AD6E0
+1378,recycle bin,D223D4
+529,counter top,50ABAA
+1538,rafter,EA8A14
+191,dryer,1D2076
+954,bed lamp,917B44
+1598,wall paneling,F3B06C
+1328,stage,CA83E0
+1017,fire sprinkler,9B16BA
+713,brush,6CBADA
+525,wall 2,500F82
+1375,balcony,D1AEB6
+1118,water tank,AA7DAC
+16,pile of objects,0270A0
+12,garage door frame,01D478
+146,back wall,1643B4
+737,plant soil,7063CA
+500,globe stand,4C3F88
+1321,bicycle,C9729A
+714,stairframe,6CE1E4
+869,separating screen,8484F2
+559,unknown wall object,553ED6
+83,air duct,0CA83E
+1547,kitchen upper cabinet,EBE96E
+1458,chair pillow,DE56F4
+1243,led tv,BD8D8E
+421,deco,403372
+841,ceiling under staircase,803FDA
+467,chair /w books,47373E
+419,bed back rest,3FE55E
+94,giraffe,0E55AC
+190,lightswitch,1CF96C
+1287,doorframe \other room,C44346
+672,object / camera?,667A40
+1423,grandfather clock,D90096
+465,jewelry box,46E92A
+1529,bottles of wine,E92ABA
+946,massage table base,9042F4
+336,hood,333D20
+1510,mirrorframe,E644FC
+1542,wall beam,EB263C
+966,wooden trim,934FBC
+540,stalls,525918
+627,partition,5F9D7E
+104,dog,0FDC10
+270,valance,292C8C
+1133,radio,ACC742
+263,bush,281B46
+754,row of theater seats,72FB74
+1305,bath utencil,C701FA
+545,basket of towels,531C4A
+1446,laundry machine,DC827C
+814,mirror /otherroom,7C21CC
+1499,toilet sink,E4978E
+521,sauna heater,4F735A
+1322,dining bench,C999A4
+284,fume cupboard,2B4F18
+996,mouse,97E2E8
+571,boiler,57134E
+625,hearth,5F4F6A
+1401,curtain darker,D5A5BA
+1345,round chair,CD1B8A
+101,toilet bowl,0F66F2
+555,whine rack,54A2AE
+247,doorstep,25AAA6
+915,binder,8B88BE
+496,shower door frame,4BA360
+615,bed runner,5DC906
+1629,cubicle,F86AA2
+511,fitness device,4DECF6
+267,support,28B76E
+1448,overhang,DCD090
+1341,electric box,CC7F62
+640,bathrobe,619900
+628,door mat,5FC488
+1284,jacket,C3CE28
+1253,cabinet table,BF13F2
+1141,side frame,ADFF92
+1256,wainscoting,BF8910
+947,staircase trim,9069FE
+384,box /w books,3A8F00
+1462,nighstand,DEF31C
+704,window reflection,6B5B80
+473,pulpit,48217A
+167,set of armchairs,197786
+1005,fish tank,994242
+5,bathroom countertop objects,00C332
+62,concrete shelf,09746C
+1263,ceiling wall,C09A56
+684,picture \other room,684EB8
+936,wall entry,8EBC90
+578,lintel,582494
+787,wall table,7803BE
+277,small table,2A3DD2
+1424,lighting fixture,D927A0
+616,bed frame,5DF010
+892,freezer,8806D8
+1116,glass doors,AA2F98
+1100,extractor,A7BEF8
+836,flower pot,7F7CA8
+894,soffet,8854EC
+402,platform,3D4DB4
+1530,hot tub,E951C4
+579,paper towels,584B9E
+56,kitchen utencils,088A30
+391,shower grab bar,3BA046
+1354,wall detail,CE7AE4
+858,whineshelf,82D784
+1625,painting/other room,F7CE7A
+826,television,7DF644
+950,sauna bench,90DF1C
+1300,fruits,C63EC8
+1101,picture frames,A7E602
+1161,buffet,B10C5A
+278,billow,2A64DC
+760,computer chair,73E5B0
+429,sofa seat,416BC2
+1,wall tv,00270A
+342,ground,34275C
+1049,wall2,9FF7FA
+923,ceiling under stairs,8CC10E
+818,calendar,7CBDF4
+360,dome,36E610
+100,object /outside,0F3FE8
+516,poll,4EB028
+922,wet bar,8C9A04
+1447,folding table,DCA986
+111,stovetop,10ED56
+769,gym equip,75450A
+991,fruitbowl,971FB6
+1052,vending machine,A06D18
+992,handwash,9746C0
+410,wall clock,3E8604
+1641,liquid soap,FA3F1A
+1379,trinkets,D24ADE
+1584,small table / stand,F18DE0
+1394,window shuts,D49474
+1311,door frame 3,C7EC36
+1523,stone,E8407E
+906,tripod,8A2964
+36,projector screen,057D68
+561,window frame / other room,558CEA
+71,wreath,0AD3C6
+328,door hinge,3204D0
+1573,sound,EFE072
+307,french door,2ED0FE
+844,staircase handrail,80B4F8
+1371,nighttable,D1128E
+204,photo in frame,1F1BF8
+294,photoframe,2CD57C
+400,stair wall,3CFFA0
+658,closet ceiling,6457B4
+1404,stick,D61AD8
+1632,fluorescent light,F8DFC0
+474,wash cabinet,484884
+365,shower seat,37A942
+433,trellis,4207EA
+926,patio,8D362C
+623,dart board,5F0156
+1485,comforter,E27502
+921,table /w books,8C72FA
+359,picture/other room,36BF06
+556,dirt,54C9B8
+417,base,3F974A
+1168,chemical tank,B21DA0
+1508,step stool,E5F6E8
+449,misc,44788A
+32,sink table,04E140
+605,curved wall,5C42A2
+183,roof beam,1BE826
+130,cover,13D314
+1330,reading table,CAD1F4
+778,side steps wall,76A464
+1115,sideboard,AA088E
+1353,wall from another room,CE53DA
+1540,electric outlet,EAD828
+813,stall door,7BFAC2
+1365,separator,D02852
+835,toilet bowl brush holder,7F559E
+1413,vessel,D77A32
+1174,table clutter,B307DC
+1177,partition wall,B37CFA
+374,bed curtain,39089C
+986,stairs skirt,965C84
+542,small chair,52A72C
+1585,ceiling window,F1B4EA
+90,rocking chair,0DB984
+1252,window \other room,BEECE8
+708,under stair,6BF7A8
+622,unknown outside building,5EDA4C
+1140,bath wall,ADD888
+807,panel screen,7B1086
+572,doorfra,e,573A58
+187,shower mat,1C844E
+1033,blackboard,9D875A
+448,drawer desk,445180
+254,poster,26BBEC
+1399,fireplace sconce,D557A6
+205,table support,1F4302
+1514,wall lamp,E6E124
+961,closet shelving,928C8A
+1612,closest area,F5D2F8
+182,scroll,1BC11C
+1624,foot stand,F7A770
+833,button,7F078A
+1171,art / clutter,B292BE
+1097,door arc,A749DA
+394,stairs railing,3C1564
+193,floor /otherroom,1D6E8A
+229,shovel,22EBF2
+91,alarm controls,0DE08E
+298,lamb,2D71A4
+1108,cluttered objects,A8F748
+164,door/other room,190268
+1335,closet shelves,CB9526
+1558,scultpure,ED96DC
+317,arm chair,305762
+396,door behind,3C6378
+705,exercise ball,6B828A
+1192,yard,B5C690
+839,semi chair,7FF1C6
+840,bouquet,8018D0
+253,garage door opener bar,2694E2
+1334,pots,CB6E1C
+1588,decorations,F22A08
+38,unkown,05CB7C
+217,kitchen decoration,21177A
+1602,archway corner,F44C94
+752,kitchen wall,72AD60
+96,cabinet door,0EA3C0
+1306,sauna bowl,C72904
+984,bar chair,960E70
+512,shelf cubby,4E1400
+1314,toilet plunger,C86154
+885,belts,86F592
+1126,sewing machine,ABB5FC
+544,hot water/cold water knob,52F540
+1650,barbeque,FB9E74
+956,cutting board,91C958
+435,soapbox,4255FE
+670,washing stuff,662C2C
+1293,dining table decoration,C52D82
+720,copier,6DCC20
+460,unknown (picture or window),4625F8
+136,stair handle,14BD50
+1440,reflection,DB9840
+1569,horizonal bar for exercise?,EF444A
+900,shelving / other room,893F28
+551,seats,540686
+1374,shower stall,D187AC
+710,chairs,6C45BC
+557,stair /otherroom,54F0C2
+1303,kitchen stuff,C6B3E6
+857,unkown object,82B07A
+942,throne,8FA6CC
+1607,socket,F50FC6
+899,bathroom art,89181E
+1501,night table,E4E5A2
+382,display,3A40EC
+632,tabletop,6060B0
+1600,thrash bin,F3FE80
+611,l shape sofa,5D2CDE
+498,cardboard box,4BF174
+810,wall borader,7B85A4
+1312,kitchen appliances,C81340
+797,ceiling object,798A22
+1346,wall hanging decoration,CD4294
+407,stand / small table,3E10E6
+1392,kitchen ceiling,D44660
+1350,floor matt,CDDEBC
+686,wall indent,689CCC
+376,chairir,3956B0
+485,window seat,49F5F2
+1651,bike,FBC57E
+54,towels (rolled),083C1C
+732,wall \other oom,6FA098
+163,shower pipe,18DB5E
+706,towel or curtain bar,6BA994
+1567,shower glass,EEF636
+911,stone bench,8AEC96
+581,window/other room,5899B2
+323,back splash sink,31419E
+1443,iron board,DC0D5E
+1255,computer equipment,BF6206
+1041,shelf / cabinet,9EBFAA
+1088,stove door,A5EA80
+445,door inside,43DC62
+1656,unknown stove accessory,FC88B0
+1247,circular sofa,BE29B6
+1026,dustpan,9C7614
+985,bathroom door,96357A
+1633,paining,F906CA
+794,luggage,791504
+868,dooframe,845DE8
+1525,outside wall,E88E92
+741,alarm control,70FFF2
+589,oil lamp,59D202
+1493,scaffolding,E3AD52
+225,bed light,224FCA
+1556,baluster,ED48C8
+1070,leg rest,A32BCC
+1291,ceiling / upstairs room,C4DF6E
+979,tv cabinet,954B3E
+721,hole,6DF32A
+477,ping pong table,48BDA2
+541,hutch,528022
+1349,low shelf,CDB7B2
+266,foliage,289064
+848,windows sill,815120
+1429,toilet cistern,D9EAD2
+1230,stone circle,BB920C
+458,bathroom  sink,45D7E4
+192,record player,1D4780
+779,table cushion,76CB6E
+1360,power outlet,CF6520
+763,machine,745ACE
+1257,door post,BFB01A
+399,briefcase,3CD896
+369,wall of doors,38456A
+967,showe wall,9376C6
+1342,door stand,CCA66C
+1246,energy box,BE02AC
+613,balcony floor,5D7AF2
+755,bean bag,73227E
+793,kitchen extractor,78EDFA
+513,toilet bin,4E3B0A
+1445,wall in other room,DC5B72
+154,plumbing,177C04
+480,moose head / sculpture / hunting trophy,4932C0
+1449,ceiling dome,DCF79A
+941,cabinet counter,8F7FC2
+371,cabinet \other room,38937E
+707,flowerbed,6BD09E
+590,paingitn,59F90C
+1113,bed headboard,A9BA7A
+1541,antique clock,EAFF32
+320,rocks,30CC80
+1010,shower caddy for soap etc.,9A0574
+1439,window / frame,DB7136
+864,media console,83C1C0
+1016,cloths,9AEFB0
+533,vaccum cleaner,5147D2
+1106,door frame fireplace wall,A8A934
+577,fruit dish,57FD8A
+1658,risers for theater seating,FCD6C4
+1617,interior bathroom wall,F6962A
+1653,hall wall,FC1392
+1649,drawer sink table,FB776A
+155,keyboard piano,17A30E
+169,tree branch,19C59A
+296,tiled floor,2D2390
+554,ceiling bedroom,547BA4
+1146,chandellier,AEC2C4
+791,ceilin,789FE6
+37,hearst,05A472
+1316,random wall,C8AF68
+617,condiments,5E171A
+1188,shelf cubbies,B52A68
+904,book display,89DB50
+314,endtable,2FE244
+1627,antique telephone,F81C8E
+1646,clothes rack,FB024C
+1487,doore,E2C316
+291,heater piping,2C605E
+1400,tissue box stand,D57EB0
+1543,utencils,EB4D46
+248,foodtray,25D1B0
+1591,shelves /otherroom,F29F26
+389,cailing,3B5232
+1251,cluttered chair,BEC5DE
+532,countertop object,5120C8
+43,art frames,068EAE
+1441,soap bottle,DBBF4A
+1150,small wall,AF5EEC
+300,watch,2DBFB8
+641,ceil,61C00A
+890,fuse box,87B8C4
+223,painting board,2201B6
+700,door locker handle,6ABF58
+358,box with clutter,3697FC
+340,knive holder,33D948
+626,computer mouse,5F7674
+425,mirror / other room,40CF9A
+366,door back side,37D04C
+1220,ceiling bath,BA0BA8
+607,chandelier?,5C90B6
+505,table tray,4D02BA
+675,aquarium,66EF5E
+1268,wheelbarrow,C15D88
+292,curtain rail,2C8768
+588,rods / table,59AAF8
+228,counter /otherroom,22C4E8
+446,gable,44036C
+1054,bothroom wall,A0BB2C
+1638,balustrade,F9C9FC
+451,bathroom,44C69E
+775,three,762F46
+137,handcloth,14E45A
+958,wall curved,92176C
+134,teapoy,146F3C
+788,table with clutter,782AC8
+286,back door,2B9D2C
+1181,rocky ground,B41922
+1155,doormat,B0221E
+413,backrest,3EFB22
+1589,cabinet with desk,F25112
+84,faucet handles,0CCF48
+1411,floor trim,D72C1E
+1564,toilet sliding door,EE8118
+1148,gym stuff,AF10D8
+1522,clothes container,E81974
+872,basketball hoop,84FA10
+1275,cooktop,C26ECE
+221,both tub,21B3A2
+33,fireplace heart,05084A
+937,spice racks,8EE39A
+913,wall fireplace,8B3AAA
+280,cabinet /w cluttered art,2AB2F0
+232,inside wall,236110
+420,transformer,400C68
+188,wall light,1CAB58
+1596,bathroom shelf,F36258
+1480,glass french door,E1B1D0
+250,lamp / other room,261FC4
+185,picutre,1C363A
+1452,gift,DD6CB8
+785,mirror door,77B5AA
+1579,deorative object,F0CAAE
+1347,ceiling door,CD699E
+1134,stack of papers,ACEE4C
+777,holy cross,767D5A
+871,door window,84D306
+990,computer screen,96F8AC
+738,while bottles,708AD4
+1286,arcade game,C41C3C
+1241,unknown - probably part of trellis -- maybe blinds,BD3F7A
+1224,compound wall,BAA7D0
+1227,lamps,BB1CEE
+987,plug,96838E
+771,round cushion,75931E
+1403,ceiling frame,D5F3CE
+1425,magazine,D94EAA
+1388,stair case,D3AA38
+61,rolling pin,094D62
+1014,shower knob,9AA19C
+273,wall statue,29A1AA
+1519,wal,E7A456
+882,sink / basin,868074
+348,celling borader,351198
+290,clothes bag,2C3954
+440,perfumes,431930
+690,heat,6938F4
+1412,kitchen counter support leg,D75328
+1340,window  frame,CC5858
+1290,glassdoor,C4B864
+935,window closet door,8E9586
+570,sticks,56EC44
+758,photo frame,73979C
+696,water pump,6A2330
+973,shower doorframe,946102
+206,stairs behind,1F6A0C
+173,flood,1A61C2
+350,columned perimeter,355FAC
+1444,shrine,DC3468
+1512,papers,E69310
+1640,fireplace /w art,FA1810
+41,canvas stand,06409A
+143,art / man statue,15CE96
+334,bath towel,32EF0C
+1296,cradenza,C5A2A0
+488,doorr frame,4A6B10
+50,column statue,079FF4
+609,water basin,5CDECA
+1351,moulidng,CE05C6
+1183,tablet computer,B46736
+202,artwork,1ECDE4
+1622,towel bar shelf,F7595C
+181,floor carpet,1B9A12
+215,wine cabinet,20C966
+1427,shower rail,D99CBE
+214,skirting board,20A25C
+142,playpen,15A78C
+1451,room door,DD45AE
+610,doorgrame,5D05D4
+152,makeup,172DF0
+1418,plant / art,D83D64
+415,sauna seating,3F4936
+426,bot,40F6A4
+846,handrail / other room,81030C
+1516,rocking horse,E72F38
+811,kitchen lower cabinet,7BACAE
+178,floor /other room,1B24F4
+1130,chair stand,AC5224
+902,wall pack,898D3C
+1326,towel box,CA35CC
+870,vessel sink,84ABFC
+1570,can,EF6B54
+1132,ceiling lattice,ACA038
+1299,backslash,C617BE
+595,ire place,5ABC3E
+352,divider,35ADC0
+729,pathway,6F2B7A
+1007,laundry,999056
+1382,tablecloth,D2BFFC
+1407,water dispenser,D68FF6
+1226,;photo,BAF5E4
+180,door frame wall entry,1B7308
+1389,plastic tarp,D3D142
+536,clothing stand,51BCF0
+1045,bathtab,9F5BD2
+753,apron,72D46A
+283,ceiling bedroom entry,2B280E
+1410,ashtray,D70514
+1127,control panel,ABDD06
+1234,ironing board,BC2E34
+52,exhaust pipe,07EE08
+17,rack of theater electronics,0297AA
+1611,canvas,F5ABEE
+1623,alarm clock,F78066
+1254,ceiling lower,BF3AFC
+487,yarn machine,4A4406
+1034,tarrace door,9DAE64
+631,stand/table,6039A6
+1408,statue base,D6B700
+1463,swing,DF1A26
+918,extractor fan,8BFDDC
+1167,crib,B1F696
+683,hallway wall,6827AE
+1320,side wall 2,C94B90
+817,side wall 5,7C96EA
+93,mens urinal,0E2EA2
+1406,stacked chairs,D668EC
+1630,patio floor,F891AC
+1175,stair steps,B32EE6
+1619,electrical controller,F6E43E
+103,kitchencounter,0FB506
+1233,rotunda railing,BC072A
+499,lamp table,4C187E
+1329,cabinet top,CAAAEA
+852,tray with bottles of soap and lotion,81ED48
+1030,speakers,9D123C
+939,fancy cabinet,8F31AE
+635,air vent,60D5CE
+789,sofa couch,7851D2
+1172,channel,B2B9C8
+373,wall sign,38E192
+1187,bench back,B5035E
+1473,baby changing station,E0A08A
+1507,paip,E5CFDE
+453,bed arm pillows,4514B2
+703,shower tap,6B3476
+866,axe,840FD4
+630,table shelf,60129C
+126,washcloth,1336EC
+573,coffee mug,576162
+330,iron panel,3252E4
+1468,door or window frame,DFDD58
+1112,coffe table,A99370
+388,dice,3B2B28
+549,title,53B872
+135,toilet seat,149646
+95,coffee table leg,0E7CB6
+1231,soft chair,BBB916
+51,icebox,07C6FE
+917,showerfloor,8BD6D2
+1119,floor outside,AAA4B6
+563,framing,55DAFE
+1062,wall patch,A1F37C
+495,decorative bowl,4B7C56
+919,dog bed,8C24E6
+1608,pool sticks,F536D0
+271,exericse equipment,295396
+196,remove floor behind,1DE3A8
+106,doorhandle,102A24
+238,dishrag,244B4C
+1626,behind,F7F584
+475,drinking fountain,486F8E
+337,bureau,33642A
+1207,night stand object,B81026
+1327,tub,CA5CD6
+1120,parapet,AACBC0
+1616,attic door,F66F20
+18,wall object,02BEB4
+861,closet door knob,834CA2
+1385,bathroom accessory,D3351A
+335,teddy,331616
+368,wall toilet paper,381E60
+637,coffee machine,6123E2
+974,excercise equipment / other room,94880C
+878,storage cabinet,85E44C
+338,toilet stall door,338B34
+834,bin of posters,7F2E94
+363,photos,375B2E
+411,push broom,3EAD0E
+1391,art stand,D41F56
+401,shelf /w art,3D26AA
+122,spiderman,129AC4
+647,mount,62AA46
+1272,ac unit,C1F9B0
+657,newspaper,6430AA
+1652,towel basket,FBEC88
+905,base rail,8A025A
+888,show pack,876AB0
+1012,coutertop,9A5388
+186,stair stepper,1C5D44
+1344,car batteries,CCF480
+1223,pad,BA80C6
+333,old fireplace,32C802
+1077,desk lamp,A43D12
+482,easychair,4980D4
+1453,wees,DD93C2
+4,tabletop box,009C28
+117,canopy,11D792
+1614,wall behind door,F6210C
+1104,cabinet / other room,A85B20
+1358,objects / other room,CF170C
+506,bar soap,4D29C4
+1043,column /otherroom,9F0DBE
+596,outer wall,5AE348
+940,wall control,8F58B8
+1534,desktop,E9EDEC
+357,fire screen,3670F2
+1222,fireplace counter,BA59BC
+119,bread,1225A6
+709,piano bench,6C1EB2
+1098,window shutter,A770E4
+768,draw,751E00
+1359,flower wage,CF3E16
+1044,ceiling/west wall,9F34C8
+633,decorative quilt,6087BA
+912,knife,8B13A0
+1042,projector opening,9EE6B4
+694,boader,69D51C
+1102,lights / deco,A80D0C
+1436,tv3,DAFC18
+13,desk clutter,01FB82
+1604,curatain,F49AA8
+1532,shoe shelves,E99FD8
+831,mixer,7EB976
+745,ceiling fixture,719C1A
+1325,scuplture,CA0EC2
+1586,countertop /otherroom,F1DBF4
+66,work bench,0A1094
+587,wall desk,5983EE
+77,shelf of cloth,0BBE02
+895,telescope,887BF6
+11,shower hoses,01AD6E
+86,step;,0D1D5C
+1214,bathtub platform,B9216C
+1201,sauna seats,B725EA
+747,bucker,71EA2E
+1074,ac,A3C7F4
+829,unknown / remove,7E6B62
+1018,art / statue,9B3DC4
+1460,dinner table,DEA508
+309,storage,2F1F12
+1331,unknown kitchen stuff,CAF8FE
+981,alamari,959952
+1578,cement drum,F0A3A4
+212,kitchen cupboard,205448
+367,platter,37F756
+1574,large chunk of art,F0077C
+354,dushbin,35FBD4
+968,couch pillows,939DD0
+1298,ceiling /other room,C5F0B4
+1015,object on cutting board,9AC8A6
+1292,show wall,C50678
+695,robes,69FC26
+1024,cusion,9C2800
+49,column /outside,0778EA
+838,hanging clothes,7FCABC
+102,newspaper basket,0F8DFC
+746,towels in a bowl,71C324
+347,detached door,34EA8E
+1506,big door,E5A8D4
+235,wall molding,23D62E
+618,bed / other room,5E3E24
+761,window /w pictures,740CBA
+1038,ceiling corridor,9E4A8C
+1163,rotunda base,B15A6E
+29,fire extinguisher',046C22
+1357,unicycle,CEF002
+1025,ceiling under balcony,9C4F0A
+1520,laundary machines,E7CB60
+3,nightstand /reflection,00751E
+1545,pile of magazines,EB9B5A
+982,wall of statue inset,95C05C
+891,cosmetic,87DFCE
+324,unknown item,3168A8
+988,side steps 4,96AA98
+651,kitchen table,63466E
+289,round footstool,2C124A
+1103,firewood holder,A83416
+75,flag,0B6FEE
+343,window frame and shelves,344E66
+537,towel ring,51E3FA
+503,window frame /reflection,4CB4A6
+1486,basket of something,E29C0C
+489,towel rod,4A921A
+711,window /reflection,6C6CC6
+889,paper storage,8791BA
+404,t.v,3D9BC8
+550,kitchen bell,53DF7C
+325,ceiling from another room,318FB2
+20,throw blanket,030CC8
+743,wall post,714E06
+602,sink pipe,5BCD84
+1355,workstation,CEA1EE
+74,room 1 wall,0B48E4
+736,storage space,703CC0
+184,mattress,1C0F30
+1128,kitchen handle,AC0410
+326,bed side table,31B6BC
+1376,lookout,D1D5C0
+1096,bag of sand,A722D0
+1302,walll,C68CDC
+879,kitchen countertop object',860B56
+1587,bed rest,F202FE
+1109,furniture 2,A91E52
+591,wall ac vent,5A2016
+931,dumbbells,8DF95E
+805,weight,7AC272
+1479,fixture,E18AC6
+678,llight,67647C
+668,show space,65DE18
+507,recessed cubby,4D50CE
+1249,oven hood,BE77CA
+567,counter doors,567726
+81,roof grill,0C5A2A
+770,shower dial,756C14
+998,riser,9830FC
+1315,plant ornament,C8885E
+795,floor stand,793C0E
+701,fruit,6AE662
+1489,frige,E3112A
+962,stairwell,92B394
+728,trash bag,6F0470
+1636,cups,F97BE8
+207,photo mount,1F9116
+560,drawers for clothes,5565E0
+1087,strange ceiling,A5C376
+443,bilow,438E4E
+241,ceilng,24C06A
+1085,bathroom towel,A57562
+1582,john,F13FCC
+1613,refrigerator cabinet,F5FA02
+669,fish picture,660522
+865,painting frame,83E8CA
+305,display table,2E82EA
+1415,round seat,D7C846
+1142,lower floor,AE269C
+353,lid,35D4CA
+600,bonsai tree,5B7F70
+1208,window3,B83730
+874,window2,854824
+1560,window1,EDE4F0
+269,window5,290582
+964,shower floor surround,9301A8
+416,folders,3F7040
+1581,decorative plant,F118C2
+1023,cooker unit,9C00F6
+901,towel holder,896632
+693,laundrybag,69AE12
+564,bathroom utencil,560208
+1236,wine bottles,BC7C48
+535,high shelf,5195E6
+1535,loveseat,EA14F6
+1592,couch pillow,F2C630
+552,ceiling molding,542D90
+1550,firewook,EC5E8C
+1517,door /otherroom,E75642
+1248,toaster?,BE50C0
+82,foodstand,0C8134
+1154,weight bench,AFFB14
+403,floor / room above,3D74BE
+933,mini fridge,8E4772
+165,bars,192972
+1121,lion,AAF2CA
+24,cuddly toy,03A8F0
+1008,toilet stall,99B760
+517,copier machine,4ED732
+1432,raised platform,DA5FF0
+26,bell,03F704
+462,fireextinctioms,46740C
+774,table vase,76083C
+444,bedroom ceiling,43B558
+1496,ceiling \other room,E42270
+418,chair parts,3FBE54
+237,door / window,242442
+1461,closet mirror wall,DECC12
+654,beam across top of arch,63BB8C
+614,fireplace utensils,5DA1FC
+89,liight,0D927A
+1211,self side,B8AC4E
+832,kitchen faucet,7EE080
+1475,candle holder,E0EE9E
+960,mirror/other room,926580
+593,hall top,5A6E2A
+1082,decoration / other room,A50044
+1274,shower hose,C247C4
+200,bottle of detergent,1E7FD0
+362,box opening,373424
+1229,hunting trohpy,BB6B02
+114,rack with pool cues,116274
+1221,stack,BA32B2
+8,bed stand,013850
+109,planter curb,109F42
+951,garage door motor,910626
+1210,entry,B88544
+944,a-frame sign,8FF4E0
+603,cuboid,5BF48E
+1197,shelf with jars,B689C2
+313,wall top,2FBB3A
+124,window4,12E8D8
+249,bath faucet,25F8BA
+42,statue / art,0667A4
+949,cabinet /w clutter,90B812
+1050,workout bike,A01F04
+558,closet area for hanging clothes,5517CC
+649,vase \other room,62F85A
+424,art / muscle shell,40A890
+662,center island,64F3DC
+436,dedore,427D08
+802,dome roof,7A4D54
+1490,chair /w clutter,E33834
+53,basket of objects (popcorn?),081512
+459,outer side wall,45FEEE
+718,top floor,6D7E0C
+773,pelt,75E132
+673,washer-dryer,66A14A
+952,yellow egg shaped vase,912D30
+1051,entry table,A0460E
+1199,domino decoration,B6D7D6
+1481,pc tower,E1D8DA
+1635,unknown/ other room,F954DE
+1244,bathroom glass,BDB498
+447,chanellier,442A76
+712,makeup area,6C93D0
+133,fireplace mirror,144832
+1576,jug,F05590
+1270,bathroom window,C1AB9C
+724,falling light,6E6848
+639,snow globe,6171F6
+121,unknown kitchen appliance,1273BA
+1264,boxes /w books,C0C160
+1184,alarm,B48E40
+619,electirc outlet,5E652E
+1055,sauna floor,A0E236
+1363,picture /otherroom,CFDA3E
+1319,garage door railing,C92486
+319,other ceiling,30A576
+346,lightbox frame,34C384
+456,air hole,4589D0
+1634,mantel,F92DD4
+97,cooker,0ECACA
+1500,partial,E4BE98
+1061,amplifier,A1CC72
+820,emergency exit,7D0C08
+750,barbecue,725F4C
+851,unkown / other room,81C63E
+22,bath sink,035ADC
+804,spa bench,7A9B68
+46,handsoap,0703CC
+520,folding stand,4F4C50
+528,table plant,5084A0
+1019,hose outlet,9B64CE
+784,theater stage,778EA0
+349,bar cabinet,3538A2
+398,washer and dryer,3CB18C
+877,door trim molding,85BD42
+1498,paintings,E47084
+716,unknown wall part,6D2FF8
+1537,wooden balcony,EA630A
+144,shelves with shoes,15F5A0
+1095,stair landing,A6FBC6
+1182,rack of excercise weights,B4402C
+1590,unknown - hot tub?,F2781C
+493,wall window,4B2E42
+799,ceiling smoke detector,79D836
+1571,couch type chair,EF925E
+978,scales,952434
+1273,chair rail,C220BA
+502,kitchen backsplash,4C8D9C
+285,shelves / other room,2B7622
+118,tools,11FE9C
+497,hoses for chemical tank,4BCA6A
+1386,wall behind / remove,D35C24
+995,sauna heat rocks,97BBDE
+120,camera,124CB0
+1396,curtain lighter,D4E288
+23,table decor,0381E6
+393,brochure,3BEE5A
+220,flowerwage,218C98
+1178,drill,B3A404
+257,book stand,27310A
+281,china cabinet,2AD9FA
+1156,remove / behind,B04928
+45,rotunda wall,06DCC2
+372,stone support structure,38BA88
+268,dresser decor,28DE78
+847,roof / other room,812A16
+1021,elliptical,9BB2E2
+341,furnace,340052
+1036,foosball table,9DFC78
+1597,maracas,F38962
+1309,box of fruit,C79E22
+825,window screen,7DCF3A
+898,door tag,88F114
+1266,fire pit,C10F74
+1035,box of tissues,9DD56E
+1593,portal,F2ED3A
+99,yoga mat,0F18DE
+364,toy duck,378238
+1225,motorcycle,BACEDA
+1285,computer tower,C3F532
+10,frame for door,018664
+1295,theater screen,C57B96
+240,swimming pool,249960
+666,shelf with clutter,659004
+197,spice rack,1E0AB2
+1513,bed small,E6BA1A
+924,object/other room,8CE818
+198,dinnerware,1E31BC
+1090,storage shelves,A63894
+1057,tanning bed,A1304A
+1455,grid door,DDE1D6
+35,background chair,05565E
+597,boarder,5B0A52
+582,closte,58C0BC
+1488,doorframe / upstairs room,E2EA20
+88,rolling cart,0D6B70
+1067,box of tissue,A2B6AE
+242,door nob,24E774
+1158,floor \other room,B0973C
+1240,table w/ clutter,BD1870
+262,table vase soil,27F43C
+1200,light box,B6FEE0
+1484,wines,E24DF8
+702,sliding glass door,6B0D6C
+1250,toilet handle,BE9ED4
+1551,bath deco,EC8596
+327,shower hose/head,31DDC6
+14,shower case,02228C
+125,mortar,130FE2
+1466,watering can,DF8F44
+293,scarf,2CAE72
+423,softer,408186
+548,soap dish cubby,539168
+1013,paintintg,9A7A92
+149,cleaning clutter,16B8D2
+312,fireplace tool set,2F9430
+943,table stand,8FCDD6
+1417,shower valve,D8165A
+179,long sofa,1B4BFE
+264,wall soap shelf,284250
+1079,ceiling inset for fan,A48B26
+288,beanbag chair,2BEB40
+218,door bottom rail,213E84
+1196,sowing machine,B662B8
+655,couch chair,63E296
+543,tabletop trinket,52CE36
+524,ceilling,4FE878
+800,flowerstand,79FF40
+1123,wall stand,AB40DE
+1431,shower cabin,DA38E6
+450,shower-bath cabinet,449F94
+650,teddy bear,631F64
+1093,foor lamp,A6ADB2
+1368,water fountain,D09D70
+282,elephant sculpture,2B0104
+884,grate,86CE88
+69,chicken,0A85B2
+1056,bathroom fan,A10940
+1655,roomba,FC61A6
+843,planter,808DEE
+1356,controls,CEC8F8
+457,nightstand / other room,45B0DA
+1099,worktop,A797EE
+1164,steps wall,B18178
+1147,door fireplace wall,AEE9CE
+1137,floor / upstairs room,AD636A
+78,oven and stove,0BE50C
+259,chest drawer,277F1E
+823,door outside,7D8126
+957,fireplace \other room,91F062
+79,hammock,0C0C16
+642,dartboard,61E714
+55,fireplace brush,086326
+1503,drum,E533B6
+308,rotunda ceiling,2EF808
+1459,ceiling light fixture connection,DE7DFE
+1139,stair fencing,ADB17E
+629,piano stool,5FEB92
+158,swing door,18182C
+1659,bathtub utencils,FCFDCE
+233,access area,23881A
+1483,exercise mat roll,E226EE
+792,ceiling  duct,78C6F0
+427,motorbike,411DAE
+1515,floor elevator,E7082E
+1618,kitchen countertop items,F6BD34
+538,entertainment set,520B04
+1053,shower curtain bar,A09422
+782,bedroom entry walls,77408C
+601,oven vent,5BA67A
+1040,shower floor /otherroom,9E98A0
+6,washing bowl,00EA3C
+1198,desert plate,B6B0CC
+929,fuse panel,8DAB4A
+855,barbers chair,826266
+408,diploma,3E37F0
+219,wall behind stove,21658E
+830,window6,7E926C
+1620,ceiling /otherroom,F70B48
+304,ventilation hood,2E5BE0
+1430,dirt ground,DA11DC
+442,awning,436744
+40,stiarcase step,061990
+504,rack of weights,4CDBB0
+172,shower tub,1A3AB8
+1076,washing powder,A41608
+612,toilet cleaner,5D53E8
+127,soap displensor shelf in shower,135DF6
+1549,window or door,EC3782
+140,storage boxes,155978
+301,closet storage area,2DE6C2
+339,stationary bike,33B23E
+1332,bedding,CB2008
+1065,stair handrail,A2689A
+21,room divider,0333D2
+387,window frames,3B041E
+1548,wall electrics,EC1078
+584,other step,590ED0
+25,tabletop objects,03CFFA
+85,foosball game table,0CF652
+1105,wall showcase,A8822A
+244,kitchen utencil,253588
+1125,towels in a basket,AB8EF2
+756,lamp stand,734988
+256,toy giraffe,270A00
+1583,big door frame,F166D6
+1603,unknown / probably shrubbery,F4739E
+1565,wooden wall paneling,EEA822
+329,bedstead,322BDA
+1037,fire dish,9E2382
+1191,tray with tea cups,B59F86
+1467,television table,DFB64E
+1318,tissues,C8FD7C
+1482,sitting area,E1FFE4
+1511,wall vent,E66C06
+454,utensils,453BBC
+734,pip,6FEEAC
+1204,fireplace wall,B79B08
+910,stonework,8AC58C
+1066,bottom of stairs,A28FA4
+175,star,1AAFD6
+993,art / deer statue,976DCA
+569,unknown objects,56C53A
+162,wall side,18B454
+1645,shower glass /shifted,FADB42
+201,toilet stall partition,1EA6DA
+1215,ceiling design,B94876
+1528,conference table,E903B0
+766,edge,74CFEC
+1568,electrical box,EF1D40
+1194,entrance,B614A4
+883,gap,86A77E
+279,garage door opener motor,2A8BE6
+1402,lamp base,D5CCC4
+715,racks,6D08EE
+275,stringer,29EFBE
+58,supporting structure,08D844
+1419,typewriter,D8646E
+265,walls,28695A
+1561,washbasin top,EE0BFA

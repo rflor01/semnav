@@ -5,7 +5,7 @@ import time
 # LICENSE file in the root directory of this source tree.
 
 from typing import Optional, Tuple
-
+import os
 import torch
 from habitat import logger
 from habitat.utils import profiling_wrapper
@@ -13,7 +13,8 @@ from torch import Tensor
 from torch import nn as nn
 from torch import optim as optim
 import cv2
-
+import numpy as np
+import matplotlib.pyplot as plt
 class ILAgent(nn.Module):
     def __init__(
         self,
@@ -30,6 +31,8 @@ class ILAgent(nn.Module):
     ) -> None:
 
         super().__init__()
+
+        #self.contador = 0
 
         self.actor_critic = actor_critic
 
@@ -89,9 +92,7 @@ class ILAgent(nn.Module):
 
 
         for batch in data_generator:
-           # for image in batch["observations"]["semantic_rgb"]:
-           #     cv2.imshow('Logo OpenCV',image.detach().cpu().numpy())
-           #     cv2.waitKey(500)
+
             # Reshape to do in a single forward pass for all steps
 
             (logits, rnn_hidden_states, dist_entropy) = self.actor_critic(
@@ -181,6 +182,8 @@ class SemanticILAgent(nn.Module):
 
         super().__init__()
 
+        #self.contador = 0
+
         self.actor_critic = actor_critic
 
         self.num_mini_batch = num_mini_batch
@@ -242,8 +245,9 @@ class SemanticILAgent(nn.Module):
            # for image in batch["observations"]["semantic_rgb"]:
            #     cv2.imshow('Logo OpenCV',image.detach().cpu().numpy())
            #     cv2.waitKey(500)
+
             # Reshape to do in a single forward pass for all steps
-            constant = 10255
+            constant = 9994
 
             observations_mult = batch["observations"]["semantic"]*constant
 
@@ -255,6 +259,27 @@ class SemanticILAgent(nn.Module):
 
 
             batch["observations"]["semantic_rgb"] = rgb_matrix
+           # # Uncomment the following code if you want to obtain train images for a dataset
+           #  for num_im in range(batch["observations"]["semantic_rgb"].size(0)):
+           # #     cv2.imshow('Logo OpenCV',image.detach().cpu().numpy())
+           # #     cv2.waitKey(500)
+           #
+           #
+           #      self.contador += 1
+           #      ruta_imagen_rgb_sem =  str(self.contador) + "semantic.png"
+           #      ruta_imagen_rgb_sem = os.path.join("train_images_depthcorr","semantic", ruta_imagen_rgb_sem)
+           #      ruta_imagen_depth = str(self.contador) + "depth.png"
+           #      ruta_imagen_depth = os.path.join("train_images_depthcorr","depth", ruta_imagen_depth)
+           #      image = batch["observations"]["semantic_rgb"][num_im]
+           #      plt.imsave(ruta_imagen_rgb_sem, image.detach().cpu().numpy())
+           #      depth_image = batch["observations"]["depth"][num_im]*65535
+           #      cv2.imwrite(ruta_imagen_depth, depth_image.detach().cpu().numpy().astype(np.uint16))
+           #      ruta_imagen_rgb = str(self.contador) + "rgb.png"
+           #      ruta_imagen_rgb = os.path.join("train_images_depthcorr","rgb", ruta_imagen_rgb)
+           #      image = batch["observations"]["rgb"][num_im]
+           #      plt.imsave(ruta_imagen_rgb, image.detach().cpu().numpy())
+           #      print(self.contador)
+
 
             (logits, rnn_hidden_states, dist_entropy) = self.actor_critic(
                 batch["observations"],
