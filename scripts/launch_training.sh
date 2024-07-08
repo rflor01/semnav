@@ -18,8 +18,8 @@ export OMP_NUM_THREADS=$((num_cpus/num_gpus))
 
 config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
-TENSORBOARD_DIR="tb/semanticsensor_woutDINO_correctlr"
-CHECKPOINT_DIR="data/checkpoints/semanticsensor_woutDINO_correctlr"
+TENSORBOARD_DIR="tb/new_modified_dataset"
+CHECKPOINT_DIR="data/checkpoints/new_modified_dataset"
 INFLECTION_COEF=3.234951275740812
 
 echo "In ObjectNav IL DDP"
