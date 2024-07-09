@@ -264,7 +264,7 @@ class SemanticILAgent(nn.Module):
            #     cv2.imshow('Logo OpenCV',image.detach().cpu().numpy())
            #     cv2.waitKey(500)
 
-
+                print("Directorio ", os.getcwd())
                 self.contador += 1
                 ruta_imagen_rgb_sem =  str(self.contador) + "semantic.png"
                 ruta_imagen_rgb_sem = os.path.join("train_images_depthcorr","semantic", ruta_imagen_rgb_sem)
