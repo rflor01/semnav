@@ -5,12 +5,12 @@ WANDB_ENABLED: True
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/new_modified_dataset"
-VIDEO_DIR: "new_modified_dataset"
+TENSORBOARD_DIR: "tb/debug"
+VIDEO_DIR: "debug"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/checkpoints/new_modified_dataset"
-NUM_ENVIRONMENTS: 20
-CHECKPOINT_FOLDER: "data/checkpoints/new_modified_dataset"
+EVAL_CKPT_PATH_DIR: "data/checkpoints/debug"
+NUM_ENVIRONMENTS: 2
+CHECKPOINT_FOLDER: "data/checkpoints/debug"
 TRAINER_NAME: "pirlnav-il"
 
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
