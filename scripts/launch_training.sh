@@ -21,7 +21,7 @@ DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
 TENSORBOARD_DIR="tb/debug2"
 CHECKPOINT_DIR="data/checkpoints/debug2"
 INFLECTION_COEF=3.234951275740812
-SENSORS= ["RGB_SENSOR","SEMANTIC_SENSOR"]
+SENSORS=["RGB_SENSOR","SEMANTIC_SENSOR"]
 
 echo "In ObjectNav IL DDP"
 torchrun --nproc_per_node $num_gpus run.py \
@@ -33,6 +33,7 @@ torchrun --nproc_per_node $num_gpus run.py \
     NUM_ENVIRONMENTS 24 \
     IL.BehaviorCloning.num_mini_batch 2\
     EVAL.USE_CKPT_CONFIG True\
+    SENSORS $SENSORS\
     RL.DDPPO.force_distributed True \
     TASK_CONFIG.DATASET.DATA_PATH "$DATA_PATH/{split}/{split}.json.gz" \
     TASK_CONFIG.TASK.INFLECTION_WEIGHT_SENSOR.INFLECTION_COEF $INFLECTION_COEF \
