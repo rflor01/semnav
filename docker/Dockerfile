@@ -51,7 +51,7 @@ RUN conda create -n habitat python=3.7 cmake=3.14.0
 
 # Setup habitat-sim
 RUN git clone --depth 1 --branch v0.2.2 https://github.com/facebookresearch/habitat-sim.git
-RUN /bin/bash -c ". activate habitat; cd habitat-sim; pip install -r requirements.txt; python setup.py install --headless"
+RUN /bin/bash -c ". activate habitat; cd habitat-sim; pip install -r requirements.txt; python setup.py install --withbullet --headless"
 
 # Install torch
 RUN /bin/bash -c ". activate habitat; pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url  \
