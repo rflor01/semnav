@@ -330,7 +330,7 @@ class ILEnvDDPTrainer(PPOTrainer):
         # semantic_txt_path = [None] * self.envs.num_envs
         for i in range(self.envs.num_envs):
             print("First semantic values")
-            print(semantic_rgb_values[step_batch["observations"]['semantic'][i].long()].squeeze(2))
+            print(step_batch["observations"]['semantic'][i])
         # for i in range(self.envs.num_envs):
         #     scene_id[i] = current_episode[i].scene_id
         #     scene_cut_id = re.findall(self.gss.patron, scene_id[i])
