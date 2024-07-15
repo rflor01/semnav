@@ -61,6 +61,6 @@ DATASET:
   TYPE: ObjectNav-v2
   SPLIT: train
   DATA_PATH: "data/datasets/objectnav/objectnav_hm3d_hd/{split}/{split}.json.gz"
-  SCENES_DIR: "data/modify_scene_datasets/modify_scene_datasets"
+  SCENES_DIR: "data/scene_datasets/semantics"
   MAX_EPISODE_STEPS: 500
 
