@@ -262,6 +262,7 @@ class SemanticILAgent(nn.Module):
             batch["observations"]["semantic_rgb"] = rgb_matrix
             for num_im in range(batch["observations"]["semantic_rgb"].size(0)):
                 print(batch["observations"]["semantic"][num_im])
+                print(batch["observations"]["depth"][num_im])
            # # Uncomment the following code if you want to obtain train images for a dataset
            #  for num_im in range(batch["observations"]["semantic_rgb"].size(0)):
            # #     cv2.imshow('Logo OpenCV',image.detach().cpu().numpy())
