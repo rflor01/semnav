@@ -121,6 +121,8 @@ class ILEnvDDPTrainer(PPOTrainer):
         #This line changes the configuration to the one the ckpt was done, not interesting for us in this moment
         if resume_state is not None:
             #None
+            resume_state["config"]['NUM_UPDATES'] = 60000000
+            resume_state["config"]['NUM_CHECKPOINTS'] = 1000
             self.config: Config = resume_state["config"]
         #Distributed is in order to parallel the work, it seems to be necessary
         if self.config.RL.DDPPO.force_distributed:
