@@ -708,7 +708,7 @@ class ILEnvDDPTrainer(PPOTrainer):
         batch = batch_obs(
             observations, device=self.device, cache=self._obs_batching_cache
         )
-        constant = 10255
+        constant = 9994
 
         observations_mult = batch["semantic"] * constant
 
