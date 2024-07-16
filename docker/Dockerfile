@@ -66,8 +66,9 @@ RUN git clone --depth 1 --branch v0.2.2 https://github.com/facebookresearch/habi
 
 # Modern installation approach
 RUN /bin/bash -c ". activate habitat; pip install pyyaml==5.4.1"
-RUN /bin/bash -c ". activate habitat; cd habitat-lab; pip install build setuptools wheel; python -m build; pip install dist/*.whl"
-
+RUN /bin/bash -c ". activate habitat; cd habitat-lab; pip install build setuptools wheel"
+RUN /bin/bash -c ". activate habitat; cd habitat-lab; python -m build"
+RUN /bin/bash -c ". activate habitat; cd habitat-lab; pip install dist/*.whl"
 RUN /bin/bash -c ". activate habitat; pip install wandb"
 
 # Silence habitat-sim logs
