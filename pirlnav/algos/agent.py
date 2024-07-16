@@ -248,7 +248,6 @@ class SemanticILAgent(nn.Module):
 
             # Reshape to do in a single forward pass for all steps
             constant = 9994
-            print(batch["observations"]["rgb"])
             print(batch["observations"]["semantic"])
             observations_mult = batch["observations"]["semantic"]*constant
 
