@@ -61,5 +61,5 @@ DATASET:
   TYPE: ObjectNav-v2
   SPLIT: train
   DATA_PATH: "data/datasets/objectnav/objectnav_hm3d_hd/{split}/{split}.json.gz"
-  SCENES_DIR: "data/scene_datasets/semantics/hm3d"
+  SCENES_DIR: "data/scene_datasets/semantics"
 
