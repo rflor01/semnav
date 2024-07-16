@@ -18,8 +18,8 @@ export OMP_NUM_THREADS=$((num_cpus/num_gpus))
 
 config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d_hd"
-TENSORBOARD_DIR="tb/debug2"
-CHECKPOINT_DIR="data/checkpoints/debug2"
+TENSORBOARD_DIR="tb/debug3"
+CHECKPOINT_DIR="data/checkpoints/debug3"
 INFLECTION_COEF=3.234951275740812
 
 
