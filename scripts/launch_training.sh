@@ -17,9 +17,9 @@ export HABITAT_SIM_LOG=quiet
 export OMP_NUM_THREADS=$((num_cpus/num_gpus))
 
 config="configs/experiments/il_objectnav.yaml"
-DATA_PATH="data/datasets/objectnav/objectnav_hm3d/objectnav_hm3d_hd"
-TENSORBOARD_DIR="tb/no_pretrained_encoder_zeuslr0.0001"
-CHECKPOINT_DIR="data/checkpoints/no_pretrained_encoder_zeuslr0.0001"
+DATA_PATH="data/new_datasets/objectnav/objectnav_hm3d/objectnav_hm3d_hd"
+TENSORBOARD_DIR="tb/debug4"
+CHECKPOINT_DIR="data/checkpoints/debug4"
 INFLECTION_COEF=3.234951275740812
 
 

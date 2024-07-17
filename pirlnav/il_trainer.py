@@ -178,7 +178,10 @@ class ILEnvDDPTrainer(PPOTrainer):
 
         if rank0_only() and self.config.VERBOSE:
             logger.info(f"config: {self.config}")
-
+        print("Ey, que se está haciendo bien")
+        print(self.config.TASK_CONFIG.DATASET.DATA_PATH)
+        print(self.config.TASK_CONFIG.DATASET.CONTENT_SCENES)
+        print(self.config.SCENE_DATASET)
         profiling_wrapper.configure(
             capture_start_step=self.config.PROFILING.CAPTURE_START_STEP,
             num_steps_to_capture=self.config.PROFILING.NUM_STEPS_TO_CAPTURE,
