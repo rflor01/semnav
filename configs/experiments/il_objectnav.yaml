@@ -1,22 +1,22 @@
 BASE_TASK_CONFIG_PATH: "configs/tasks/objectnav_hm3d.yaml"
 CMD_TRAILING_OPTS: ["TASK_CONFIG.ENVIRONMENT.ITERATOR_OPTIONS.MAX_SCENE_REPEAT_STEPS", "50000"]
 ENV_NAME: "SimpleRLEnv"
-WANDB_ENABLED: False
+WANDB_ENABLED: True
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/debug4"
-VIDEO_DIR: "debug4"
+TENSORBOARD_DIR: "tb/rerunpenelopelr0.0001pretrained"
+VIDEO_DIR: "rerunpenelopelr0.0001pretrained"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/checkpoints/debug4"
-NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "data/checkpoints/debug4"
+EVAL_CKPT_PATH_DIR: "data/checkpoints/rerunpenelopelr0.0001pretrained"
+NUM_ENVIRONMENTS: 5
+CHECKPOINT_FOLDER: "data/checkpoints/rerunpenelopelr0.0001pretrained"
 TRAINER_NAME: "pirlnav-il"
 
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 #SENSORS: ["RGB_SENSOR",]
 #SENSORS: ["SEMANTIC_SENSOR"]
-NUM_UPDATES: 32000000
+NUM_UPDATES: 3200000000
 LOG_INTERVAL: 10
 NUM_CHECKPOINTS: 30000
 
@@ -50,7 +50,7 @@ RL:
 POLICY:
   CRITIC:
     no_critic: True
-#  RGB_ENCODER:
-#    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
-#  SEMANTIC_RGB_ENCODER:
-#    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
+  RGB_ENCODER:
+    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
+  SEMANTIC_RGB_ENCODER:
+    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
