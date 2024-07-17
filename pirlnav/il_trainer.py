@@ -275,7 +275,7 @@ class ILEnvDDPTrainer(PPOTrainer):
         #     observations[i]["semantic_rgb"] = matriz_rgb[i,:,:,:]
         ###########
         #########
-
+        print(self.envs.current_episodes())
         # current_episode = self.envs.current_episodes() #Esto no actualiza posiciones de ningún tipo, es idempotente
         # scene_id = [None] * self.envs.num_envs
         # for i in range(self.envs.num_envs):
