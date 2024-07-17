@@ -119,11 +119,11 @@ class ILEnvDDPTrainer(PPOTrainer):
 
         #Unless is there is no checkpoint, in that case we will have nothing to unfreeze
         #This line changes the configuration to the one the ckpt was done, not interesting for us in this moment
-        # if resume_state is not None:
-        #     #None
-        #     resume_state["config"]['NUM_UPDATES'] = 60000000
-        #     resume_state["config"]['NUM_CHECKPOINTS'] = 1000
-        #     self.config: Config = resume_state["config"]
+        if resume_state is not None:
+            #None
+            # resume_state["config"]['NUM_UPDATES'] = 60000000
+            # resume_state["config"]['NUM_CHECKPOINTS'] = 1000
+            self.config: Config = resume_state["config"]
         #Distributed is in order to parallel the work, it seems to be necessary
         if self.config.RL.DDPPO.force_distributed:
             self._is_distributed = True
@@ -275,10 +275,10 @@ class ILEnvDDPTrainer(PPOTrainer):
         #     observations[i]["semantic_rgb"] = matriz_rgb[i,:,:,:]
         ###########
         #########
-        current_episode = self.envs.current_episodes()
-        for i in range(self.envs.num_envs):
-            print("ey")
-            print(current_episode[i].scene_id)
+        # current_episode = self.envs.current_episodes()
+        # for i in range(self.envs.num_envs):
+        #     print("ey")
+        #     print(current_episode[i].scene_id)
         # current_episode = self.envs.current_episodes() #Esto no actualiza posiciones de ningún tipo, es idempotente
         # scene_id = [None] * self.envs.num_envs
         # for i in range(self.envs.num_envs):
