@@ -2,15 +2,15 @@ BASE_TASK_CONFIG_PATH: "configs/tasks/objectnav_hm3d.yaml"
 CMD_TRAILING_OPTS: ["TASK_CONFIG.ENVIRONMENT.ITERATOR_OPTIONS.MAX_SCENE_REPEAT_STEPS", "50000"]
 ENV_NAME: "SimpleRLEnv"
 WANDB_ENABLED: True
-SIMULATOR_GPU_ID: 1
-TORCH_GPU_ID: 1
+SIMULATOR_GPU_ID: 0
+TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/debug3"
-VIDEO_DIR: "debug"
+TENSORBOARD_DIR: "tb/no_pretrained_encoder_zeuslr0.0001"
+VIDEO_DIR: "no_pretrained_encoder_zeuslr0.0001"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/checkpoints/debug3"
+EVAL_CKPT_PATH_DIR: "data/checkpoints/no_pretrained_encoder_zeuslr0.0001"
 NUM_ENVIRONMENTS: 6
-CHECKPOINT_FOLDER: "data/checkpoints/debug3"
+CHECKPOINT_FOLDER: "data/checkpoints/no_pretrained_encoder_zeuslr0.0001"
 TRAINER_NAME: "pirlnav-il"
 
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
@@ -18,7 +18,7 @@ SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 #SENSORS: ["SEMANTIC_SENSOR"]
 NUM_UPDATES: 32000000
 LOG_INTERVAL: 10
-NUM_CHECKPOINTS: 3000
+NUM_CHECKPOINTS: 30000
 
 
 # Force PyTorch to be single threaded as
@@ -50,7 +50,7 @@ RL:
 POLICY:
   CRITIC:
     no_critic: True
-  RGB_ENCODER:
-    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
-  SEMANTIC_RGB_ENCODER:
-    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
+#  RGB_ENCODER:
+#    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
+#  SEMANTIC_RGB_ENCODER:
+#    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"

@@ -29,7 +29,7 @@ torchrun --nproc_per_node $num_gpus run.py \
     --run-type train \
     TENSORBOARD_DIR $TENSORBOARD_DIR \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
-    NUM_UPDATES 320000 \
+    NUM_UPDATES 3200000000 \
     NUM_ENVIRONMENTS 2 \
     IL.BehaviorCloning.num_mini_batch 2\
     EVAL.USE_CKPT_CONFIG False\
