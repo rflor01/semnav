@@ -59,7 +59,7 @@ TASK:
     SUCCESS_DISTANCE: 0.1
 
 DATASET:
-  TYPE: ObjectNav-v2
+  TYPE: ObjectNav-v1
   SPLIT: train
   DATA_PATH: "data/new_datasets/objectnav/objectnav_hm3d/objectnav_hm3d_hd/{split}/{split}.json.gz"
   SCENES_DIR: "data/modify_scene_datasets/modify_scene_datasets"
