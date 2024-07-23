@@ -8,9 +8,9 @@ VIDEO_OPTION: [disk]
 TENSORBOARD_DIR: "tb/debug5"
 VIDEO_DIR: "debug5"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/checkpoints/debug5"
+EVAL_CKPT_PATH_DIR: "data/checkpoints/debug6"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "data/checkpoints/debug5"
+CHECKPOINT_FOLDER: "data/checkpoints/debug6"
 TRAINER_NAME: "pirlnav-il"
 
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]

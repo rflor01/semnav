@@ -11,9 +11,9 @@ fi
 # Get number of CPUs
 num_cpus=$(nproc)
 
-export GLOG_minloglevel=2
-export MAGNUM_LOG=quiet
-export HABITAT_SIM_LOG=quiet
+#export GLOG_minloglevel=2
+#export MAGNUM_LOG=quiet
+#export HABITAT_SIM_LOG=quiet
 export OMP_NUM_THREADS=$((num_cpus/num_gpus))
 
 config="configs/experiments/il_objectnav.yaml"
