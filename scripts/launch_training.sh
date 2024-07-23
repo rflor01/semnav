@@ -18,8 +18,8 @@ export OMP_NUM_THREADS=$((num_cpus/num_gpus))
 
 config="configs/experiments/il_objectnav.yaml"
 DATA_PATH="/home/rafa/code/data/datasets/objectnav/objectnav_hm3d/objectnav_hm3d_hd"
-TENSORBOARD_DIR="tb/semantic_rgb_lr0.0001dgx_pretrainedencoder"
-CHECKPOINT_DIR="/home/rafa/code/data/checkpoints/semantic_rgb_lr0.0001dgx_pretrainedencoder"
+TENSORBOARD_DIR="tb/semantic_rgb_lr0.001dgx_pretrainedencoder"
+CHECKPOINT_DIR="/home/rafa/code/data/checkpoints/semantic_rgb_lr0.001dgx_pretrainedencoder"
 INFLECTION_COEF=3.234951275740812
 
 
