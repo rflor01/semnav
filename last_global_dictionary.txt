@@ -1,0 +1,1659 @@
+wall	1134
+door	200
+ceiling	1425
+floor	880
+picture	757
+window	553
+chair	837
+doorframe	1525
+remove	1255
+pillow	1316
+object	315
+light	965
+cabinet	1132
+curtain	249
+table	489
+plant	1588
+decoration	175
+window frame	1074
+lamp	1578
+mirror	1596
+towel	1614
+sink	1247
+shelf	150
+couch	830
+dining chair	162
+bed	123
+nightstand	331
+toilet	1016
+sofa chair	1508
+column	1048
+handrail	1593
+stair	899
+stool	1185
+armchair	114
+kitchen cabinet	1157
+vase	898
+cushion	248
+tv	554
+door frame	744
+unknown	727
+pot	174
+desk	101
+painting	561
+roof	1381
+box	326
+shower wall	569
+coffee table	1493
+countertop	129
+bench	342
+wall frame	1248
+trash can	677
+fireplace	1411
+clothes	211
+pillar	295
+bathtub	1128
+ceiling duct	1602
+bath cabinet	1490
+book	1325
+beam	613
+vent	1263
+shower floor	198
+faucet	230
+photo	1228
+delete	1554
+toilet paper	1373
+counter	451
+fan	686
+step	753
+table lamp	1363
+wall / other room	983
+washbasin	379
+rail	1090
+side table	767
+decor	1595
+shelves	1651
+statue	1409
+dresser	1521
+stairs	1053
+rug	1384
+ottoman	1540
+round table	1438
+bottle	887
+kitchen counter	313
+windowframe	1347
+office chair	81
+frame	271
+refrigerator	674
+bookshelf	862
+end table	939
+wardrobe	716
+toiletry	1565
+windowsill	870
+pipe	1075
+monitor	104
+stand	1346
+drawers	273
+dining table	584
+container	913
+light switch	179
+skylight	1219
+purse	1512
+wall /otherroom	193
+sofa	1534
+books	828
+doorway	1012
+railing	9
+wainscotting	1653
+basket	1018
+closet	482
+arch	194
+chandelier	1292
+oven	979
+clock	883
+footstool	1453
+stove	682
+trashcan	751
+drawer	1022
+bathroom countertop object	124
+washing machine	1107
+shower curtain	860
+rack	375
+art	690
+firealarm	1476
+bin	255
+chest	555
+microwave	195
+blinds	254
+bowl	807
+ceiling pipe	844
+tree	1224
+vanity	1161
+ceiling fan	952
+tissue box	1432
+desk chair	1153
+plate	1557
+tv stand	650
+shoes	1420
+heater	447
+bedframe	586
+headboard	945
+post	1182
+swivel chair	1079
+pedestal	947
+fence	23
+ceiling pipes	120
+pew	396
+decorative object	390
+bucket	521
+mask	724
+candle	1649
+flowerpot	8
+speaker	1352
+seat	1249
+sign	356
+air conditioner	1403
+shower curtain rod	869
+unknown / other room	1115
+flowers	389
+clutter	1572
+pillows	204
+plants	223
+wall \other room	284
+fire extinguisher	1605
+towels	772
+curtains	134
+curtain rod	1641
+kitchen countertop object	89
+mat	62
+flower	904
+sculpture	1330
+shelving	72
+wall/other room	1082
+knickknack	921
+printer	97
+wall behind	1377
+telephone	1460
+bedside table	1400
+moulding	1044
+handbag	1296
+wall /other room	1469
+blanket	50
+shower	1524
+steps	397
+switch	1576
+toilet paper dispenser	1582
+objects	1315
+handle	414
+frame /outside	1354
+screen	126
+shower head	1167
+baracade	224
+picture frame	750
+soap	347
+staircase railing	525
+keyboard	1180
+thermostat	1658
+radiator	419
+kitchen island	1529
+paper towel	170
+wall decoration	547
+phone	1159
+mirror frame	905
+clothes dryer	128
+panel	811
+glass	1499
+soap dispenser	994
+dishwasher	1256
+cup	1264
+bathroom cabinet	1655
+ladder	516
+garage door	944
+hat	12
+chest of drawers	1089
+exit sign	972
+sidetable	632
+office table	1631
+piano	1558
+painter	1391
+board	966
+windows	13
+archway	552
+rope	382
+ball	1466
+gym equipment	917
+clothes hangers	1573
+bathroom object	456
+easy chair	166
+lounge chair	121
+furniture	422
+cabinets	1361
+carpet	1564
+food	774
+plant pot	395
+duct	240
+ridge	259
+candlestick	1045
+computer desk	1587
+shower door	157
+trash	1033
+crown molding	1124
+wall sconce	232
+door handle	826
+scale	1214
+trash bin	928
+baseboard	391
+window /otherroom	1566
+bag	1113
+laptop	156
+treadmill	1056
+staircase	1190
+guitar	168
+light fixture	748
+pipes	1577
+display case	1312
+weight machine	438
+toilet paper holder	40
+basin	1080
+towel bar	490
+floor behind	909
+wooden chair	646
+potted plant	1399
+ceiling / other room	640
+window sill	1555
+floor / other room	717
+cupboard	739
+tray	1200
+urn	272
+church seating	386
+decorative plate	574
+doors	721
+bar	1152
+stair rail	492
+window shade	1621
+grass	1148
+pool table	11
+coat	287
+trees	687
+cloth	889
+bottle of soap	48
+floor lamp	572
+water cooler	460
+pews	631
+ledge	1562
+kitchen shelf	268
+bathroom utencils	440
+hanger	1187
+shrubbery	835
+teapot	1463
+bottles	1606
+exercise equipment	318
+boxes	617
+locker	1271
+wall cabinet	377
+wainscotting \other room	1648
+ceiling light	1519
+ornament	1497
+bidet	1353
+shower soap shelf	937
+window / door	645
+stuffed animal	1064
+paper towel dispenser	832
+chair bottom	269
+fencing	794
+lampshade	61
+door side	1030
+bust	644
+car	1114
+figure	308
+sofa set	434
+commode	1199
+toilet brush	1192
+doll	1303
+drums	968
+bathroom counter	76
+dress	1092
+shower handle	1135
+closet door	103
+whiteboard	916
+garage door opener	567
+range hood	538
+window curtain	221
+easel	1133
+bowl of fruit	676
+molding	1545
+pool	335
+kitchen appliance	1117
+candelabra	1622
+ceiling lamp	1625
+toy	154
+top	1368
+wall art	982
+highchair	789
+footrest	647
+bathroom sink	1345
+soap dish	135
+miscellaneous object	34
+trim	927
+tabletop object	111
+clothes hanger rod	319
+altar	480
+candles	959
+placemat	679
+kitchen center island	875
+plate of food	618
+sheet	1433
+wood	1202
+robe	453
+bathroom stall	1145
+tabletop decoration	387
+plush toy	192
+wash basin	612
+celing	1489
+hangers	1175
+bushes	2
+floor/other room	64
+dinner placesetting	808
+curtain valence	1205
+control	787
+tap	413
+shampoo	1550
+computer	1234
+massage bed	505
+knob	1035
+door stopper	637
+bulletin board	1170
+brick archway	1220
+fruit bowl	958
+electric wire casing	499
+bookcase	743
+other room	239
+exercise machine	1032
+storage shelving	1482
+coffee maker	1154
+shower ceiling	1376
+fire alarm	790
+tissue paper	1061
+projector	1406
+coat hanger	901
+wall cubby	322
+balcony railing	340
+shelf /w clutter	752
+case	1329
+coat rack	177
+pan	1485
+fridge	236
+suitcase	565
+wardrobe rod	1419
+hamper	1336
+trinket	1494
+c;lothes hangers	1216
+paper	1302
+back splash	58
+chimney	1169
+arc	656
+shower bench	795
+person	1393
+tablet	1243
+exercise mat	1070
+smoke alarm	274
+kitchen utensils	801
+weights	27
+display cabinet	176
+showcase	537
+bedpost	349
+file cabinet	1341
+umbrella	616
+massage table	336
+laundry basket	855
+jar	418
+exercise bike	526
+hose	1335
+window dormer	551
+closet shelf	1076
+power breaker box	1008
+smoke detector	1295
+door knob	338
+shelf side	477
+jacuzzi	773
+backpack	14
+wooden desk	1223
+bath mat	1365
+unknown clutter	929
+hook	1211
+sauna wall	511
+elevator	649
+tool	957
+recliner	822
+recessed wall	704
+closet bar	1431
+tank	831
+toaster	182
+toilet brush holder	1396
+handrail /otherroom	1237
+landing	1455
+book rack	712
+wall mirror	160
+hunting trophy	31
+rod	1585
+floor mat	1461
+motion detector	1339
+clothing	771
+can of paint	536
+medicine cabinet	659
+sensor	1604
+cart	1408
+slab	365
+bean bag chair	1020
+window valence	141
+window /outside	188
+pole	1129
+picture / other room	226
+canister	579
+washbasin counter	1539
+kitchen top	381
+unknown object	1109
+pitcher	599
+showerhead	484
+podium	852
+ceiling vent	1136
+throw pillow	1452
+grill	513
+sink cabinet	498
+tapestry	814
+bed sheet	316
+shade	501
+doorknob	636
+stair railing	1310
+vacuum cleaner	1579
+bed comforter	932
+door / other room	345
+pictures	580
+bed table	818
+shirt	1491
+dressing table	1378
+shower wall cubby	1266
+side wall	867
+beside table	17
+curb	1536
+arches	1357
+storage bin	1402
+support beam	278
+globe	1541
+pantry	658
+skateboard	633
+stove hood	541
+cabin	1537
+shower bar	540
+chaise	1059
+flower wash	1140
+desk and chairs	1293
+plant vase	26
+towel rack	1418
+cross	857
+sliding door	276
+cosmetics	1201
+wall other room	1218
+kettle	144
+junk	777
+stationery	46
+lights	685
+window / other room	1323
+dish cabinet	56
+wall panel	1372
+gate	878
+safe	519
+ventilation	1627
+logs	1251
+sliding doors	1098
+shower rod	493
+towel shelf	1441
+row of theater chairs	691
+closet wall	1280
+bath utencils	1130
+sconce	1054
+garage light	734
+ceiling beam	1186
+toolbox	130
+sponge stool	1010
+security camera	747
+gym machine	1009
+wall /outside	595
+mantle	879
+floor 2	1307
+skirting	1110
+banister	926
+lockers	78
+trophy	873
+tile	420
+unknown / room below	299
+picture car	261
+outlet	1040
+plant ridge	892
+backsplash	258
+computer monitor	69
+doorframe / other room	573
+shower wall /otherroom	497
+shelves with wine	503
+shoe	1569
+hedge	732
+glass window	1626
+sofachair	1563
+hand soap	57
+window blinds	800
+flower vase	307
+appliance	1414
+christmas tree	151
+support column	163
+dish	1526
+closet floor	663
+celling	606
+stuffed animals	891
+casket	874
+rowing machine	1181
+dining table centerpiece	55
+bedside lamp	1324
+kitchen countertop item	746
+fountain	590
+window glass	816
+wall soffet	191
+urinal	810
+kitchen hood	220
+showpiece	1636
+wall trim	432
+barrel	1546
+firewood	601
+columns	641
+beams	1282
+carpet roll	79
+portrait	759
+table light	847
+water heater	213
+stairs 2	1007
+pouffe	756
+ceiling behind	1367
+pillars	143
+concrete block	351
+range	91
+shelf with objects	955
+toilet seat liner dispenser	358
+patio chair	849
+folding chair	931
+island	1465
+toaster oven	1314
+overlook railing	1468
+bathroom mirror	1617
+recycle bin	1590
+counter top	696
+rafter	1478
+dryer	838
+bed lamp	1543
+wall paneling	88
+stage	738
+fire sprinkler	884
+brush	776
+wall 2	1189
+balcony	1427
+water tank	1273
+pile of objects	871
+garage door frame	19
+back wall	18
+plant soil	877
+globe stand	713
+bicycle	1174
+stairframe	325
+separating screen	1166
+unknown wall object	728
+air duct	96
+kitchen upper cabinet	671
+chair pillow	1464
+led tv	936
+deco	792
+ceiling under staircase	1084
+chair /w books	1344
+bed back rest	549
+giraffe	683
+lightswitch	1340
+doorframe \other room	1561
+object / camera?	368
+grandfather clock	1594
+jewelry box	466
+bottles of wine	1386
+massage table base	301
+hood	1382
+mirrorframe	593
+wall beam	562
+wooden trim	1120
+stalls	1510
+partition	180
+dog	1207
+valance	710
+radio	729
+bush	914
+row of theater seats	961
+bath utencil	534
+basket of towels	1162
+laundry machine	949
+mirror /otherroom	611
+toilet sink	941
+sauna heater	1178
+dining bench	1612
+fume cupboard	1026
+mouse	1643
+boiler	1232
+hearth	1027
+curtain darker	623
+round chair	607
+toilet bowl	620
+whine rack	602
+doorstep	1288
+binder	1366
+shower door frame	95
+bed runner	1639
+cubicle	219
+fitness device	83
+support	1306
+overhang	528
+electric box	668
+bathrobe	165
+door mat	502
+jacket	28
+cabinet table	279
+side frame	731
+wainscoting	980
+staircase trim	110
+box /w books	1066
+nighstand	935
+window reflection	321
+pulpit	581
+set of armchairs	1586
+fish tank	621
+bathroom countertop objects	1434
+concrete shelf	433
+ceiling wall	824
+picture \other room	237
+wall entry	472
+lintel	1443
+wall table	1589
+small table	1121
+lighting fixture	1225
+bed frame	925
+freezer	1017
+glass doors	1592
+extractor	1275
+flower pot	1
+soffet	669
+platform	819
+hot tub	1252
+paper towels	86
+kitchen utencils	467
+shower grab bar	919
+wall detail	1637
+whineshelf	765
+painting/other room	1385
+television	153
+sauna bench	42
+fruits	394
+picture frames	475
+buffet	1308
+billow	464
+computer chair	675
+sofa seat	1176
+wall tv	1445
+ground	1281
+wall2	962
+ceiling under stairs	1390
+calendar	797
+dome	1093
+object /outside	666
+poll	94
+wet bar	589
+folding table	655
+stovetop	907
+gym equip	483
+fruitbowl	369
+vending machine	247
+handwash	781
+wall clock	260
+liquid soap	37
+trinkets	442
+small table / stand	1644
+window shuts	1404
+door frame 3	1139
+stone	1039
+tripod	186
+projector screen	702
+window frame / other room	1245
+wreath	915
+door hinge	1233
+sound	354
+french door	399
+staircase handrail	478
+nighttable	872
+photo in frame	408
+photoframe	740
+stair wall	1439
+closet ceiling	277
+stick	813
+fluorescent light	1360
+wash cabinet	689
+shower seat	1108
+trellis	366
+patio	1299
+dart board	761
+comforter	359
+table /w books	853
+picture/other room	4
+dirt	995
+base	705
+chemical tank	863
+step stool	59
+misc	185
+sink table	100
+curved wall	361
+roof beam	473
+cover	290
+reading table	310
+side steps wall	1547
+sideboard	139
+wall from another room	661
+electric outlet	1250
+stall door	951
+separator	1634
+toilet bowl brush holder	190
+vessel	1657
+table clutter	1656
+partition wall	788
+bed curtain	997
+stairs skirt	836
+small chair	1532
+ceiling window	1024
+rocking chair	463
+window \other room	1311
+under stair	885
+unknown outside building	1423
+bath wall	1172
+panel screen	227
+doorfra,e	1231
+shower mat	802
+blackboard	404
+drawer desk	350
+poster	793
+fireplace sconce	1633
+table support	1407
+wall lamp	1334
+closet shelving	22
+closest area	1286
+scroll	138
+foot stand	1258
+button	167
+art / clutter	203
+door arc	378
+stairs railing	1506
+floor /otherroom	1141
+shovel	733
+alarm controls	1127
+lamb	448
+cluttered objects	1351
+door/other room	624
+closet shelves	407
+scultpure	45
+arm chair	343
+door behind	74
+exercise ball	298
+yard	1398
+semi chair	32
+bouquet	263
+garage door opener bar	465
+pots	401
+decorations	75
+unkown	1642
+kitchen decoration	1051
+archway corner	517
+kitchen wall	833
+cabinet door	560
+sauna bowl	189
+bar chair	178
+shelf cubby	209
+toilet plunger	635
+belts	152
+sewing machine	1375
+hot water/cold water knob	1591
+barbeque	93
+cutting board	960
+soapbox	384
+washing stuff	291
+dining table decoration	233
+copier	1289
+unknown (picture or window)	1036
+stair handle	172
+reflection	969
+horizonal bar for exercise?	720
+shelving / other room	1364
+seats	1014
+shower stall	1143
+chairs	1348
+stair /otherroom	865
+kitchen stuff	1188
+unkown object	3
+throne	411
+socket	851
+bathroom art	256
+night table	1568
+display	1235
+tabletop	1505
+thrash bin	1597
+l shape sofa	1507
+cardboard box	246
+wall borader	1086
+kitchen appliances	1553
+ceiling object	1047
+wall hanging decoration	1428
+stand / small table	1571
+kitchen ceiling	426
+floor matt	978
+wall indent	1138
+chairir	1276
+window seat	524
+bike	1011
+towels (rolled)	140
+wall \other oom	142
+shower pipe	364
+towel or curtain bar	766
+shower glass	523
+stone bench	202
+window/other room	1072
+back splash sink	1321
+iron board	988
+computer equipment	1272
+shelf / cabinet	1277
+stove door	1483
+door inside	1504
+unknown stove accessory	409
+circular sofa	993
+dustpan	634
+bathroom door	695
+paining	1479
+luggage	530
+dooframe	1551
+outside wall	714
+alarm control	903
+oil lamp	1085
+scaffolding	267
+bed light	306
+baluster	1435
+leg rest	65
+ceiling / upstairs room	709
+tv cabinet	7
+hole	643
+ping pong table	362
+hutch	208
+low shelf	85
+foliage	49
+windows sill	701
+toilet cistern	1437
+stone circle	856
+bathroom  sink	245
+record player	846
+table cushion	845
+power outlet	654
+machine	1101
+door post	214
+briefcase	1394
+wall of doors	504
+showe wall	1502
+door stand	406
+energy box	1500
+balcony floor	425
+bean bag	1416
+kitchen extractor	840
+toilet bin	1313
+wall in other room	388
+plumbing	344
+moose head / sculpture / hunting trophy	446
+ceiling dome	496
+cabinet counter	1260
+cabinet \other room	469
+flowerbed	1300
+paingitn	1383
+bed headboard	102
+antique clock	1405
+rocks	1611
+shower caddy for soap etc.	1613
+window / frame	996
+media console	591
+cloths	667
+vaccum cleaner	543
+door frame fireplace wall	665
+fruit dish	1204
+risers for theater seating	1230
+interior bathroom wall	786
+hall wall	251
+drawer sink table	5
+keyboard piano	1337
+tree branch	281
+tiled floor	550
+ceiling bedroom	1078
+chandellier	1198
+ceilin	694
+hearst	1401
+random wall	330
+condiments	1144
+shelf cubbies	416
+book display	1570
+endtable	588
+antique telephone	1397
+clothes rack	353
+doore	474
+heater piping	282
+tissue box stand	24
+utencils	1055
+foodtray	1287
+shelves /otherroom	1333
+cailing	681
+cluttered chair	1538
+countertop object	1326
+art frames	1116
+soap bottle	363
+small wall	184
+watch	1412
+ceil	1021
+fuse box	435
+painting board	992
+door locker handle	1268
+box with clutter	1598
+knive holder	609
+computer mouse	970
+mirror / other room	568
+door back side	888
+ceiling bath	1559
+chandelier?	1514
+table tray	1029
+aquarium	755
+wheelbarrow	113
+curtain rail	1429
+rods / table	1442
+counter /otherroom	196
+gable	1355
+bothroom wall	608
+balustrade	1488
+bathroom	1309
+three	303
+handcloth	1379
+wall curved	841
+teapoy	564
+table with clutter	1034
+back door	1290
+rocky ground	946
+doormat	546
+backrest	332
+cabinet with desk	1608
+faucet handles	839
+floor trim	1297
+toilet sliding door	506
+gym stuff	423
+clothes container	610
+basketball hoop	148
+cooktop	1304
+both tub	1184
+fireplace heart	868
+spice racks	823
+wall fireplace	548
+cabinet /w cluttered art	1104
+inside wall	834
+transformer	107
+wall light	1217
+bathroom shelf	403
+glass french door	383
+lamp / other room	512
+picutre	398
+gift	1119
+mirror door	1283
+deorative object	300
+ceiling door	84
+stack of papers	587
+holy cross	1002
+door window	105
+computer screen	1196
+while bottles	470
+arcade game	304
+unknown - probably part of trellis -- maybe blinds	71
+compound wall	922
+lamps	1645
+plug	1001
+round cushion	1447
+ceiling frame	1265
+magazine	441
+stair case	736
+rolling pin	893
+shower knob	6
+wall statue	918
+wal	450
+sink / basin	476
+celling borader	1259
+clothes bag	38
+perfumes	1513
+heat	443
+kitchen counter support leg	1102
+window  frame	881
+glassdoor	412
+window closet door	1319
+sticks	1183
+photo frame	1544
+water pump	866
+shower doorframe	1652
+stairs behind	370
+flood	531
+columned perimeter	1177
+shrine	1371
+papers	317
+fireplace /w art	1646
+canvas stand	1019
+art / man statue	698
+bath towel	934
+cradenza	900
+doorr frame	1160
+column statue	594
+water basin	337
+moulidng	346
+tablet computer	908
+artwork	468
+towel bar shelf	1496
+floor carpet	1600
+wine cabinet	614
+shower rail	1131
+skirting board	292
+playpen	578
+room door	782
+doorgrame	557
+makeup	662
+plant / art	1620
+sauna seating	1301
+bot	98
+handrail / other room	711
+rocking horse	1457
+kitchen lower cabinet	1206
+floor /other room	60
+chair stand	1077
+wall pack	754
+towel box	1580
+vessel sink	1146
+can	805
+ceiling lattice	1370
+backslash	619
+ire place	923
+divider	1603
+pathway	1155
+laundry	1470
+tablecloth	582
+water dispenser	1503
+;photo	222
+door frame wall entry	1270
+plastic tarp	1426
+clothing stand	215
+bathtab	920
+apron	427
+ceiling bedroom entry	1477
+ashtray	886
+control panel	1542
+ironing board	1240
+exhaust pipe	430
+rack of theater electronics	250
+canvas	1013
+alarm clock	707
+ceiling lower	238
+yarn machine	147
+tarrace door	1195
+stand/table	1413
+statue base	201
+swing	1171
+extractor fan	52
+crib	697
+hallway wall	1509
+side wall 2	1004
+side wall 5	1415
+mens urinal	51
+stacked chairs	570
+patio floor	21
+stair steps	1057
+electrical controller	986
+kitchencounter	615
+rotunda railing	1060
+lamp table	651
+cabinet top	954
+tray with bottles of soap and lotion	1462
+speakers	145
+fancy cabinet	70
+air vent	629
+sofa couch	459
+channel	1025
+wall sign	976
+bench back	431
+baby changing station	1632
+paip	297
+bed arm pillows	583
+shower tap	1049
+axe	520
+table shelf	1062
+washcloth	758
+coffee mug	817
+iron panel	510
+door or window frame	1638
+coffe table	1487
+dice	327
+title	984
+toilet seat	742
+coffee table leg	288
+soft chair	854
+icebox	112
+showerfloor	783
+floor outside	627
+framing	652
+wall patch	672
+decorative bowl	1647
+dog bed	559
+pool sticks	1451
+exericse equipment	1449
+remove floor behind	444
+doorhandle	1422
+dishrag	133
+behind	545
+drinking fountain	1041
+bureau	234
+night stand object	1208
+tub	1150
+parapet	897
+attic door	43
+wall object	1222
+closet door knob	1043
+bathroom accessory	977
+teddy	642
+wall toilet paper	1254
+coffee machine	244
+excercise equipment / other room	990
+storage cabinet	1065
+toilet stall door	735
+bin of posters	47
+photos	242
+push broom	912
+art stand	1173
+shelf /w art	896
+spiderman	1454
+mount	323
+ac unit	131
+newspaper	953
+towel basket	173
+base rail	948
+show pack	1050
+coutertop	115
+stair stepper	235
+car batteries	187
+pad	989
+old fireplace	1000
+desk lamp	657
+easychair	558
+wees	719
+tabletop box	29
+canopy	1221
+wall behind door	1448
+cabinet / other room	1349
+objects / other room	289
+bar soap	673
+column /otherroom	1481
+outer wall	1459
+wall control	749
+desktop	1480
+fire screen	741
+fireplace counter	333
+bread	850
+piano bench	1380
+window shutter	1530
+draw	264
+flower wage	723
+ceiling/west wall	762
+decorative quilt	1523
+knife	1498
+projector opening	809
+boader	462
+lights / deco	622
+tv3	1531
+desk clutter	265
+curatain	231
+shoe shelves	1581
+mixer	991
+ceiling fixture	509
+scuplture	1616
+countertop /otherroom	1369
+work bench	648
+wall desk	1291
+shelf of cloth	341
+telescope	35
+shower hoses	373
+step;	971
+bathtub platform	806
+sauna seats	1322
+bucker	628
+ac	1241
+unknown / remove	1350
+art / statue	122
+dinner table	1052
+storage	1560
+unknown kitchen stuff	488
+alamari	726
+cement drum	1624
+kitchen cupboard	699
+platter	486
+large chunk of art	775
+dushbin	207
+couch pillows	495
+ceiling /other room	1410
+object on cutting board	1118
+show wall	1037
+robes	228
+cusion	1262
+column /outside	1112
+hanging clothes	1359
+newspaper basket	1156
+towels in a bowl	1122
+detached door	1343
+big door	1650
+wall molding	566
+bed / other room	1285
+window /w pictures	708
+ceiling corridor	1629
+rotunda base	270
+fire extinguisher'	556
+unicycle	500
+ceiling under balcony	769
+laundary machines	1094
+nightstand /reflection	858
+pile of magazines	563
+wall of statue inset	137
+cosmetic	821
+unknown item	1456
+side steps 4	1193
+kitchen table	770
+round footstool	275
+firewood holder	956
+flag	439
+window frame and shelves	1515
+towel ring	1106
+window frame /reflection	514
+basket of something	791
+towel rod	693
+window /reflection	542
+paper storage	1486
+t.v	371
+kitchen bell	544
+ceiling from another room	1069
+throw blanket	286
+wall post	1015
+sink pipe	539
+workstation	1338
+room 1 wall	309
+storage space	1395
+mattress	535
+kitchen handle	820
+bed side table	532
+lookout	1356
+bag of sand	106
+walll	374
+kitchen countertop object'	1088
+bed rest	16
+furniture 2	400
+wall ac vent	1165
+dumbbells	1424
+weight	218
+fixture	1548
+llight	82
+show space	1213
+recessed cubby	449
+oven hood	508
+counter doors	940
+roof grill	164
+shower dial	44
+riser	217
+plant ornament	938
+floor stand	1125
+fruit	943
+frige	372
+stairwell	1552
+trash bag	592
+cups	1392
+photo mount	357
+drawers for clothes	639
+strange ceiling	1068
+bilow	415
+ceilng	410
+bathroom towel	155
+john	305
+refrigerator cabinet	1164
+fish picture	1574
+painting frame	902
+display table	471
+round seat	529
+lower floor	803
+lid	494
+bonsai tree	461
+window3	999
+window2	638
+window1	1527
+window5	63
+shower floor surround	894
+folders	1168
+decorative plant	1028
+cooker unit	1601
+towel holder	985
+laundrybag	678
+bathroom utencil	861
+wine bottles	66
+high shelf	1528
+loveseat	393
+couch pillow	428
+ceiling molding	1294
+firewook	1317
+door /otherroom	1063
+toaster?	533
+foodstand	87
+weight bench	481
+floor / room above	1388
+mini fridge	329
+bars	730
+lion	1261
+cuddly toy	924
+toilet stall	1142
+copier machine	1374
+raised platform	1194
+bell	737
+fireextinctioms	1203
+table vase	455
+bedroom ceiling	1209
+ceiling \other room	933
+chair parts	604
+door / window	804
+closet mirror wall	118
+beam across top of arch	1654
+fireplace utensils	127
+liight	703
+self side	1417
+kitchen faucet	1607
+candle holder	339
+mirror/other room	68
+hall top	895
+decoration / other room	780
+shower hose	906
+bottle of detergent	653
+box opening	334
+hunting trohpy	1087
+rack with pool cues	311
+stack	1619
+bed stand	1475
+planter curb	491
+garage door motor	1215
+entry	302
+a-frame sign	1191
+cuboid	812
+shelf with jars	424
+wall top	1583
+window4	41
+bath faucet	577
+statue / art	1516
+cabinet /w clutter	54
+workout bike	1229
+closet area for hanging clothes	1609
+vase \other room	285
+art / muscle shell	1440
+center island	159
+dedore	1100
+dome roof	799
+chair /w clutter	1362
+basket of objects (popcorn?)	1046
+outer side wall	199
+top floor	294
+pelt	785
+washer-dryer	1005
+yellow egg shaped vase	1492
+entry table	1511
+domino decoration	1179
+pc tower	487
+unknown/ other room	67
+bathroom glass	1244
+chanellier	90
+makeup area	1151
+fireplace mirror	283
+jug	320
+bathroom window	1520
+falling light	1284
+snow globe	1318
+unknown kitchen appliance	998
+boxes /w books	1111
+alarm	158
+electirc outlet	454
+sauna floor	664
+picture /otherroom	1549
+garage door railing	706
+other ceiling	1473
+lightbox frame	625
+air hole	314
+mantel	1610
+cooker	171
+partial	253
+amplifier	605
+emergency exit	1095
+barbecue	205
+unkown / other room	768
+bath sink	77
+spa bench	825
+handsoap	183
+folding stand	1332
+table plant	405
+hose outlet	1238
+theater stage	515
+bar cabinet	25
+washer and dryer	796
+door trim molding	930
+paintings	942
+unknown wall part	1421
+wooden balcony	1305
+shelves with shoes	1236
+stair landing	1472
+rack of excercise weights	73
+unknown - hot tub?	670
+wall window	1328
+ceiling smoke detector	1023
+couch type chair	964
+scales	1081
+chair rail	109
+kitchen backsplash	146
+shelves / other room	1474
+tools	1467
+hoses for chemical tank	352
+wall behind / remove	745
+sauna heat rocks	987
+camera	324
+curtain lighter	1067
+table decor	355
+brochure	417
+flowerwage	1278
+drill	108
+book stand	576
+china cabinet	1575
+remove / behind	33
+rotunda wall	963
+stone support structure	1556
+dresser decor	827
+roof / other room	1058
+elliptical	257
+furnace	600
+foosball table	725
+maracas	864
+box of fruit	950
+window screen	212
+door tag	1640
+fire pit	1097
+box of tissues	1659
+portal	280
+yoga mat	445
+toy duck	630
+motorcycle	479
+computer tower	1227
+frame for door	380
+theater screen	1073
+swimming pool	1279
+shelf with clutter	385
+spice rack	1226
+bed small	229
+object/other room	876
+dinnerware	132
+storage shelves	1257
+tanning bed	798
+grid door	1501
+background chair	360
+boarder	210
+closte	911
+doorframe / upstairs room	1096
+rolling cart	252
+box of tissue	571
+door nob	1103
+floor \other room	1331
+table w/ clutter	1091
+table vase soil	181
+light box	1197
+wines	161
+sliding glass door	485
+toilet handle	815
+bath deco	125
+shower hose/head	1158
+shower case	848
+mortar	1242
+watering can	1471
+scarf	1071
+softer	1522
+soap dish cubby	859
+paintintg	760
+cleaning clutter	1274
+fireplace tool set	457
+table stand	348
+shower valve	1389
+long sofa	715
+wall soap shelf	216
+ceiling inset for fan	429
+beanbag chair	974
+door bottom rail	1239
+sowing machine	1387
+couch chair	967
+tabletop trinket	692
+ceilling	507
+flowerstand	293
+wall stand	1137
+shower cabin	575
+shower-bath cabinet	452
+teddy bear	225
+foor lamp	1149
+water fountain	1269
+elephant sculpture	1105
+grate	241
+chicken	1635
+bathroom fan	1006
+roomba	437
+planter	367
+controls	1517
+nightstand / other room	458
+worktop	402
+steps wall	296
+door fireplace wall	149
+floor / upstairs room	1446
+oven and stove	1147
+chest drawer	764
+door outside	1342
+fireplace \other room	778
+hammock	597
+dartboard	376
+fireplace brush	598
+drum	92
+rotunda ceiling	20
+ceiling light fixture connection	1495
+stair fencing	1210
+piano stool	266
+swing door	518
+bathtub utencils	842
+access area	1584
+exercise mat roll	973
+ceiling  duct	1163
+motorbike	197
+floor elevator	1567
+kitchen countertop items	1267
+entertainment set	1298
+shower curtain bar	1618
+bedroom entry walls	206
+oven vent	30
+shower floor /otherroom	99
+washing bowl	1533
+desert plate	116
+fuse panel	312
+barbers chair	1320
+diploma	1484
+wall behind stove	53
+window6	1599
+ceiling /otherroom	718
+ventilation hood	36
+dirt ground	1038
+awning	1083
+stiarcase step	80
+rack of weights	243
+shower tub	522
+washing powder	136
+toilet cleaner	843
+soap displensor shelf in shower	1358
+window or door	626
+storage boxes	1031
+closet storage area	1518
+stationary bike	784
+bedding	882
+stair handrail	1253
+room divider	1458
+window frames	1535
+wall electrics	15
+other step	1436
+tabletop objects	1444
+foosball game table	1327
+wall showcase	684
+kitchen utencil	169
+towels in a basket	1615
+lamp stand	975
+toy giraffe	10
+big door frame	763
+unknown / probably shrubbery	1003
+wooden wall paneling	910
+bedstead	1126
+fire dish	421
+tray with tea cups	117
+television table	1042
+tissues	779
+sitting area	392
+wall vent	722
+utensils	585
+pip	1430
+fireplace wall	1450
+stonework	1123
+bottom of stairs	119
+star	1212
+art / deer statue	527
+unknown objects	660
+wall side	1099
+shower glass /shifted	596
+toilet stall partition	688
+ceiling design	890
+conference table	1630
+edge	981
+electrical box	328
+entrance	39
+gap	262
+garage door opener motor	680
+lamp base	829
+racks	700
+stringer	603
+supporting structure	1628
+typewriter	1246
+walls	436
+washbasin top	1623
