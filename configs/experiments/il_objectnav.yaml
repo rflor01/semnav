@@ -5,12 +5,12 @@ WANDB_ENABLED: True
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/semantic_rgb_lr0.001dgx_pretrainedencoder"
-VIDEO_DIR: "semantic_rgb_lr0.001dgx_pretrainedencoder"
+TENSORBOARD_DIR: "tb/40catrgbsemnoprecorrect11"
+VIDEO_DIR: "vid40catrgbsemnoprecorrect11"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/checkpoints/semantic_rgb_lr0.001dgx_pretrainedencoder"
-NUM_ENVIRONMENTS: 6
-CHECKPOINT_FOLDER: "data/checkpoints/semantic_rgb_lr0.001dgx_pretrainedencoder"
+EVAL_CKPT_PATH_DIR: "40catrgbsemnoprecorrect11"
+NUM_ENVIRONMENTS: 20
+CHECKPOINT_FOLDER: "40catrgbsemnoprecorrect11"
 TRAINER_NAME: "pirlnav-il"
 
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
@@ -34,8 +34,8 @@ IL:
     name: "SEMANTIC_RGB_ObjectNavILMAEPolicy"
   BehaviorCloning:
     num_steps: 64
-    lr: 0.001
-    encoder_lr: 0.001
+    lr: 0.0001
+    encoder_lr: 0.0001
     num_mini_batch: 2
 
 
@@ -52,5 +52,5 @@ POLICY:
     no_critic: True
   RGB_ENCODER:
     pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
-  SEMANTIC_RGB_ENCODER:
-    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
+#  SEMANTIC_RGB_ENCODER:
+#    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"

@@ -247,7 +247,10 @@ class SemanticILAgent(nn.Module):
            #     cv2.waitKey(500)
 
             # Reshape to do in a single forward pass for all steps
-            constant = 9994
+
+            constant = 414534
+            #constant = 9994
+
             #print(batch["observations"]["rgb"])
             #print(torch.any(batch["observations"]["semantic"]))
             observations_mult = batch["observations"]["semantic"]*constant
