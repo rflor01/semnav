@@ -4,12 +4,12 @@ ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/num_env26num_updates500000lr0001lrencoder0001wprDINO"
-VIDEO_DIR: "num_env26num_updates500000lr0001lrencoder0001wprDINO"
+TENSORBOARD_DIR: "tb/onlysem40catpretrained5pth"
+VIDEO_DIR: "onlysem40catpretrained5pth"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/num_env26num_updates500000lr0001lrencoder0001wprDINO"
+EVAL_CKPT_PATH_DIR: "data/onlysem40catpretrained5pth"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "data/num_env26num_updates500000lr0001lrencoder0001wprDINO"
+CHECKPOINT_FOLDER: "data/onlysem40catpretrained5pth"
 TRAINER_NAME: "pirlnav-il"
 SENSORS: ["RGB_SENSOR"]
 NUM_UPDATES: 500000
@@ -47,4 +47,6 @@ POLICY:
   CRITIC:
     no_critic: True
   RGB_ENCODER:
+    pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
+  SEMANTIC_ENCODER:
     pretrained_encoder: "data/visual_encoders/omnidata_DINO_02.pth"
