@@ -57,7 +57,7 @@ RL:
     # Visual encoder babone
     pretrained_weights: data/checkpoints/semantic_rgb_lrcycliccor0.00001dgx_PRETRAINEDencoder40categories2_correctedconstant/ckpt.13.pth
     # Initialize with pretrained weights
-    pretrained: False
+    pretrained: True
     # Initialize just the visual encoder backbone with pretrained weights
     pretrained_encoder: False
     # Whether or not the visual encoder backbone will be trained.
