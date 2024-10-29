@@ -17,7 +17,7 @@ export HABITAT_SIM_LOG=quiet
 export OMP_NUM_THREADS=$((num_cpus/num_gpus))
 
 config="configs/experiments/rl_ft_objectnav.yaml"
-DATA_PATH="data/datasets/objectnav/objectnav_hm3d_v1"
+DATA_PATH="data/datasets/objectnav/objectnav_hm3d/objectnav_hm3d_v1"
 TENSORBOARD_DIR="tb/semantic_rgb_lrcycliccor0.00001dgx_NOpretrainedencoder40categories2"
 CHECKPOINT_DIR="data/checkpoints/semantic_rgb_lrcyliccor0.0000100001dgx_NOpretrainedencoder40categories2"
 PRETRAINED_WEIGHTS="data/checkpoints/semantic_rgb_lrcycliccor0.00001dgx_PRETRAINEDencoder40categories2_correctedconstant/ckpt.13.pth"
