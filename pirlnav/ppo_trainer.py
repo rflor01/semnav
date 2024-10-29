@@ -49,7 +49,6 @@ from pirlnav.utils.lr_scheduler import PIRLNavLRScheduler
 @baseline_registry.register_trainer(name="pirlnav-ppo")
 class PIRLNavPPOTrainer(PPOTrainer):
     def __init__(self, config=None):
-        self.config = 'data/il_ckpts/ckpt.9.pth'
         super().__init__(config)
 
     def _setup_actor_critic_agent(self, ppo_cfg: Config) -> None:
@@ -415,6 +414,9 @@ class PIRLNavPPOTrainer(PPOTrainer):
         self.rollouts.to(self.device)
 
         observations = self.envs.reset()
+        if 'semantic' in obs_space.spaces:
+            for i in range(self.envs.num_envs):
+                observations[i]["semantic_rgb"] = np.zeros([480,640,3])
         batch = batch_obs(
             observations, device=self.device, cache=self._obs_batching_cache
         )
