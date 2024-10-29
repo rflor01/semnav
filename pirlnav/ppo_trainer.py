@@ -294,7 +294,7 @@ class PIRLNavPPOTrainer(PPOTrainer):
 
     def _init_train(self):
 
-        resume_state = load_resume_state('data/il_ckpts/ckpt.9.pth')
+        resume_state = load_resume_state(self.config)
         if resume_state is not None:
             self.config: Config = resume_state["config"]
             self.using_velocity_ctrl = (

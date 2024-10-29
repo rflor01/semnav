@@ -4,17 +4,17 @@ ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb_dgx/eval"
-VIDEO_DIR: "video_dir"
+TENSORBOARD_DIR: "tb/RL_RGBSEMPRETRAINED"
+VIDEO_DIR: "RL_RGBSEMPRETRAINED"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/new_checkpoints_dgx_il/ckpt.9.pth"
+EVAL_CKPT_PATH_DIR: "data/checkpoints/RL_RGBSEMPRETRAINED"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "data/new_checkpoints_rl"
+CHECKPOINT_FOLDER: "data/checkpoints/RL_RGBSEMPRETRAINED"
 TRAINER_NAME: "pirlnav-ppo"
-SENSORS: ["RGB_SENSOR"]
-NUM_UPDATES: 100000
+SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
+NUM_UPDATES: 3200000000
 LOG_INTERVAL: 10
-NUM_CHECKPOINTS: 100
+NUM_CHECKPOINTS: 30000
 # Force PyTorch to be single threaded as
 # this improves performance considerably
 FORCE_TORCH_SINGLE_THREADED: True
@@ -28,7 +28,7 @@ RL:
   SLACK_REWARD: -1e-3
 
   POLICY:
-    name: "ObjectNavILMAEPolicy"
+    name: "SEMANTIC_RGB_ObjectNavILMAEPolicy"
 
   PPO:
     # ppo params
@@ -55,7 +55,7 @@ RL:
     # The PyTorch distributed backend to use
     distrib_backend: NCCL
     # Visual encoder babone
-    pretrained_weights: data/old_il_ckpts/ckpt.9.pth
+    pretrained_weights: data/checkpoints/semantic_rgb_lrcycliccor0.00001dgx_PRETRAINEDencoder40categories2_correctedconstant/ckpt.13.pth
     # Initialize with pretrained weights
     pretrained: False
     # Initialize just the visual encoder backbone with pretrained weights
@@ -65,3 +65,4 @@ RL:
     # Whether or not to reset the critic linear layer
     reset_critic: True
     force_distributed: True
+
