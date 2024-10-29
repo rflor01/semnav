@@ -47,7 +47,9 @@ from habitat_baselines.utils.common import (
     is_continuous_action_space,
     linear_decay,
 )
+
 from torch import nn as nn
+from torch.optim.lr_scheduler import CyclicLR
 from torch.optim.lr_scheduler import LambdaLR
 
 from pirlnav.algos.agent import DDPILAgent
@@ -404,10 +406,15 @@ class ILEnvDDPTrainer(PPOTrainer):
 
         count_checkpoints = 0
         prev_time = 0
-
-        lr_scheduler = LambdaLR(
+        il_cfg = self.config.IL.BehaviorCloning
+        lr_scheduler = CyclicLR(
             optimizer=self.agent.optimizer,
-            lr_lambda=lambda x: 1 - self.percent_done(),
+            mode='exp_range',
+            base_lr=il_cfg.lr,
+            max_lr=il_cfg.lr*il_cfg.CYCLIC_LR.multiplication_factor,
+            gamma=il_cfg.CYCLIC_LR.gamma,
+            cycle_momentum=False,
+            step_size_up=il_cfg.CYCLIC_LR.step_size_up
         )
         resume_state = load_resume_state(self.config)
 
