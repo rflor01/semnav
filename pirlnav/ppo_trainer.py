@@ -150,7 +150,7 @@ class PIRLNavPPOTrainer(PPOTrainer):
             start_critic_update_at=self.config.RL.Finetune.start_critic_update_at,
             start_critic_warmup_at=self.config.RL.Finetune.start_critic_warmup_at,
         )
-        resume_state = load_resume_state('data/il_ckpts/ckpt.9.pth')
+        resume_state = load_resume_state(self.config)
         if resume_state is not None:
             self.agent.load_state_dict(resume_state["state_dict"])
             self.agent.optimizer.load_state_dict(resume_state["optim_state"])
