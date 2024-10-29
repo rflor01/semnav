@@ -24,10 +24,11 @@ PRETRAINED_WEIGHTS="data/checkpoints/semantic_rgb_lrcycliccor0.00001dgx_PRETRAIN
 INFLECTION_COEF=3.234951275740812
 
 echo "In ObjectNav IL DDP"
-torchrun --nproc_per_node $num_gpus run.py \
+torchrun --nproc_per_node $num_gpus \
+    --max-restarts 3\
+    run.py \
     --exp-config $config \
     --run-type train \
-    --max-restarts 3\
     TENSORBOARD_DIR $TENSORBOARD_DIR \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
     NUM_UPDATES 3200000000 \
