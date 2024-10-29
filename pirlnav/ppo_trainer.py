@@ -79,9 +79,13 @@ class PIRLNavPPOTrainer(PPOTrainer):
             self.config.RL.DDPPO.pretrained_encoder
             or self.config.RL.DDPPO.pretrained
         ):
-            pretrained_state = torch.load(
-                self.config.RL.DDPPO.pretrained_weights, map_location="cpu"
-            )
+            try:
+                pretrained_state = torch.load(
+                    self.config.RL.DDPPO.pretrained_weights, map_location="cpu"
+                )
+                logger.info("Weights Fine.")
+            except Exception as e:
+                logger.error("Weights not fine: %s", e)
 
         if self.config.RL.DDPPO.pretrained:
             self.actor_critic.load_state_dict(
