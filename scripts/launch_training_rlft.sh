@@ -30,7 +30,7 @@ torchrun --nproc_per_node $num_gpus run.py \
     --max-restarts 3\
     TENSORBOARD_DIR $TENSORBOARD_DIR \
     CHECKPOINT_FOLDER $CHECKPOINT_DIR \
-    NUM_UPDATES 320000 \
+    NUM_UPDATES 3200000000 \
     NUM_ENVIRONMENTS 16 \
     RL.DDPPO.force_distributed True \
     RL.DDPPO.pretrained_weights $PRETRAINED_WEIGHTS \
