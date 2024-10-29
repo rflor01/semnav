@@ -414,9 +414,9 @@ class PIRLNavPPOTrainer(PPOTrainer):
         self.rollouts.to(self.device)
 
         observations = self.envs.reset()
-        if 'semantic' in obs_space.spaces:
-            for i in range(self.envs.num_envs):
-                observations[i]["semantic_rgb"] = np.zeros([480,640,3])
+        # if 'semantic' in obs_space.spaces:
+        #     for i in range(self.envs.num_envs):
+        #         observations[i]["semantic_rgb"] = np.zeros([480,640,3])
         batch = batch_obs(
             observations, device=self.device, cache=self._obs_batching_cache
         )
