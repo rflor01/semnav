@@ -1,10 +1,10 @@
 #!/bin/bash
 # Get number of GPUs
-if [ -z "$CUDA_VISIBLE_DEVICES" ]
+if [ -z "$NVIDIA_VISIBLE_DEVICES" ]
 then
-    echo "CUDA_VISIBLE_DEVICES is not set"
+    echo "NVIDIA_VISIBLE_DEVICES is not set"
 else
-    IFS=',' read -ra ADDR <<< "$CUDA_VISIBLE_DEVICES"
+    IFS=',' read -ra ADDR <<< "$NVIDIA_VISIBLE_DEVICES"
     num_gpus=${#ADDR[@]}
     echo "Number of GPUs: $num_gpus"
 fi
