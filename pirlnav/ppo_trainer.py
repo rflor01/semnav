@@ -236,6 +236,8 @@ class PIRLNavPPOTrainer(PPOTrainer):
                 rgb_matrix[:,:, :, :, 2] = observations_mult[:,:, :, :, 0] & 0xFF  # B
                 self.rollouts.buffers["observations"]["semantic_rgb"] = rgb_matrix
                 for buffer_index in range(self._nbuffers):
+                    print("compute actions")
+                    print(self.rollouts.buffers["observations"]["semantic_rgb"])
                     self._compute_actions_and_step_envs(buffer_index)
 
                 for step in range(ppo_cfg.num_steps):
@@ -267,7 +269,8 @@ class PIRLNavPPOTrainer(PPOTrainer):
 
                 if self._is_distributed:
                     self.num_rollouts_done_store.add("num_done", 1)
-
+                print("update agent")
+                print(self.rollouts.buffers["observations"]["semantic_rgb"])
                 (
                     value_loss,
                     action_loss,
