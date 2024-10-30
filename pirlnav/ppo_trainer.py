@@ -89,10 +89,8 @@ class PIRLNavPPOTrainer(PPOTrainer):
 
         if self.config.RL.DDPPO.pretrained:
             self.actor_critic.load_state_dict(
-                {  # type: ignore
-                    k[len("actor_critic.") :]: v
-                    for k, v in pretrained_state["state_dict"].items()
-                }
+                {k[len("actor_critic."):]: v for k, v in pretrained_state["state_dict"].items()},
+                strict=False
             )
         elif self.config.RL.DDPPO.pretrained_encoder:
             prefix = "actor_critic.net.visual_encoder."
