@@ -227,6 +227,7 @@ class PIRLNavPPOTrainer(PPOTrainer):
 
                 # print(batch["observations"]["rgb"])
                 # print(torch.any(batch["observations"]["semantic"]))
+                print(self.rollouts.buffers["observations"]["semantic"].shape)
                 observations_mult = self.rollouts.buffers["observations"]["semantic"] * constant
 
                 rgb_matrix = torch.zeros((observations_mult.size(0),observations_mult.size(1), 480, 640, 3), dtype=torch.uint8,
@@ -236,8 +237,6 @@ class PIRLNavPPOTrainer(PPOTrainer):
                 rgb_matrix[:,:, :, :, 2] = observations_mult[:,:, :, :, 0] & 0xFF  # B
                 self.rollouts.buffers["observations"]["semantic_rgb"] = rgb_matrix
                 for buffer_index in range(self._nbuffers):
-                    print("compute actions")
-                    print(self.rollouts.buffers["observations"]["semantic_rgb"])
                     self._compute_actions_and_step_envs(buffer_index)
 
                 for step in range(ppo_cfg.num_steps):
@@ -269,8 +268,6 @@ class PIRLNavPPOTrainer(PPOTrainer):
 
                 if self._is_distributed:
                     self.num_rollouts_done_store.add("num_done", 1)
-                print("update agent")
-                print(self.rollouts.buffers["observations"]["semantic_rgb"])
                 (
                     value_loss,
                     action_loss,
