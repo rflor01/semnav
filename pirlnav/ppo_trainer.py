@@ -195,7 +195,7 @@ class PIRLNavPPOTrainer(PPOTrainer):
                 rgb_matrix[:,:, :, :, 0] = (observations_mult[:,:, :, :, 0] >> 16) & 0xFF  # R
                 rgb_matrix[:,:, :, :, 1] = (observations_mult[:,:, :, :, 0] >> 8) & 0xFF  # G
                 rgb_matrix[:,:, :, :, 2] = observations_mult[:,:, :, :, 0] & 0xFF  # B
-                self.rollouts["buffers"]["observations"]["semantic_rgb"] = rgb_matrix
+                self.rollouts.buffers["observations"]["semantic_rgb"] = rgb_matrix
 
                 if ppo_cfg.use_linear_clip_decay:
                     self.agent.clip_param = ppo_cfg.clip_param * (
