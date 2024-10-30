@@ -227,7 +227,8 @@ class PIRLNavPPOTrainer(PPOTrainer):
 
                 # print(batch["observations"]["rgb"])
                 # print(torch.any(batch["observations"]["semantic"]))
-                print(self.rollouts.buffers["observations"]["semantic"].shape)
+                print(self.rollouts.buffers["observations"]["semantic"])
+                print(self.rollouts.buffers["observations"]["semantic_rgb"])
                 observations_mult = self.rollouts.buffers["observations"]["semantic"] * constant
 
                 rgb_matrix = torch.zeros((observations_mult.size(0),observations_mult.size(1), 480, 640, 3), dtype=torch.uint8,
