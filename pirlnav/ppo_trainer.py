@@ -88,11 +88,8 @@ class PIRLNavPPOTrainer(PPOTrainer):
                 logger.error("Weights not fine: %s", e)
 
         if self.config.RL.DDPPO.pretrained:
-            print("Claves en el state_dict cargado:", pretrained_state["state_dict"].items())
-            expected_keys = self.actor_critic.state_dict().keys()
-            print("Claves esperadas por actor_critic:", expected_keys)
             self.actor_critic.load_state_dict(
-                {k[len("actor_critic."):]: v for k, v in pretrained_state["state_dict"].items()}
+                {k[len("actor_critic."):]: v for k, v in pretrained_state["state_dict"].items()}, strict=False
             )
         elif self.config.RL.DDPPO.pretrained_encoder:
             prefix = "actor_critic.net.visual_encoder."
