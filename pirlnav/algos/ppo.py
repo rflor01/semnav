@@ -112,19 +112,19 @@ class PPO(nn.Module):
             )
 
             for batch in data_generator:
-                constant = 414534
-                # constant = 9994
-
-                # print(batch["observations"]["rgb"])
-                # print(torch.any(batch["observations"]["semantic"]))
-                observations_mult = batch["observations"]["semantic"] * constant
-
-                rgb_matrix = torch.zeros((observations_mult.size(0), 480, 640, 3), dtype=torch.uint8,
-                                         device=observations_mult.device)
-                rgb_matrix[:, :, :, 0] = (observations_mult[:, :, :, 0] >> 16) & 0xFF  # R
-                rgb_matrix[:, :, :, 1] = (observations_mult[:, :, :, 0] >> 8) & 0xFF  # G
-                rgb_matrix[:, :, :, 2] = observations_mult[:, :, :, 0] & 0xFF  # B
-                batch["observations"]["semantic_rgb"] = rgb_matrix
+                # constant = 414534
+                # # constant = 9994
+                #
+                # # print(batch["observations"]["rgb"])
+                # # print(torch.any(batch["observations"]["semantic"]))
+                # observations_mult = batch["observations"]["semantic"] * constant
+                #
+                # rgb_matrix = torch.zeros((observations_mult.size(0), 480, 640, 3), dtype=torch.uint8,
+                #                          device=observations_mult.device)
+                # rgb_matrix[:, :, :, 0] = (observations_mult[:, :, :, 0] >> 16) & 0xFF  # R
+                # rgb_matrix[:, :, :, 1] = (observations_mult[:, :, :, 0] >> 8) & 0xFF  # G
+                # rgb_matrix[:, :, :, 2] = observations_mult[:, :, :, 0] & 0xFF  # B
+                # batch["observations"]["semantic_rgb"] = rgb_matrix
                 (
                     values,
                     action_log_probs,

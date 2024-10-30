@@ -87,8 +87,8 @@ def run_exp(exp_config: str, run_type: str, opts=None) -> None:
         None.
     """
     config = get_config(exp_config, opts)
-    wandb.init(project="semnav", name=f'{run_type}-{config.TENSORBOARD_DIR.split("/")[-1]}', sync_tensorboard=True,
-               config=config, tags=[f'{run_type}'])
+    # wandb.init(project="semnav", name=f'{run_type}-{config.TENSORBOARD_DIR.split("/")[-1]}', sync_tensorboard=True,
+    #            config=config, tags=[f'{run_type}'])
     execute_exp(config, run_type)
 
 
