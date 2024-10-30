@@ -125,6 +125,7 @@ class PPO(nn.Module):
                 rgb_matrix[:, :, :, 1] = (observations_mult[:, :, :, 0] >> 8) & 0xFF  # G
                 rgb_matrix[:, :, :, 2] = observations_mult[:, :, :, 0] & 0xFF  # B
                 batch["observations"]["semantic_rgb"] = rgb_matrix
+                print(batch["observations"]["semantic_rgb"])
                 (
                     values,
                     action_log_probs,
@@ -200,8 +201,6 @@ class PPO(nn.Module):
         r"""Internal method that calls Policy.evaluate_actions.  This is used instead of calling
         that directly so that that call can be overrided with inheritance
         """
-        print("observations")
-        print(observations[0]["semantic_rgb"])
         return self.actor_critic.evaluate_actions(
             observations, rnn_hidden_states, prev_actions, masks, action
         )
