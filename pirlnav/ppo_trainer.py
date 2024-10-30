@@ -180,23 +180,6 @@ class PIRLNavPPOTrainer(PPOTrainer):
                 profiling_wrapper.on_start_step()
                 profiling_wrapper.range_push("train update")
 
-
-
-
-                constant = 414534
-                # constant = 9994
-
-                # print(batch["observations"]["rgb"])
-                # print(torch.any(batch["observations"]["semantic"]))
-                observations_mult = self.rollouts.buffers["observations"]["semantic"] * constant
-
-                rgb_matrix = torch.zeros((observations_mult.size(0),observations_mult.size(1), 480, 640, 3), dtype=torch.uint8,
-                                         device=observations_mult.device)
-                rgb_matrix[:,:, :, :, 0] = (observations_mult[:,:, :, :, 0] >> 16) & 0xFF  # R
-                rgb_matrix[:,:, :, :, 1] = (observations_mult[:,:, :, :, 0] >> 8) & 0xFF  # G
-                rgb_matrix[:,:, :, :, 2] = observations_mult[:,:, :, :, 0] & 0xFF  # B
-                self.rollouts.buffers["observations"]["semantic_rgb"] = rgb_matrix
-
                 if ppo_cfg.use_linear_clip_decay:
                     self.agent.clip_param = ppo_cfg.clip_param * (
                         1 - self.percent_done()
@@ -244,6 +227,20 @@ class PIRLNavPPOTrainer(PPOTrainer):
                     self._compute_actions_and_step_envs(buffer_index)
 
                 for step in range(ppo_cfg.num_steps):
+                    constant = 414534
+                    # constant = 9994
+
+                    # print(batch["observations"]["rgb"])
+                    # print(torch.any(batch["observations"]["semantic"]))
+                    observations_mult = self.rollouts.buffers["observations"]["semantic"] * constant
+
+                    rgb_matrix = torch.zeros((observations_mult.size(0), observations_mult.size(1), 480, 640, 3),
+                                             dtype=torch.uint8,
+                                             device=observations_mult.device)
+                    rgb_matrix[:, :, :, :, 0] = (observations_mult[:, :, :, :, 0] >> 16) & 0xFF  # R
+                    rgb_matrix[:, :, :, :, 1] = (observations_mult[:, :, :, :, 0] >> 8) & 0xFF  # G
+                    rgb_matrix[:, :, :, :, 2] = observations_mult[:, :, :, :, 0] & 0xFF  # B
+                    self.rollouts.buffers["observations"]["semantic_rgb"] = rgb_matrix
                     is_last_step = (
                         self.should_end_early(step + 1)
                         or (step + 1) == ppo_cfg.num_steps
