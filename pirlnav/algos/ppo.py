@@ -200,6 +200,8 @@ class PPO(nn.Module):
         r"""Internal method that calls Policy.evaluate_actions.  This is used instead of calling
         that directly so that that call can be overrided with inheritance
         """
+        print("observations")
+        print(observations[0]["semantic_rgb"])
         return self.actor_critic.evaluate_actions(
             observations, rnn_hidden_states, prev_actions, masks, action
         )
