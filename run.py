@@ -15,7 +15,7 @@ from habitat.config import Config
 from habitat_baselines.common.baseline_registry import baseline_registry
 
 from pirlnav.config import get_config
-
+from habitat_baselines.rl.ddppo.ddp_utils import load_resume_state
 
 def main():
     parser = argparse.ArgumentParser()
@@ -86,9 +86,43 @@ def run_exp(exp_config: str, run_type: str, opts=None) -> None:
     Returns:
         None.
     """
+
     config = get_config(exp_config, opts)
-    # wandb.init(project="semnav", name=f'{run_type}-{config.TENSORBOARD_DIR.split("/")[-1]}', sync_tensorboard=True,
-    #            config=config, tags=[f'{run_type}'])
+    resume_state = load_resume_state(config)
+    if resume_state is not None:
+        wandb_id = resume_state["config"]["WANDB_UNIQUE_ID"]
+        if wandb_id is not None:
+            config.defrost()
+            config.WANDB_UNIQUE_ID = wandb_id
+            config.freeze()
+        del resume_state
+    if config.WANDB_UNIQUE_ID is None:
+        config.defrost()
+        # if we're going to restart the experiment, this will be saved to a json file
+        config.WANDB_UNIQUE_ID = f'{run_type}-{config.TENSORBOARD_DIR.split("/")[-1]}_{datetime.now().strftime("%Y%m%d_%H%M%S_%f")}'
+        config.freeze()
+
+    if config.WANDB_ENABLED:
+        if os.environ.get("LOCAL_RANK", None) is not None:
+            world_rank = int(os.environ["RANK"])
+        # Else parse from SLURM is using SLURM
+        elif os.environ.get("SLURM_JOBID", None) is not None:
+            world_rank = int(os.environ["SLURM_PROCID"])
+        # Else parse from TSUBAME if using TSUBAME
+        elif os.environ.get("JOB_ID", None) is not None:
+            world_rank = int(os.environ["OMPI_COMM_WORLD_RANK"])
+        else:
+            world_rank = 0
+        # print(f"local_rank: {local_rank}, global_rank: {global_rank}")
+        if int(world_rank) == 0:  # multinode job
+            wandb.init(project="semnav",
+                       name=f'{run_type}-{config.TENSORBOARD_DIR.split("/")[-1]}',
+                       sync_tensorboard=True,
+                       config=config,
+                       entity='gram-uah',
+                       tags=[f'{run_type}', 'dgx'],
+                       id=config.WANDB_UNIQUE_ID,
+                       resume="allow")
     execute_exp(config, run_type)
 
 

@@ -3,14 +3,14 @@ CMD_TRAILING_OPTS: ["TASK_CONFIG.ENVIRONMENT.ITERATOR_OPTIONS.MAX_SCENE_REPEAT_S
 ENV_NAME: "SimpleRLEnv"
 SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
-WANDB_ENABLED: False
+WANDB_ENABLED: True
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/RL_RGBSEMPRETRAINED8"
-VIDEO_DIR: "RL_RGBSEMPRETRAINED8"
+TENSORBOARD_DIR: "tb/RLFT_Working"
+VIDEO_DIR: "debug"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/checkpoints/RL_RGBSEMPRETRAINED8"
+EVAL_CKPT_PATH_DIR: "data/checkpoints/RLFT_Working"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "data/checkpoints/RL_RGBSEMPRETRAINED8"
+CHECKPOINT_FOLDER: "data/checkpoints/RLFT_Working"
 TRAINER_NAME: "pirlnav-ppo"
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 NUM_UPDATES: 3200000000
@@ -56,7 +56,7 @@ RL:
     # The PyTorch distributed backend to use
     distrib_backend: NCCL
     # Visual encoder babone
-    pretrained_weights: data/checkpoints/semantic_rgb_lrcycliccor0.00001dgx_PRETRAINEDencoder40categories2_correctedconstant/ckpt.13.pth
+    pretrained_weights: /home/rafa/repositorios/semnav/40catrgbsem_ckpt13pre/ckpt.13.pth
     # Initialize with pretrained weights
     pretrained: True
     # Initialize just the visual encoder backbone with pretrained weights
