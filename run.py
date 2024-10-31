@@ -96,7 +96,7 @@ def run_exp(exp_config: str, run_type: str, opts=None) -> None:
             config.WANDB_UNIQUE_ID = wandb_id
             config.freeze()
         del resume_state
-    if config.WANDB_UNIQUE_ID is None:
+    if getattr(config, "WANDB_UNIQUE_ID", None) is None:
         config.defrost()
         # if we're going to restart the experiment, this will be saved to a json file
         config.WANDB_UNIQUE_ID = f'{run_type}-{config.TENSORBOARD_DIR.split("/")[-1]}_{datetime.now().strftime("%Y%m%d_%H%M%S_%f")}'
