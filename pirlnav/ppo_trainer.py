@@ -50,7 +50,80 @@ from pirlnav.utils.lr_scheduler import PIRLNavLRScheduler
 class PIRLNavPPOTrainer(PPOTrainer):
     def __init__(self, config=None):
         super().__init__(config)
+    def _compute_actions_and_step_envs(self, buffer_index: int = 0):
+        constant = 414534
+        # constant = 9994
 
+        # print(batch["observations"]["rgb"])
+        # print(torch.any(batch["observations"]["semantic"]))
+        observations_mult = self.rollouts.buffers["observations"]["semantic"] * constant
+
+        rgb_matrix = torch.zeros((observations_mult.size(0), observations_mult.size(1), 480, 640, 3), dtype=torch.uint8,
+                                 device=observations_mult.device)
+        rgb_matrix[:, :, :, :, 0] = (observations_mult[:, :, :, :, 0] >> 16) & 0xFF  # R
+        rgb_matrix[:, :, :, :, 1] = (observations_mult[:, :, :, :, 0] >> 8) & 0xFF  # G
+        rgb_matrix[:, :, :, :, 2] = observations_mult[:, :, :, :, 0] & 0xFF  # B
+        self.rollouts.buffers["observations"]["semantic_rgb"] = rgb_matrix
+        num_envs = self.envs.num_envs
+        env_slice = slice(
+            int(buffer_index * num_envs / self._nbuffers),
+            int((buffer_index + 1) * num_envs / self._nbuffers),
+        )
+
+        t_sample_action = time.time()
+
+        # sample actions
+        with torch.no_grad():
+            step_batch = self.rollouts.buffers[
+                self.rollouts.current_rollout_step_idxs[buffer_index],
+                env_slice,
+            ]
+
+            profiling_wrapper.range_push("compute actions")
+            (
+                values,
+                actions,
+                actions_log_probs,
+                recurrent_hidden_states,
+            ) = self.actor_critic.act(
+                step_batch["observations"],
+                step_batch["recurrent_hidden_states"],
+                step_batch["prev_actions"],
+                step_batch["masks"],
+            )
+
+        # NB: Move actions to CPU.  If CUDA tensors are
+        # sent in to env.step(), that will create CUDA contexts
+        # in the subprocesses.
+        # For backwards compatibility, we also call .item() to convert to
+        # an int
+        actions = actions.to(device="cpu")
+        self.pth_time += time.time() - t_sample_action
+
+        profiling_wrapper.range_pop()  # compute actions
+
+        t_step_env = time.time()
+
+        for index_env, act in zip(
+            range(env_slice.start, env_slice.stop), actions.unbind(0)
+        ):
+            if act.shape[0] > 1:
+                step_action = action_array_to_dict(
+                    self.policy_action_space, act
+                )
+            else:
+                step_action = act.item()
+            self.envs.async_step_at(index_env, step_action)
+
+        self.env_time += time.time() - t_step_env
+
+        self.rollouts.insert(
+            next_recurrent_hidden_states=recurrent_hidden_states,
+            actions=actions,
+            action_log_probs=actions_log_probs,
+            value_preds=values,
+            buffer_index=buffer_index,
+        )
     def _setup_actor_critic_agent(self, ppo_cfg: Config) -> None:
         r"""Sets up actor critic and agent for PPO.
         Args:
@@ -222,21 +295,6 @@ class PIRLNavPPOTrainer(PPOTrainer):
                 count_steps_delta = 0
                 profiling_wrapper.range_push("rollouts loop")
                 profiling_wrapper.range_push("_collect_rollout_step")
-                constant = 414534
-                # constant = 9994
-
-                # print(batch["observations"]["rgb"])
-                # print(torch.any(batch["observations"]["semantic"]))
-                print(self.rollouts.buffers["observations"]["semantic"])
-                print(self.rollouts.buffers["observations"]["semantic_rgb"])
-                observations_mult = self.rollouts.buffers["observations"]["semantic"] * constant
-
-                rgb_matrix = torch.zeros((observations_mult.size(0),observations_mult.size(1), 480, 640, 3), dtype=torch.uint8,
-                                         device=observations_mult.device)
-                rgb_matrix[:,:, :, :, 0] = (observations_mult[:,:, :, :, 0] >> 16) & 0xFF  # R
-                rgb_matrix[:,:, :, :, 1] = (observations_mult[:,:, :, :, 0] >> 8) & 0xFF  # G
-                rgb_matrix[:,:, :, :, 2] = observations_mult[:,:, :, :, 0] & 0xFF  # B
-                self.rollouts.buffers["observations"]["semantic_rgb"] = rgb_matrix
                 for buffer_index in range(self._nbuffers):
                     self._compute_actions_and_step_envs(buffer_index)
 
