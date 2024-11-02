@@ -57,7 +57,8 @@ class PIRLNavPPOTrainer(PPOTrainer):
             step_batch = self.rollouts.buffers[
                 self.rollouts.current_rollout_step_idx
             ]
-
+            if torch.all(step_batch["observations"]["semantic_rgb"] == 0):
+                print("El tensor es todo ceros.")
             next_value = self.actor_critic.get_value(
                 step_batch["observations"],
                 step_batch["recurrent_hidden_states"],

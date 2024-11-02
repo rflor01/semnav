@@ -9,7 +9,7 @@ import numba
 import quaternion
 import torch
 import habitat
-import wandb
+import wandb_local
 from habitat import logger
 from habitat.config import Config
 from habitat_baselines.common.baseline_registry import baseline_registry
@@ -115,14 +115,14 @@ def run_exp(exp_config: str, run_type: str, opts=None) -> None:
             world_rank = 0
         # print(f"local_rank: {local_rank}, global_rank: {global_rank}")
         if int(world_rank) == 0:  # multinode job
-            wandb.init(project="semnav",
-                       name=f'{run_type}-{config.TENSORBOARD_DIR.split("/")[-1]}',
-                       sync_tensorboard=True,
-                       config=config,
-                       entity='gram-uah',
-                       tags=[f'{run_type}', 'dgx'],
-                       id=config.WANDB_UNIQUE_ID,
-                       resume="allow")
+            wandb_local.init(project="semnav",
+                             name=f'{run_type}-{config.TENSORBOARD_DIR.split("/")[-1]}',
+                             sync_tensorboard=True,
+                             config=config,
+                             entity='gram-uah',
+                             tags=[f'{run_type}', 'dgx'],
+                             id=config.WANDB_UNIQUE_ID,
+                             resume="allow")
     execute_exp(config, run_type)
 
 
