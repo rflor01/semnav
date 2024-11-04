@@ -407,15 +407,18 @@ class ILEnvDDPTrainer(PPOTrainer):
         count_checkpoints = 0
         prev_time = 0
         il_cfg = self.config.IL.BehaviorCloning
-        lr_scheduler = CyclicLR(
-            optimizer=self.agent.optimizer,
-            mode='exp_range',
-            base_lr=il_cfg.lr,
-            max_lr=il_cfg.lr*il_cfg.CYCLIC_LR.multiplication_factor,
-            gamma=il_cfg.CYCLIC_LR.gamma,
-            cycle_momentum=False,
-            step_size_up=il_cfg.CYCLIC_LR.step_size_up
+        lr_scheduler = LambdaLR(
+            lr_lambda=lambda x: 1 - self.percent_done(),
         )
+        # lr_scheduler = CyclicLR(
+        #     optimizer=self.agent.optimizer,
+        #     mode='exp_range',
+        #     base_lr=il_cfg.lr,
+        #     max_lr=il_cfg.lr*il_cfg.CYCLIC_LR.multiplication_factor,
+        #     gamma=il_cfg.CYCLIC_LR.gamma,
+        #     cycle_momentum=False,
+        #     step_size_up=il_cfg.CYCLIC_LR.step_size_up
+        # )
         resume_state = load_resume_state(self.config)
 
         if resume_state is not None:
@@ -718,8 +721,8 @@ class ILEnvDDPTrainer(PPOTrainer):
         batch = batch_obs(
             observations, device=self.device, cache=self._obs_batching_cache
         )
-        constant = 414534
-        #constant = 9994
+        #constant = 414534
+        constant = 9994
 
         observations_mult = batch["semantic"] * constant
 
@@ -833,8 +836,8 @@ class ILEnvDDPTrainer(PPOTrainer):
                 device=self.device,
                 cache=self._obs_batching_cache,
             )
-            constant = 414534
-            # constant = 9994
+            #constant = 414534
+            constant = 9994
 
             observations_mult = batch["semantic"] * constant
 
