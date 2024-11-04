@@ -18,8 +18,8 @@ export OMP_NUM_THREADS=$((num_cpus/num_gpus))
 
 config="configs/experiments/rl_ft_objectnav.yaml"
 DATA_PATH="data/datasets/objectnav/objectnav_hm3d/objectnav_hm3d_v1"
-TENSORBOARD_DIR="tb/RLFT_Working_lowerlr2"
-CHECKPOINT_DIR="data/checkpoints/RLFT_Working_lowerlr2"
+TENSORBOARD_DIR="tb/RLFT_Change_pirlnavparameters"
+CHECKPOINT_DIR="data/checkpoints/RLFT_Change_pirlnavparameters"
 PRETRAINED_WEIGHTS="data/checkpoints/semantic_rgb_lrcycliccor0.00001dgx_PRETRAINEDencoder40categories2_correctedconstant/ckpt.13.pth"
 INFLECTION_COEF=3.234951275740812
 

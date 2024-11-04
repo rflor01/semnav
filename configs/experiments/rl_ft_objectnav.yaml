@@ -5,12 +5,12 @@ SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 WANDB_ENABLED: True
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/RLFT_Working_collectenvironmentresultcorrect"
-VIDEO_DIR: "RLFT_Working_collectenvironmentresultcorrect"
+TENSORBOARD_DIR: "tb/RLFT_Change_pirlnavparameters"
+VIDEO_DIR: "RLFT_Change_pirlnavparameters"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/checkpoints/RLFT_Working_collectenvironmentresultcorrect"
+EVAL_CKPT_PATH_DIR: "data/checkpoints/RLFT_Change_pirlnavparameters"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "data/checkpoints/RLFT_Working_collectenvironmentresultcorrect"
+CHECKPOINT_FOLDER: "data/checkpoints/RLFT_Change_pirlnavparameters"
 TRAINER_NAME: "pirlnav-ppo"
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 NUM_UPDATES: 3200000000
@@ -32,10 +32,10 @@ RL:
     name: "SEMANTIC_RGB_ObjectNavILMAEPolicy"
 
   Finetune:
-    start_actor_warmup_at: 50
-    start_actor_update_at: 100
-    start_critic_warmup_at: 20
-    start_critic_update_at: 80
+    start_actor_warmup_at: 850
+    start_actor_update_at: 1700
+    start_critic_warmup_at: 340
+    start_critic_update_at: 1360
 
 
   PPO:
