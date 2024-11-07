@@ -36,6 +36,7 @@ RL:
     start_actor_update_at: 1700
     start_critic_warmup_at: 340
     start_critic_update_at: 1360
+    lr: 1.5e-6
 
 
   PPO:
