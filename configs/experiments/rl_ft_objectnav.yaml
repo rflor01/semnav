@@ -5,12 +5,12 @@ SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 WANDB_ENABLED: True
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/RLFT_Change_pirlnavparameters"
-VIDEO_DIR: "RLFT_Change_pirlnavparameters"
+TENSORBOARD_DIR: "tb/RLFT_Change_lr"
+VIDEO_DIR: "vidRLFT_Change_lr"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/checkpoints/RLFT_Change_pirlnavparameters"
+EVAL_CKPT_PATH_DIR: "data/checkpoints/RLFT_Change_lr"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "data/checkpoints/RLFT_Change_pirlnavparameters"
+CHECKPOINT_FOLDER: "data/checkpoints/RLFT_Change_lr"
 TRAINER_NAME: "pirlnav-ppo"
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 NUM_UPDATES: 3200000000
