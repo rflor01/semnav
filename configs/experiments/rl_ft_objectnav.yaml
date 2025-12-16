@@ -5,23 +5,23 @@ SIMULATOR_GPU_ID: 0
 TORCH_GPU_ID: 0
 WANDB_ENABLED: True
 VIDEO_OPTION: [disk]
-TENSORBOARD_DIR: "tb/RLFT_Change_lr"
+TENSORBOARD_DIR: "tb/RLFT_newminibatch4_lr"
 VIDEO_DIR: "vidRLFT_Change_lr"
 TEST_EPISODE_COUNT: -1
-EVAL_CKPT_PATH_DIR: "data/checkpoints/RLFT_Change_lr"
+EVAL_CKPT_PATH_DIR: "data/checkpoints/RLFT_newminibatch4_lr"
 NUM_ENVIRONMENTS: 2
-CHECKPOINT_FOLDER: "data/checkpoints/RLFT_Change_lr"
+CHECKPOINT_FOLDER: "data/checkpoints/RLFT_newminibatch4_lr"
 TRAINER_NAME: "pirlnav-ppo"
 SENSORS: ["RGB_SENSOR","SEMANTIC_SENSOR"]
 NUM_UPDATES: 3200000000
 LOG_INTERVAL: 10
-NUM_CHECKPOINTS: 30000
+NUM_CHECKPOINTS: 3000000
 # Force PyTorch to be single threaded as
 # this improves performance considerably
 FORCE_TORCH_SINGLE_THREADED: True
 
 EVAL:
-  SPLIT: "val"
+  SPLIT: "train"
   USE_CKPT_CONFIG: False
 
 RL:
