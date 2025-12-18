@@ -452,6 +452,7 @@ class ILEnvDDPTrainer(PPOTrainer):
                 max_grad_norm=il_cfg.max_grad_norm,
                 wd=il_cfg.wd,
                 entropy_coef=il_cfg.entropy_coef,
+                semantic_constant = self.constant
             )
         else:
             self.agent = DDPILAgent(
